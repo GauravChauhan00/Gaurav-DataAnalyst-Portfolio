@@ -14,7 +14,7 @@ function CoreObject() {
     if (groupRef.current) {
       groupRef.current.rotation.y += delta * 0.35;
       groupRef.current.rotation.x = Math.sin(time * 0.8) * 0.2;
-      groupRef.current.position.y = 0.25 + Math.sin(time * 1.5) * 0.08;
+      groupRef.current.position.y = -0.12 + Math.sin(time * 1.5) * 0.08;
     }
     if (ring1Ref.current) {
       ring1Ref.current.rotation.z -= delta * 0.5;
@@ -31,7 +31,7 @@ function CoreObject() {
   });
 
   return (
-    <group ref={groupRef} scale={1.05}>
+    <group ref={groupRef} scale={1.48}>
       {/* Solid Translucent Inner Knot */}
       <mesh>
         <torusKnotGeometry args={[0.92, 0.22, 180, 24]} />
@@ -96,13 +96,13 @@ function CoreObject() {
 export default function HeroScene() {
   return (
     <div className="hero-scene" aria-hidden="true">
-      <Canvas camera={{ position: [0, 0, 5.5], fov: 44 }} dpr={[1, 2]} performance={{ min: 0.5 }}>
+      <Canvas camera={{ position: [0, 0, 5.2], fov: 46 }} dpr={[1, 2]} performance={{ min: 0.5 }}>
         <ambientLight intensity={1.1} />
         <directionalLight position={[5, 5, 5]} intensity={1.8} color="#ffffff" />
         <pointLight position={[4, 3, 4]} intensity={2.8} color="#00f0ff" />
         <pointLight position={[-4, -3, 3]} intensity={2.2} color="#a855f7" />
         <pointLight position={[0, -4, 2]} intensity={1.8} color="#10b981" />
-        <DataNodeField count={180} />
+        <DataNodeField count={200} />
         <CoreObject />
       </Canvas>
       <div className="hero-scene__scanline" />
