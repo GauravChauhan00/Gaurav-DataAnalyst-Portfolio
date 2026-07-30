@@ -7,7 +7,7 @@ export const education = [
     highlights: ['Engineering foundation', 'Data, software, and analytical project exposure']
   },
   {
-    degree: 'Intermediate (CBSE)',
+    degree: 'Intermediate (HBSE)',
     institution: 'Barwala Public Sr. Sec. School, Hisar',
     duration: 'Mar 2020',
     score: 'Percentage: 89%',
