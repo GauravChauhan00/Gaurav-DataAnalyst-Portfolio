@@ -457,7 +457,7 @@ html[data-theme='light'] .navbar--scrolled {
 .hero-scene {
   position: relative;
   width: 100%;
-  min-height: 520px;
+  height: 520px;
   border: 1px solid var(--border);
   border-radius: 42px;
   overflow: hidden;
@@ -470,6 +470,12 @@ html[data-theme='light'] .navbar--scrolled {
   background-size: 36px 36px, 36px 36px, 100% 100%, 100% 100%;
   box-shadow: var(--shadow);
   backdrop-filter: blur(18px);
+}
+
+.hero-scene canvas,
+.hero-scene > div {
+  width: 100% !important;
+  height: 100% !important;
 }
 
 .hero-scene__scanline {
