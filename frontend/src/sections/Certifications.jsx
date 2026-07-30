@@ -101,7 +101,7 @@ export default function Certifications() {
           </div>
           <div className="cert-tab-card__content">
             <h3>Single Certificates</h3>
-            <p>{singleCertificates.length} Individual Credentials</p>
+            <p>{singleCertificates.length} Certificates</p>
           </div>
         </button>
       </div>
