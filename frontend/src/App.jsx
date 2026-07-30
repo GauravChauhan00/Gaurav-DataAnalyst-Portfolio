@@ -11,7 +11,7 @@ import { API_BASE_URL } from './config/apiConfig';
 
 const getInitialTheme = () => {
   const savedTheme = localStorage.getItem('portfolio-theme');
-  if (savedTheme) return savedTheme;
+  if (savedTheme === 'dark') return 'dark';
   return 'light';
 };
 
