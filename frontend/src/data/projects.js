@@ -8,7 +8,7 @@ export const projects = [
     status: 'Completed',
     featured: true,
     shortDescription:
-      'A full-stack grocery store management app with admin dashboard, product inventory, sales processing, automated stock updates, and CSV-exportable reports — built with React, Flask, and SQLite.',
+      'A full-stack grocery store management app with admin dashboard, product inventory, sales processing, automated stock updates, and CSV-exportable reports — built with React, FastAPI, and SQLite.',
     overview:
       'Built a complete admin system for a grocery store that handles everything from adding products to recording sales and generating reports. The idea was to replace the typical manual tracking (pen-paper or basic Excel) with a proper digital solution. Any store owner can plug in their own data and manage their inventory from a clean dashboard.',
     problem:
@@ -21,16 +21,16 @@ export const projects = [
       'Daily, weekly, monthly sales reports with date range filter and CSV export',
       'Charts for recent sales trends and stock distribution',
       'Auto database setup on first run with sample data — beginner-friendly setup',
-      'REST API-driven architecture — React frontend talks to Flask backend cleanly'
+      'REST API-driven architecture — React frontend talks to FastAPI backend cleanly'
     ],
-    technologies: ['React.js', 'Vite', 'JavaScript', 'Python', 'Flask', 'SQLite', 'REST API', 'CSS3'],
+    technologies: ['React.js', 'Vite', 'JavaScript', 'Python', 'FastAPI', 'SQLite', 'REST API', 'CSS3'],
     role: 'Full-Stack Developer',
     challenges:
       'Making sure stock deduction and sale recording happen atomically — if one fails, the other should not go through. Also designing a clean UI that a non-technical store owner could actually use without training.',
     solution:
       'Used SQLite transactions to wrap sale insertion and stock deduction together, so data stays consistent. Kept the UI simple — card-based dashboard, clear status badges on products, and one-click report export without any complex steps.',
     learnings:
-      'Got hands-on with Flask REST API design, SQLite transactions, React state management across multiple pages, and how to build a product that\'s actually usable by someone who\'s not a developer.',
+      'Got hands-on with FastAPI REST API design, SQLite transactions, React state management across multiple pages, and how to build a product that\'s actually usable by someone who\'s not a developer.',
     githubUrl: 'https://github.com/GauravChauhan00/Grainex-Grocery-Management-System',
     liveUrl: '',
     screenshots: [
@@ -45,7 +45,7 @@ export const projects = [
       '/images/projects/grocery-management-store/9.png',
       '/images/projects/grocery-management-store/10.png'
     ],
-    tags: ['Full Stack', 'Inventory', 'Flask', 'React', 'SQLite', 'Dashboard']
+    tags: ['Full Stack', 'Inventory', 'FastAPI', 'React', 'SQLite', 'Dashboard']
   },
   {
     id: 'customer-support-analysis',
