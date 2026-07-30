@@ -1,9 +1,11 @@
-import { Download, ExternalLink, FileText } from 'lucide-react';
+import { Building2, Download, ExternalLink, FileText } from 'lucide-react';
 import Badge from '../common/Badge';
 
 export default function CertificateCard({ certificate, onView }) {
   const hasFile = Boolean(certificate.filePath);
   const hasCredential = Boolean(certificate.credentialUrl);
+  const orgName = certificate.organization || certificate.issuer || 'Online Credential';
+  const platformName = certificate.platform ? `via ${certificate.platform}` : '';
 
   return (
     <div className="certificate-row">
@@ -30,9 +32,13 @@ export default function CertificateCard({ certificate, onView }) {
         </div>
       </div>
 
-      {/* Line 2: Issuer + Category + Date */}
+      {/* Line 2: Organization (Prominent) + Platform + Category + Date */}
       <div className="certificate-row__meta">
-        <span className="certificate-row__issuer">{certificate.issuer}</span>
+        <div className="certificate-row__org-badge">
+          <Building2 size={12} className="certificate-row__org-icon" />
+          <strong className="certificate-row__org-name">{orgName}</strong>
+          {platformName && <span className="certificate-row__platform-name">{platformName}</span>}
+        </div>
         <span className="certificate-row__category">
           <Badge tone="soft">{certificate.category}</Badge>
         </span>

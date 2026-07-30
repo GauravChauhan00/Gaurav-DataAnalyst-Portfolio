@@ -24,7 +24,7 @@ export default function Certifications() {
   const filteredSingles = useMemo(() => {
     const q = normalizeText(query);
     return singleCertificates.filter((certificate) => {
-      const matchesQuery = !q || normalizeText(`${certificate.title} ${certificate.issuer} ${certificate.category}`).includes(q);
+      const matchesQuery = !q || normalizeText(`${certificate.title} ${certificate.organization || ''} ${certificate.issuer || ''} ${certificate.platform || ''} ${certificate.category}`).includes(q);
       const matchesCategory = category === 'All' || certificate.category === category;
       return matchesQuery && matchesCategory;
     });
@@ -33,7 +33,7 @@ export default function Certifications() {
   const filteredBundles = useMemo(() => {
     const q = normalizeText(query);
     return courseBundles.filter((bundle) => {
-      const matchesQuery = !q || normalizeText(`${bundle.courseName} ${bundle.platform} ${bundle.category}`).includes(q);
+      const matchesQuery = !q || normalizeText(`${bundle.courseName} ${bundle.organization || ''} ${bundle.platform || ''} ${bundle.category}`).includes(q);
       const matchesCategory = category === 'All' || bundle.category === category;
       return matchesQuery && matchesCategory;
     });
