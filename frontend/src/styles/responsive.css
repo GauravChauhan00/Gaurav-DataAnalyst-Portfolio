@@ -119,7 +119,13 @@
   }
 
   .certificate-controls {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .certificate-controls select {
+    max-width: 100%;
+    width: 100%;
   }
 
   .certificates-list {

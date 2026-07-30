@@ -1056,23 +1056,38 @@ html[data-theme='light'] .terminal-card {
 }
 
 .certificate-controls {
-  display: grid;
-  grid-template-columns: 1fr 220px;
-  gap: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
   margin-bottom: 30px;
+}
+
+.certificate-controls input {
+  flex: 1;
+  min-width: 0;
+}
+
+.certificate-controls select {
+  width: auto;
+  max-width: 230px;
+  flex-shrink: 0;
 }
 
 .certificate-controls input,
 .certificate-controls select,
 .contact-form input,
 .contact-form textarea {
-  width: 100%;
   border: 1px solid var(--border);
   border-radius: 18px;
   outline: none;
   background: rgba(255, 255, 255, 0.06);
   color: var(--text);
   padding: 14px 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
 }
 
 .certificate-controls input:focus,
