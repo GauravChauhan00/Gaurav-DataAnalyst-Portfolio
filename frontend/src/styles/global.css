@@ -461,25 +461,39 @@ html[data-theme='light'] .navbar--scrolled {
   border: 1px solid var(--border);
   border-radius: 42px;
   overflow: hidden;
-  background:
-    radial-gradient(circle at 50% 45%, rgba(34, 211, 238, 0.20), transparent 30%),
-    radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.18), transparent 32%),
-    rgba(255, 255, 255, 0.045);
+  background-color: rgba(255, 255, 255, 0.045);
+  background-image:
+    linear-gradient(to right, rgba(34, 211, 238, 0.14) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(34, 211, 238, 0.14) 1px, transparent 1px),
+    radial-gradient(circle at 50% 45%, rgba(34, 211, 238, 0.25), transparent 40%),
+    radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.22), transparent 45%);
+  background-size: 36px 36px, 36px 36px, 100% 100%, 100% 100%;
   box-shadow: var(--shadow);
   backdrop-filter: blur(18px);
 }
 
 .hero-scene__scanline {
   position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.08), transparent);
-  opacity: 0.35;
-  animation: scan 4s linear infinite;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(34, 211, 238, 0.15) 50%,
+    rgba(34, 211, 238, 0.45) 85%,
+    rgba(168, 85, 247, 0.75) 100%
+  );
+  border-bottom: 2px solid rgba(0, 240, 255, 0.9);
+  box-shadow: 0 4px 20px rgba(0, 240, 255, 0.5);
+  opacity: 0.85;
+  animation: scan 3.5s ease-in-out infinite alternate;
+  pointer-events: none;
 }
 
 @keyframes scan {
-  from { transform: translateY(-100%); }
-  to { transform: translateY(100%); }
+  from { transform: translateY(-120px); }
+  to { transform: translateY(420px); }
 }
 
 .terminal-card {
