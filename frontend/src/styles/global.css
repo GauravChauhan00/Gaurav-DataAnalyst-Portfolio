@@ -451,6 +451,7 @@ html[data-theme='light'] .navbar--scrolled {
 .hero__visual {
   position: relative;
   min-height: 560px;
+  padding-bottom: 30px;
 }
 
 .hero-scene {
@@ -483,27 +484,28 @@ html[data-theme='light'] .navbar--scrolled {
 
 .terminal-card {
   position: absolute;
-  left: -24px;
-  bottom: 18px;
-  width: min(390px, 88%);
-  padding: 14px;
+  left: -20px;
+  bottom: 28px;
+  width: min(390px, 90%);
+  padding: 16px 20px 20px;
   border: 1px solid var(--border);
   border-radius: 22px;
-  background: rgba(2, 6, 23, 0.82);
+  background: rgba(2, 6, 23, 0.92);
   color: #cbd5e1;
   box-shadow: var(--shadow-soft);
   backdrop-filter: blur(18px);
+  z-index: 10;
 }
 
 html[data-theme='light'] .terminal-card {
-  background: rgba(15, 23, 42, 0.88);
+  background: rgba(15, 23, 42, 0.94);
   color: #e2e8f0;
 }
 
 .terminal-card__bar {
   display: flex;
   gap: 7px;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .terminal-card__bar span {
@@ -518,9 +520,10 @@ html[data-theme='light'] .terminal-card {
 
 .terminal-card code {
   display: grid;
-  gap: 5px;
+  gap: 6px;
   font-family: "SFMono-Regular", Consolas, monospace;
-  font-size: 0.82rem;
+  font-size: 0.84rem;
+  line-height: 1.5;
 }
 
 .about__grid,
