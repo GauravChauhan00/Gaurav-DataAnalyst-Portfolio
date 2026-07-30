@@ -755,13 +755,13 @@ export const courseBundles = [
     "courseName": "Time & Stress Management Collection",
     "platform": "LinkedIn",
     "category": "Other",
-    "totalCertificates": 6,
+    "totalCertificates": 24,
     "status": "Completed",
     "description": "Professional development bundle covering time management, stress reduction, and peak productivity.",
     "organization": "LINKEDIN",
     "certificates": [
       {
-        "title": "Time & Stress Management Complete Collection",
+        "title": "Time & Stress Management Collection (24 Certificates)",
         "date": "2023",
         "filePath": "/certificates/single/time-and-stress-management-compressed.pdf",
         "credentialUrl": ""
@@ -773,13 +773,13 @@ export const courseBundles = [
     "courseName": "Ethics & Gender Equality Collection",
     "platform": "LinkedIn",
     "category": "Other",
-    "totalCertificates": 8,
+    "totalCertificates": 30,
     "status": "Completed",
     "description": "Professional certification bundle covering ethics, diversity, inclusion, and workplace gender equality.",
     "organization": "LINKEDIN",
     "certificates": [
       {
-        "title": "Ethics & Gender Equality Certificate Collection",
+        "title": "Ethics & Gender Equality Collection (30 Certificates)",
         "date": "2023",
         "filePath": "/certificates/single/ethics-and-gender-equality-compressed.pdf",
         "credentialUrl": ""
@@ -797,7 +797,7 @@ export const courseBundles = [
     "organization": "LINKEDIN",
     "certificates": [
       {
-        "title": "Entrepreneurship Mastery Certificate Collection (26 Courses)",
+        "title": "Entrepreneurship Mastery Collection (26 Certificates)",
         "date": "2022",
         "filePath": "/certificates/single/enterpreneurship-compressed.pdf",
         "credentialUrl": ""
@@ -815,7 +815,7 @@ export const courseBundles = [
     "organization": "LINKEDIN",
     "certificates": [
       {
-        "title": "Interpersonal Communication & Leadership Collection (46 Courses)",
+        "title": "Interpersonal Communication & Leadership Collection (46 Certificates)",
         "date": "2023",
         "filePath": "/certificates/single/inrerpersonal-communication-compressed.pdf",
         "credentialUrl": ""
