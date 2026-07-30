@@ -14,7 +14,7 @@ function CoreObject() {
     if (groupRef.current) {
       groupRef.current.rotation.y += delta * 0.35;
       groupRef.current.rotation.x = Math.sin(time * 0.8) * 0.18;
-      groupRef.current.position.y = Math.sin(time * 1.5) * 0.05;
+      groupRef.current.position.y = 0.22 + Math.sin(time * 1.5) * 0.05;
       groupRef.current.position.x = 0;
     }
     if (ring1Ref.current) {
@@ -32,10 +32,10 @@ function CoreObject() {
   });
 
   return (
-    <group ref={groupRef} scale={1.15}>
+    <group ref={groupRef} scale={0.78}>
       {/* Solid Translucent Inner Knot */}
       <mesh>
-        <torusKnotGeometry args={[0.9, 0.22, 180, 24]} />
+        <torusKnotGeometry args={[0.8, 0.18, 180, 24]} />
         <meshStandardMaterial
           color="#06b6d4"
           emissive="#0284c7"
@@ -49,7 +49,7 @@ function CoreObject() {
 
       {/* Glowing Outer Wireframe Mesh */}
       <mesh>
-        <torusKnotGeometry args={[0.91, 0.225, 120, 16]} />
+        <torusKnotGeometry args={[0.81, 0.185, 120, 16]} />
         <meshStandardMaterial
           color="#00f0ff"
           emissive="#00f0ff"
@@ -60,7 +60,7 @@ function CoreObject() {
 
       {/* Orbiting Neon Ring 1 - Purple */}
       <mesh ref={ring1Ref} rotation={[Math.PI / 3, 0.2, 0]}>
-        <torusGeometry args={[1.45, 0.016, 20, 200]} />
+        <torusGeometry args={[1.25, 0.015, 20, 200]} />
         <meshStandardMaterial
           color="#a855f7"
           emissive="#a855f7"
@@ -70,7 +70,7 @@ function CoreObject() {
 
       {/* Orbiting Neon Ring 2 - Emerald */}
       <mesh ref={ring2Ref} rotation={[-Math.PI / 3, -0.4, 0.5]}>
-        <torusGeometry args={[1.6, 0.014, 20, 200]} />
+        <torusGeometry args={[1.38, 0.013, 20, 200]} />
         <meshStandardMaterial
           color="#10b981"
           emissive="#10b981"
@@ -80,7 +80,7 @@ function CoreObject() {
 
       {/* Inner Glowing Gem Core */}
       <mesh ref={coreGemRef} rotation={[0.7, 0.2, 0.4]}>
-        <icosahedronGeometry args={[0.48, 1]} />
+        <icosahedronGeometry args={[0.4, 1]} />
         <meshStandardMaterial
           color="#ec4899"
           emissive="#f43f5e"
@@ -99,7 +99,7 @@ export default function HeroScene() {
     <div className="hero-scene" aria-hidden="true">
       <Canvas
         style={{ width: '100%', height: '100%', display: 'block' }}
-        camera={{ position: [0, 0, 5.0], fov: 45 }}
+        camera={{ position: [0, 0, 5.8], fov: 45 }}
         dpr={[1, 2]}
         performance={{ min: 0.5 }}
       >
