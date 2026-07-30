@@ -180,7 +180,7 @@ export const singleCertificates = [
     "filePath": "/certificates/single/ethics-and-gender-equality.pdf",
     "credentialUrl": "",
     "description": "Certification in Ethics and Gender Equality issued by Linkdin.",
-    "organization": "LINKEDIN",
+    "organization": "LINKEDIN LEARNING",
     "platform": "LinkedIn Learning"
   },
   {
@@ -758,7 +758,7 @@ export const courseBundles = [
     "totalCertificates": 23,
     "status": "Completed",
     "description": "Professional development bundle covering time management, stress reduction, and peak productivity.",
-    "organization": "LINKEDIN",
+    "organization": "LINKEDIN LEARNING",
     "certificates": [
       {
         "title": "Time & Stress Management Collection (23 Certificates)",
@@ -776,7 +776,7 @@ export const courseBundles = [
     "totalCertificates": 30,
     "status": "Completed",
     "description": "Professional certification bundle covering ethics, diversity, inclusion, and workplace gender equality.",
-    "organization": "LINKEDIN",
+    "organization": "LINKEDIN LEARNING",
     "certificates": [
       {
         "title": "Ethics & Gender Equality Collection (30 Certificates)",
@@ -794,7 +794,7 @@ export const courseBundles = [
     "totalCertificates": 25,
     "status": "Completed",
     "description": "Comprehensive 26-course bundle covering business strategy, startup growth, small business marketing, and venture creation.",
-    "organization": "LINKEDIN",
+    "organization": "LINKEDIN LEARNING",
     "certificates": [
       {
         "title": "Entrepreneurship Mastery Collection (25 Certificates)",
@@ -812,7 +812,7 @@ export const courseBundles = [
     "totalCertificates": 46,
     "status": "Completed",
     "description": "Extensive 46-course specialization bundle in interpersonal communication, emotional intelligence, cross-cultural collaboration, and team leadership.",
-    "organization": "LINKEDIN",
+    "organization": "LINKEDIN LEARNING",
     "certificates": [
       {
         "title": "Interpersonal Communication & Leadership Collection (46 Certificates)",
