@@ -19,5 +19,7 @@ export const env = {
   emailUser: process.env.EMAIL_USER || '',
   emailPass: process.env.EMAIL_PASS || '',
   receiverEmail: process.env.RECEIVER_EMAIL || '',
-  resendApiKey: process.env.RESEND_API_KEY || ''
+  resendApiKey: process.env.RESEND_API_KEY || '',
+  telegramBotToken: process.env.TELEGRAM_BOT_TOKEN || '',
+  telegramChatId: process.env.TELEGRAM_CHAT_ID || ''
 };

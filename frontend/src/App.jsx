@@ -7,6 +7,7 @@ import SmoothScroll from './components/layout/SmoothScroll';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import ProjectDetail from './pages/ProjectDetail';
+import { API_BASE_URL } from './config/apiConfig';
 
 const getInitialTheme = () => {
   const savedTheme = localStorage.getItem('portfolio-theme');
@@ -22,6 +23,26 @@ export default function App() {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('portfolio-theme', theme);
   }, [theme]);
+
+  useEffect(() => {
+    try {
+      const hasVisited = sessionStorage.getItem('visited_portfolio_session');
+      if (!hasVisited) {
+        sessionStorage.setItem('visited_portfolio_session', 'true');
+        fetch(`${API_BASE_URL}/api/analytics/visit`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            path: window.location.pathname,
+            referrer: document.referrer || 'Direct',
+            screen: `${window.screen.width}x${window.screen.height}`
+          })
+        }).catch(() => {});
+      }
+    } catch (e) {
+      // Ignore quota/storage errors
+    }
+  }, []);
 
   return (
     <div className="app-shell">
