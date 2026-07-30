@@ -12,6 +12,7 @@ export default function Certifications() {
   const [activeTab, setActiveTab] = useState('bundles'); // 'bundles' or 'singles'
   const [query, setQuery] = useState('');
   const [category, setCategory] = useState('All');
+  const [selectedOrg, setSelectedOrg] = useState('All Organizations');
   const [activeCertificate, setActiveCertificate] = useState(null);
   const [activeBundle, setActiveBundle] = useState(null);
   const [lastOpenBundle, setLastOpenBundle] = useState(null);
@@ -21,23 +22,42 @@ export default function Certifications() {
     return courseBundles.reduce((acc, curr) => acc + curr.totalCertificates, 0);
   }, []);
 
+  // Compute list of organizations with counts for active tab
+  const organizationList = useMemo(() => {
+    const list = activeTab === 'bundles' ? courseBundles : singleCertificates;
+    const counts = {};
+    list.forEach((item) => {
+      const org = item.organization || item.issuer || 'Other';
+      counts[org] = (counts[org] || 0) + 1;
+    });
+    const sortedOrgs = Object.keys(counts).sort((a, b) => counts[b] - counts[a]);
+    return [
+      { name: 'All Organizations', count: list.length },
+      ...sortedOrgs.map((org) => ({ name: org, count: counts[org] }))
+    ];
+  }, [activeTab]);
+
   const filteredSingles = useMemo(() => {
     const q = normalizeText(query);
     return singleCertificates.filter((certificate) => {
-      const matchesQuery = !q || normalizeText(`${certificate.title} ${certificate.organization || ''} ${certificate.issuer || ''} ${certificate.platform || ''} ${certificate.category}`).includes(q);
+      const org = certificate.organization || certificate.issuer || 'Other';
+      const matchesQuery = !q || normalizeText(`${certificate.title} ${org} ${certificate.category}`).includes(q);
       const matchesCategory = category === 'All' || certificate.category === category;
-      return matchesQuery && matchesCategory;
+      const matchesOrg = selectedOrg === 'All Organizations' || org === selectedOrg;
+      return matchesQuery && matchesCategory && matchesOrg;
     });
-  }, [query, category]);
+  }, [query, category, selectedOrg]);
 
   const filteredBundles = useMemo(() => {
     const q = normalizeText(query);
     return courseBundles.filter((bundle) => {
-      const matchesQuery = !q || normalizeText(`${bundle.courseName} ${bundle.organization || ''} ${bundle.platform || ''} ${bundle.category}`).includes(q);
+      const org = bundle.organization || bundle.issuer || 'Other';
+      const matchesQuery = !q || normalizeText(`${bundle.courseName} ${org} ${bundle.category}`).includes(q);
       const matchesCategory = category === 'All' || bundle.category === category;
-      return matchesQuery && matchesCategory;
+      const matchesOrg = selectedOrg === 'All Organizations' || org === selectedOrg;
+      return matchesQuery && matchesCategory && matchesOrg;
     });
-  }, [query, category]);
+  }, [query, category, selectedOrg]);
 
   return (
     <section id="certifications" className="section-shell section-pad certifications">
@@ -55,6 +75,7 @@ export default function Certifications() {
             setActiveTab('bundles');
             setQuery('');
             setCategory('All');
+            setSelectedOrg('All Organizations');
           }}
         >
           <div className="cert-tab-card__icon">
@@ -72,6 +93,7 @@ export default function Certifications() {
             setActiveTab('singles');
             setQuery('');
             setCategory('All');
+            setSelectedOrg('All Organizations');
           }}
         >
           <div className="cert-tab-card__icon">
@@ -88,9 +110,16 @@ export default function Certifications() {
         <input 
           value={query} 
           onChange={(event) => setQuery(event.target.value)} 
-          placeholder={activeTab === 'bundles' ? "Search specialization bundles, platforms..." : "Search single certificates, issuers, categories..."} 
+          placeholder={activeTab === 'bundles' ? "Search specialization bundles, companies..." : "Search single certificates, companies, categories..."} 
         />
-        <select value={category} onChange={(event) => setCategory(event.target.value)}>
+        <select value={selectedOrg} onChange={(event) => setSelectedOrg(event.target.value)} aria-label="Filter by Organization">
+          {organizationList.map((item) => (
+            <option key={item.name} value={item.name}>
+              {item.name} ({item.count})
+            </option>
+          ))}
+        </select>
+        <select value={category} onChange={(event) => setCategory(event.target.value)} aria-label="Filter by Category">
           {certificateCategories.map((item) => (
             <option key={item} value={item}>{item}</option>
           ))}

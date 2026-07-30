@@ -2,8 +2,7 @@ import { Building2, Layers3 } from 'lucide-react';
 import Badge from '../common/Badge';
 
 export default function CourseBundleCard({ bundle, onOpen }) {
-  const orgName = bundle.organization || bundle.issuer || 'Industry Credential';
-  const platformName = bundle.platform || 'Coursera';
+  const orgName = bundle.organization || bundle.issuer || 'Industry Partner';
 
   return (
     <article className="course-bundle-card">
@@ -16,8 +15,8 @@ export default function CourseBundleCard({ bundle, onOpen }) {
 
       <div className="course-bundle-card__org">
         <Building2 size={13} className="org-icon" />
+        <span className="org-label">Provided by</span>
         <strong className="org-name">{orgName}</strong>
-        <span className="org-via">via {platformName}</span>
       </div>
 
       <h3>{bundle.courseName}</h3>

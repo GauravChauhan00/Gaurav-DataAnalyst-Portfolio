@@ -5,7 +5,6 @@ export default function CertificateCard({ certificate, onView }) {
   const hasFile = Boolean(certificate.filePath);
   const hasCredential = Boolean(certificate.credentialUrl);
   const orgName = certificate.organization || certificate.issuer || 'Online Credential';
-  const platformName = certificate.platform ? `via ${certificate.platform}` : '';
 
   return (
     <div className="certificate-row">
@@ -32,12 +31,12 @@ export default function CertificateCard({ certificate, onView }) {
         </div>
       </div>
 
-      {/* Line 2: Organization (Prominent) + Platform + Category + Date */}
+      {/* Line 2: Organization (Provided by Org) + Category + Date */}
       <div className="certificate-row__meta">
         <div className="certificate-row__org-badge">
           <Building2 size={12} className="certificate-row__org-icon" />
+          <span className="certificate-row__org-label">Provided by</span>
           <strong className="certificate-row__org-name">{orgName}</strong>
-          {platformName && <span className="certificate-row__platform-name">{platformName}</span>}
         </div>
         <span className="certificate-row__category">
           <Badge tone="soft">{certificate.category}</Badge>
