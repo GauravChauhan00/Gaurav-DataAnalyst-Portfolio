@@ -13,16 +13,42 @@ export async function logVisit(req, res, next) {
       timeStyle: 'short'
     });
 
-    const message = [
+    // GeoIP lookup using ip-api (free endpoint)
+    let locationStr = 'Unknown Location';
+    let ispStr = '';
+    let mapUrl = '';
+
+    if (ip && ip !== 'Unknown IP' && !ip.startsWith('127.') && !ip.startsWith('192.168.') && ip !== '::1') {
+      try {
+        const geoRes = await fetch(`http://ip-api.com/json/${ip}?fields=status,country,regionName,city,isp,lat,lon`);
+        const geoData = await geoRes.json();
+        if (geoData && geoData.status === 'success') {
+          locationStr = `${geoData.city}, ${geoData.regionName}, ${geoData.country}`;
+          ispStr = geoData.isp || '';
+          if (geoData.lat && geoData.lon) {
+            mapUrl = `https://www.google.com/maps?q=${geoData.lat},${geoData.lon}`;
+          }
+        }
+      } catch (e) {
+        console.error('GeoIP lookup error:', e.message);
+      }
+    }
+
+    const messageLines = [
       `🚨 *NEW WEBSITE VISITOR!*`,
       `━━━━━━━━━━━━━━━━━━`,
-      `📍 *IP*: \`${ip}\``,
+      `📍 *Location*: \`${locationStr}\``,
+      mapUrl ? `🗺 *Map*: [View on Google Maps](${mapUrl})` : null,
+      ispStr ? `🌐 *Network/ISP*: \`${ispStr}\`` : null,
+      `🌐 *IP*: \`${ip}\``,
       `⏰ *Time*: ${timeString} IST`,
       `🔗 *Path*: \`${path}\``,
       `🔙 *Referrer*: \`${referrer}\``,
       `🖥 *Screen*: \`${screen}\``,
-      `📱 *Device*: \`${userAgent.slice(0, 120)}\``
-    ].join('\n');
+      `📱 *Device*: \`${userAgent.slice(0, 140)}\``
+    ].filter(Boolean);
+
+    const message = messageLines.join('\n');
 
     // Send async alert so client call isn't blocked
     sendTelegramNotification(message).catch((err) => {
