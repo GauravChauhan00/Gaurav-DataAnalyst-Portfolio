@@ -22,16 +22,16 @@ export const personalInfo = {
   profilePhoto: '/images/profile/profile-placeholder.svg',
   signature: '</> clean data · reliable APIs · modern web',
   quickFacts: [
-    'Data analytics and reporting focused',
-    'API testing and workflow validation experience',
-    'React.js and modern web development skills',
-    'Comfortable with SQL, Python, Power BI, Postman, and documentation'
+    'Data Analytics, Pipeline Engineering & Power BI Dashboards',
+    'Full-Stack Web Development (React, FastAPI, Python, SQL)',
+    'REST API Testing, Postman Validation & Data Quality',
+    'Spreadsheet Automation & Custom Business Software'
   ],
   services: [
-    'Data cleaning and reporting support',
-    'Power BI/dashboard project support',
-    'API testing and validation support',
-    'React portfolio and web UI development',
-    'Freelance custom software collaboration'
+    'Data Analytics & Power BI Dashboards',
+    'Full-Stack Web Development (React + FastAPI)',
+    'Python & SQL Data Pipeline Automation',
+    'REST API Development & Validation',
+    'Data Quality & SLA Performance Analytics'
   ]
 };
