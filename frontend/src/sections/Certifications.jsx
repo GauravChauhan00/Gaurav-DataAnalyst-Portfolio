@@ -83,7 +83,7 @@ export default function Certifications() {
           </div>
           <div className="cert-tab-card__content">
             <h3>Specialization Bundles</h3>
-            <p>{courseBundles.length} Bundles ({totalBundleCourses} Courses)</p>
+            <p>{courseBundles.length} Bundles ({totalBundleCourses} Certificates)</p>
           </div>
         </button>
 
