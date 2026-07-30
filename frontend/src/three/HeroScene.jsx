@@ -13,63 +13,63 @@ function CoreObject() {
 
     if (groupRef.current) {
       groupRef.current.rotation.y += delta * 0.35;
-      groupRef.current.rotation.x = Math.sin(time * 0.8) * 0.22;
-      groupRef.current.position.y = Math.sin(time * 1.5) * 0.12;
+      groupRef.current.rotation.x = Math.sin(time * 0.8) * 0.2;
+      groupRef.current.position.y = 0.25 + Math.sin(time * 1.5) * 0.08;
     }
     if (ring1Ref.current) {
-      ring1Ref.current.rotation.z -= delta * 0.55;
-      ring1Ref.current.rotation.x += delta * 0.25;
+      ring1Ref.current.rotation.z -= delta * 0.5;
+      ring1Ref.current.rotation.x += delta * 0.2;
     }
     if (ring2Ref.current) {
-      ring2Ref.current.rotation.z += delta * 0.45;
-      ring2Ref.current.rotation.y -= delta * 0.3;
+      ring2Ref.current.rotation.z += delta * 0.4;
+      ring2Ref.current.rotation.y -= delta * 0.25;
     }
     if (coreGemRef.current) {
-      coreGemRef.current.rotation.y -= delta * 0.6;
-      coreGemRef.current.rotation.z += delta * 0.4;
+      coreGemRef.current.rotation.y -= delta * 0.5;
+      coreGemRef.current.rotation.z += delta * 0.35;
     }
   });
 
   return (
-    <group ref={groupRef} scale={1.35}>
+    <group ref={groupRef} scale={1.05}>
       {/* Solid Translucent Inner Knot */}
       <mesh>
-        <torusKnotGeometry args={[1.15, 0.26, 180, 24]} />
+        <torusKnotGeometry args={[0.92, 0.22, 180, 24]} />
         <meshStandardMaterial
           color="#06b6d4"
           emissive="#0284c7"
-          emissiveIntensity={0.35}
+          emissiveIntensity={0.4}
           metalness={0.7}
           roughness={0.15}
           transparent
-          opacity={0.65}
+          opacity={0.75}
         />
       </mesh>
 
       {/* Glowing Outer Wireframe Mesh */}
       <mesh>
-        <torusKnotGeometry args={[1.16, 0.265, 120, 16]} />
+        <torusKnotGeometry args={[0.93, 0.225, 120, 16]} />
         <meshStandardMaterial
           color="#00f0ff"
           emissive="#00f0ff"
-          emissiveIntensity={0.6}
+          emissiveIntensity={0.7}
           wireframe
         />
       </mesh>
 
       {/* Orbiting Neon Ring 1 - Purple */}
       <mesh ref={ring1Ref} rotation={[Math.PI / 3, 0.2, 0]}>
-        <torusGeometry args={[1.85, 0.022, 20, 200]} />
+        <torusGeometry args={[1.5, 0.018, 20, 200]} />
         <meshStandardMaterial
           color="#a855f7"
           emissive="#a855f7"
-          emissiveIntensity={0.9}
+          emissiveIntensity={0.95}
         />
       </mesh>
 
       {/* Orbiting Neon Ring 2 - Emerald */}
       <mesh ref={ring2Ref} rotation={[-Math.PI / 3, -0.4, 0.5]}>
-        <torusGeometry args={[2.1, 0.018, 20, 200]} />
+        <torusGeometry args={[1.7, 0.015, 20, 200]} />
         <meshStandardMaterial
           color="#10b981"
           emissive="#10b981"
@@ -79,11 +79,11 @@ function CoreObject() {
 
       {/* Inner Glowing Gem Core */}
       <mesh ref={coreGemRef} rotation={[0.7, 0.2, 0.4]}>
-        <icosahedronGeometry args={[0.62, 1]} />
+        <icosahedronGeometry args={[0.5, 1]} />
         <meshStandardMaterial
           color="#ec4899"
           emissive="#f43f5e"
-          emissiveIntensity={0.8}
+          emissiveIntensity={0.85}
           metalness={0.6}
           roughness={0.1}
           wireframe
@@ -96,7 +96,7 @@ function CoreObject() {
 export default function HeroScene() {
   return (
     <div className="hero-scene" aria-hidden="true">
-      <Canvas camera={{ position: [0, 0, 4.3], fov: 46 }} dpr={[1, 2]} performance={{ min: 0.5 }}>
+      <Canvas camera={{ position: [0, 0, 5.5], fov: 44 }} dpr={[1, 2]} performance={{ min: 0.5 }}>
         <ambientLight intensity={1.1} />
         <directionalLight position={[5, 5, 5]} intensity={1.8} color="#ffffff" />
         <pointLight position={[4, 3, 4]} intensity={2.8} color="#00f0ff" />
