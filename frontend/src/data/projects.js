@@ -23,7 +23,7 @@ export const projects = [
       'Auto database setup on first run with sample data — beginner-friendly setup',
       'REST API-driven architecture — React frontend talks to FastAPI backend cleanly'
     ],
-    technologies: ['React.js', 'Vite', 'JavaScript', 'Python', 'FastAPI', 'SQLite', 'REST API', 'CSS3'],
+    technologies: ['React.js', 'Vite', 'Python', 'FastAPI', 'SQLite', 'REST API', 'CSS3'],
     role: 'Full-Stack Developer',
     challenges:
       'Making sure stock deduction and sale recording happen atomically — if one fails, the other should not go through. Also designing a clean UI that a non-technical store owner could actually use without training.',
