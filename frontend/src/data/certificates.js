@@ -580,7 +580,7 @@ export const courseBundles = [
     "id": "java-as-a-second-language",
     "courseName": "Java As A Second Language",
     "platform": "Coursera",
-    "category": "Other",
+    "category": "Web Development",
     "totalCertificates": 4,
     "status": "Completed",
     "description": "Complete specialization track for Java As A Second Language on Coursera.",
@@ -658,7 +658,7 @@ export const courseBundles = [
         "credentialUrl": ""
       }
     ],
-    "organization": "UC Davis & Tableau"
+    "organization": "UC Davis"
   },
   {
     "id": "meta-front-end-developer",
