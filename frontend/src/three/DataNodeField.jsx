@@ -1,22 +1,22 @@
 import { useFrame } from '@react-three/fiber';
 import { useMemo, useRef } from 'react';
 
-export default function DataNodeField({ count = 120 }) {
+export default function DataNodeField({ count = 200 }) {
   const pointsRef = useRef();
   const positions = useMemo(() => {
     const values = new Float32Array(count * 3);
     for (let i = 0; i < count; i += 1) {
-      values[i * 3] = (Math.random() - 0.5) * 7;
-      values[i * 3 + 1] = (Math.random() - 0.5) * 4.8;
-      values[i * 3 + 2] = (Math.random() - 0.5) * 5;
+      values[i * 3] = (Math.random() - 0.5) * 8;
+      values[i * 3 + 1] = (Math.random() - 0.5) * 5.5;
+      values[i * 3 + 2] = (Math.random() - 0.5) * 6;
     }
     return values;
   }, [count]);
 
   useFrame((_, delta) => {
     if (!pointsRef.current) return;
-    pointsRef.current.rotation.y += delta * 0.04;
-    pointsRef.current.rotation.x += delta * 0.015;
+    pointsRef.current.rotation.y += delta * 0.06;
+    pointsRef.current.rotation.x += delta * 0.025;
   });
 
   return (
@@ -24,7 +24,7 @@ export default function DataNodeField({ count = 120 }) {
       <bufferGeometry>
         <bufferAttribute attach="attributes-position" args={[positions, 3]} />
       </bufferGeometry>
-      <pointsMaterial color="#22d3ee" size={0.035} sizeAttenuation transparent opacity={0.72} />
+      <pointsMaterial color="#00f0ff" size={0.055} sizeAttenuation transparent opacity={0.85} />
     </points>
   );
 }
