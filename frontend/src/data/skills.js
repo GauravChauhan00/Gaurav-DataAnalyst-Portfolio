@@ -7,7 +7,7 @@ export const technicalSkills = [
   {
     category: 'Database & Programming',
     description: 'Writing queries, transforming datasets, and building logic-heavy project flows.',
-    skills: ['SQL', 'Python', 'MySQL', 'C++', 'Data Structures & Algorithms']
+    skills: ['SQL', 'Python', 'PostgreSQL', 'C++', 'Data Structures & Algorithms']
   },
   {
     category: 'Web Development',
