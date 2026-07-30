@@ -24,7 +24,7 @@ export default function Hero() {
           <Badge tone="accent">
             <Sparkles size={14} /> {personalInfo.availability}
           </Badge>
-          <p className="hero__kicker">Cyber Luxe Data Portfolio</p>
+          <p className="hero__kicker">Data Analyst & Full-Stack Developer</p>
           <h1>
             {personalInfo.displayName}
             <span>{personalInfo.heroRole}</span>

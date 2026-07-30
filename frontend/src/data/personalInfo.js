@@ -5,12 +5,12 @@ export const personalInfo = {
   title: 'Data Analyst | Data Quality Analyst | Web Developer',
   heroRole: 'Data Analyst & Web Developer',
   headline:
-    'I turn messy data, APIs, and workflows into clean insights, reliable validation, and polished web experiences.',
+    'I build data analytics pipelines, clean web interfaces, and automated workflows that turn raw datasets into actionable insights.',
   intro:
-    'Entry-level Data Analyst, Data Quality professional, and Web Developer with hands-on experience in Python-based data cleaning, SQL querying, exploratory analysis, API testing, cross-system data flow validation, and React-based web development.',
+    'Data Analyst and Full-Stack Developer with hands-on experience in Python data cleaning, SQL querying, exploratory analysis, API testing, and React web development.',
   about: [
-    'I enjoy working at the intersection of data, quality, and modern web development. My work focuses on validating data flows, building clean reports, testing APIs, and presenting technical output in a way that is easy for teams to understand.',
-    'My portfolio highlights analytics, QA/data validation, and web development projects. The goal is simple: build reliable systems, clean interfaces, and business-ready insights without unnecessary noise.'
+    'I work at the intersection of data analytics and modern web development. Whether it is cleaning messy datasets in Python, querying SQL databases, building React web applications, or automating spreadsheet workflows, I focus on delivering clean, reliable software.',
+    'My portfolio highlights real-world engineering projects — from grocery store inventory systems and customer support SLA analytics to spreadsheet automation platforms.'
   ],
   email: 'gaurav949855@gmail.com',
   phone: '+91 8307042798',
