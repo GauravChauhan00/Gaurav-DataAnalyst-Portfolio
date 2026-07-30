@@ -755,13 +755,13 @@ export const courseBundles = [
     "courseName": "Time & Stress Management Collection",
     "platform": "LinkedIn",
     "category": "Other",
-    "totalCertificates": 24,
+    "totalCertificates": 23,
     "status": "Completed",
     "description": "Professional development bundle covering time management, stress reduction, and peak productivity.",
     "organization": "LINKEDIN",
     "certificates": [
       {
-        "title": "Time & Stress Management Collection (24 Certificates)",
+        "title": "Time & Stress Management Collection (23 Certificates)",
         "date": "2023",
         "filePath": "/certificates/single/time-and-stress-management-compressed.pdf",
         "credentialUrl": ""
@@ -791,13 +791,13 @@ export const courseBundles = [
     "courseName": "Entrepreneurship Mastery Collection",
     "platform": "LinkedIn",
     "category": "Other",
-    "totalCertificates": 26,
+    "totalCertificates": 25,
     "status": "Completed",
     "description": "Comprehensive 26-course bundle covering business strategy, startup growth, small business marketing, and venture creation.",
     "organization": "LINKEDIN",
     "certificates": [
       {
-        "title": "Entrepreneurship Mastery Collection (26 Certificates)",
+        "title": "Entrepreneurship Mastery Collection (25 Certificates)",
         "date": "2022",
         "filePath": "/certificates/single/enterpreneurship-compressed.pdf",
         "credentialUrl": ""
