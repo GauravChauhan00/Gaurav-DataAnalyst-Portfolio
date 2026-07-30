@@ -12,12 +12,12 @@ export const technicalSkills = [
   {
     category: 'Web Development',
     description: 'Building responsive, component-based web interfaces with clean user experience.',
-    skills: ['HTML5', 'CSS3', 'JavaScript', 'React.js', 'Responsive Design', 'Component-Based UI', 'Vite']
+    skills: ['HTML5', 'CSS3', 'React.js', 'Responsive Design', 'Component-Based UI', 'Vite']
   },
   {
     category: 'Backend & APIs',
     description: 'Understanding API behavior, request/response flows, and backend integrations.',
-    skills: ['Node.js', 'Express.js', 'REST APIs', 'OAuth2', 'Webhooks', 'Triggers', 'API Integration']
+    skills: ['FastAPI', 'REST APIs', 'OAuth2', 'Webhooks', 'Triggers', 'API Integration']
   },
   {
     category: 'QA & Data Quality',
