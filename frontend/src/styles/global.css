@@ -877,8 +877,9 @@ html[data-theme='light'] .terminal-card {
 }
 
 .magnetic-card {
-  transition: transform 0.12s ease-out;
+  transition: transform 0.25s ease-out;
   transform-style: preserve-3d;
+  will-change: transform;
 }
 
 .project-card {
