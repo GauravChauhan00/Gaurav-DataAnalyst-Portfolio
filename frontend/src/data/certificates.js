@@ -610,7 +610,7 @@ export const courseBundles = [
         "credentialUrl": ""
       }
     ],
-    "organization": "University of California, Irvine (USA)"
+    "organization": "LearnQuest"
   },
   {
     "id": "data-visualization-with-tableau",
