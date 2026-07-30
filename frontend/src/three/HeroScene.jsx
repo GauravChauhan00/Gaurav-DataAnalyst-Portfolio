@@ -14,7 +14,7 @@ function CoreObject() {
     if (groupRef.current) {
       groupRef.current.rotation.y += delta * 0.35;
       groupRef.current.rotation.x = Math.sin(time * 0.8) * 0.18;
-      groupRef.current.position.y = 0.22 + Math.sin(time * 1.5) * 0.05;
+      groupRef.current.position.y = 0.42 + Math.sin(time * 1.5) * 0.05;
       groupRef.current.position.x = 0;
     }
     if (ring1Ref.current) {
@@ -108,7 +108,7 @@ export default function HeroScene() {
         <pointLight position={[4, 3, 4]} intensity={2.8} color="#00f0ff" />
         <pointLight position={[-4, -3, 3]} intensity={2.2} color="#a855f7" />
         <pointLight position={[0, -4, 2]} intensity={1.8} color="#10b981" />
-        <DataNodeField count={200} />
+        <DataNodeField count={220} />
         <CoreObject />
       </Canvas>
       <div className="hero-scene__scanline" />

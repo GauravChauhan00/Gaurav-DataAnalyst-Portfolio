@@ -478,6 +478,16 @@ html[data-theme='light'] .navbar--scrolled {
   height: 100% !important;
 }
 
+html[data-theme='light'] .hero-scene {
+  background-color: rgba(255, 255, 255, 0.75);
+  background-image:
+    linear-gradient(to right, rgba(2, 132, 199, 0.24) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(2, 132, 199, 0.24) 1px, transparent 1px),
+    radial-gradient(circle at 50% 45%, rgba(14, 165, 233, 0.20), transparent 45%),
+    radial-gradient(circle at 80% 20%, rgba(124, 58, 237, 0.18), transparent 50%);
+  background-size: 36px 36px, 36px 36px, 100% 100%, 100% 100%;
+}
+
 .hero-scene__scanline {
   position: absolute;
   inset: 0;

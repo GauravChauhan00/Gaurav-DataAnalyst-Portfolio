@@ -1,7 +1,7 @@
 import { useFrame } from '@react-three/fiber';
 import { useMemo, useRef } from 'react';
 
-export default function DataNodeField({ count = 200 }) {
+export default function DataNodeField({ count = 220 }) {
   const pointsRef = useRef();
   const positions = useMemo(() => {
     const values = new Float32Array(count * 3);
@@ -24,7 +24,7 @@ export default function DataNodeField({ count = 200 }) {
       <bufferGeometry>
         <bufferAttribute attach="attributes-position" args={[positions, 3]} />
       </bufferGeometry>
-      <pointsMaterial color="#00f0ff" size={0.055} sizeAttenuation transparent opacity={0.85} />
+      <pointsMaterial color="#0284c7" size={0.068} sizeAttenuation transparent opacity={0.95} />
     </points>
   );
 }
