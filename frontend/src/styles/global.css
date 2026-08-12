@@ -930,35 +930,36 @@ html[data-theme='light'] .terminal-card {
 .skill-chip-compact {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 5px 12px;
+  gap: 8px;
+  padding: 7px 16px;
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid var(--border);
-  border-radius: 12px;
-  font-size: 0.78rem;
+  border-radius: 16px;
+  font-size: 0.88rem;
   font-weight: 700;
   color: var(--text-soft);
-  transition: all 0.2s ease;
+  transition: all 0.22s ease;
   user-select: none;
   cursor: default;
 }
 
 .skill-chip-compact:hover {
   color: var(--text);
-  border-color: rgba(34, 211, 238, 0.3);
-  background: rgba(34, 211, 238, 0.04);
-  transform: translateY(-1px);
+  border-color: rgba(34, 211, 238, 0.4);
+  background: rgba(34, 211, 238, 0.05);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(34, 211, 238, 0.08);
 }
 
 .skill-chip-compact__dot {
-  width: 4px;
-  height: 4px;
+  width: 6px;
+  height: 6px;
   border-radius: 999px;
   transition: all 0.2s ease;
 }
 
 .skill-card-compact:hover .skill-chip-compact__dot {
-  transform: scale(1.15);
+  transform: scale(1.2);
 }
 
 .skill-card {
