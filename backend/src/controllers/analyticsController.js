@@ -2,10 +2,18 @@ import { sendTelegramNotification } from '../utils/telegramService.js';
 
 export async function logVisit(req, res, next) {
   try {
-    const rawIp = req.headers['x-forwarded-for'] || req.socket.remoteAddress || 'Unknown IP';
-    const ip = rawIp.split(',')[0].trim();
+    // req.ip is the Express-resolved real client IP (works correctly when
+    // app.set('trust proxy', true) is enabled in app.js).
+    // Strip IPv6-mapped IPv4 prefix e.g. "::ffff:1.2.3.4" → "1.2.3.4"
+    const rawIp =
+      (req.ip || req.headers['x-forwarded-for'] || req.socket.remoteAddress || 'Unknown IP')
+        .split(',')[0]
+        .trim()
+        .replace(/^::ffff:/, '');
+    const ip = rawIp;
     const userAgent = req.headers['user-agent'] || 'Unknown User-Agent';
     const { path = '/', referrer = 'Direct', screen = 'Unknown' } = req.body || {};
+
 
     const timeString = new Date().toLocaleString('en-IN', {
       timeZone: 'Asia/Kolkata',

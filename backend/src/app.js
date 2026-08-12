@@ -7,6 +7,10 @@ import analyticsRoutes from './routes/analyticsRoutes.js';
 
 const app = express();
 
+// Trust reverse proxy (Render, Railway, etc.) so real client IP is read
+// from x-forwarded-for instead of the server's own IP
+app.set('trust proxy', true);
+
 app.use(
   cors({
     origin: env.nodeEnv === 'production' ? env.frontendOrigin : true,
