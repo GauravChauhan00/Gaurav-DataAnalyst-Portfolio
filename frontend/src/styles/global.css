@@ -605,6 +605,27 @@ html[data-theme='light'] .terminal-card {
   font-family: "SFMono-Regular", Consolas, monospace;
   font-size: 0.84rem;
   line-height: 1.5;
+  color: #94a3b8;
+}
+
+.token-keyword {
+  color: #c084fc;
+}
+
+.token-string {
+  color: #22d3ee;
+}
+
+.token-string--highlight {
+  color: #10b981 !important;
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(16, 185, 129, 0.45);
+}
+
+.token-comment {
+  color: #64748b;
+  font-style: italic;
+  margin-left: 6px;
 }
 
 .about__grid,

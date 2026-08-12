@@ -64,10 +64,10 @@ export default function Hero() {
               <span />
             </div>
             <code>
-              <span>const profile = {'{'}</span>
-              <span> role: 'analyst + developer',</span>
-              <span> focus: 'clean data + reliable systems',</span>
-              <span> status: 'open_to_work'</span>
+              <span><span className="token-keyword">const</span> profile = {'{'}</span>
+              <span>  role: <span className="token-string">'analyst + developer'</span>,</span>
+              <span>  focus: <span className="token-string">'clean data + reliable systems'</span>,</span>
+              <span>  status: <span className="token-string token-string--highlight">'open_to_work'</span> <span className="token-comment">// active</span></span>
               <span>{'}'}</span>
             </code>
           </div>
