@@ -13,12 +13,12 @@ const categoryIcons = {
 };
 
 const categoryColors = {
-  'Analytics & BI': '#00f0ff',
-  'Database & Programming': '#a855f7',
-  'Frontend Development': '#00f0ff',
-  'Backend & APIs': '#10b981',
-  'Tools & Workflow': '#f59e0b',
-  'QA & Data Quality': '#ec4899'
+  'Analytics & BI': 'var(--color-analytics)',
+  'Database & Programming': 'var(--color-db)',
+  'Frontend Development': 'var(--color-frontend)',
+  'Backend & APIs': 'var(--color-backend)',
+  'Tools & Workflow': 'var(--color-tools)',
+  'QA & Data Quality': 'var(--color-qa)'
 };
 
 export default function TechnicalSkills() {
@@ -33,19 +33,20 @@ export default function TechnicalSkills() {
       <div className="skills-grid-symmetric">
         {technicalSkills.map((group, index) => {
           const Icon = categoryIcons[group.category] || Database;
-          const color = categoryColors[group.category] || '#00f0ff';
+          const color = categoryColors[group.category] || 'var(--primary)';
           
           return (
             <motion.div 
               key={group.category} 
               className="skill-card-compact"
+              style={{ '--cat-color': color }}
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.05, duration: 0.3 }}
             >
               <div className="skill-card-compact__header">
-                <div className="skill-card-compact__icon-box" style={{ color: color, background: `${color}12` }}>
+                <div className="skill-card-compact__icon-box">
                   <Icon size={14} />
                 </div>
                 <h3>{group.category}</h3>
@@ -54,13 +55,7 @@ export default function TechnicalSkills() {
               <div className="skill-card-compact__badges">
                 {group.skills.map((skill) => (
                   <span key={skill} className="skill-chip-compact">
-                    <span 
-                      className="skill-chip-compact__dot" 
-                      style={{ 
-                        background: color,
-                        boxShadow: `0 0 6px ${color}`
-                      }} 
-                    />
+                    <span className="skill-chip-compact__dot" />
                     {skill}
                   </span>
                 ))}
