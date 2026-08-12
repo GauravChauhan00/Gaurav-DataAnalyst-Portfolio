@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Download, Mail, Sparkles } from 'lucide-react';
+import { ArrowRight, Download, Mail } from 'lucide-react';
 import AnimatedButton from '../components/common/AnimatedButton';
-import Badge from '../components/common/Badge';
 import HeroScene from '../three/HeroScene';
 import { personalInfo } from '../data/personalInfo';
 import { socialLinks } from '../data/socialLinks';
@@ -21,10 +20,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: 'easeOut' }}
         >
-          <Badge tone="success" className="hero__status-badge">
-            <span className="status-pulse-dot" /> {personalInfo.availability}
-          </Badge>
-          <p className="hero__kicker">Data Analyst & Full-Stack Developer</p>
+          <p className="hero__kicker"><span className="hero__prompt">$</span> Data Analyst & Full-Stack Developer</p>
           <h1>
             {personalInfo.displayName}
             <span>{personalInfo.heroRole}</span>

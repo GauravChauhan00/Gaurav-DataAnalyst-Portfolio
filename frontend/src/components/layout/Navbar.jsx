@@ -43,6 +43,10 @@ export default function Navbar({ theme, onToggleTheme }) {
       <a className="navbar__brand" href="/" onClick={(e) => { e.preventDefault(); navigate('/'); close(); }}>
         <span className="brand-mark">&lt;/&gt;</span>
         <span>{personalInfo.displayName}</span>
+        <span className="navbar__status">
+          <span className="status-pulse-dot" />
+          <span className="navbar__status-text">{personalInfo.availability}</span>
+        </span>
       </a>
 
       <nav className={`navbar__links ${isOpen ? 'navbar__links--open' : ''}`}>

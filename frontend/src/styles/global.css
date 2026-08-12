@@ -320,6 +320,28 @@ html[data-theme='light'] .navbar--scrolled {
   box-shadow: 0 8px 20px rgba(34, 211, 238, 0.15);
 }
 
+.navbar__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 8px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.16);
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: var(--success);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.hero__prompt {
+  color: var(--primary);
+  font-weight: 900;
+  margin-right: 4px;
+}
+
 .navbar__links {
   display: flex;
   align-items: center;
