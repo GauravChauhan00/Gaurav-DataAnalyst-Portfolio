@@ -8,8 +8,8 @@ const categoryIcons = {
   'Database & Programming': Database,
   'Frontend Development': Globe,
   'Backend & APIs': Cpu,
-  'QA & Data Quality': CheckSquare,
-  'Tools & Workflow': Wrench
+  'Tools & Workflow': Wrench,
+  'QA & Data Quality': CheckSquare
 };
 
 const categoryColors = {
@@ -17,8 +17,8 @@ const categoryColors = {
   'Database & Programming': '#a855f7',
   'Frontend Development': '#00f0ff',
   'Backend & APIs': '#10b981',
-  'QA & Data Quality': '#ec4899',
-  'Tools & Workflow': '#f59e0b'
+  'Tools & Workflow': '#f59e0b',
+  'QA & Data Quality': '#ec4899'
 };
 
 export default function TechnicalSkills() {
@@ -30,38 +30,32 @@ export default function TechnicalSkills() {
         description="A list of technical skills grouped by execution layer, sorted by text length."
       />
       
-      <div className="skills-showcase">
+      <div className="skills-masonry">
         {technicalSkills.map((group, index) => {
           const Icon = categoryIcons[group.category] || Database;
           const color = categoryColors[group.category] || '#00f0ff';
           
           return (
             <motion.div 
-              key={group.category}
-              className="skills-row"
-              initial={{ opacity: 0, y: 16 }}
+              key={group.category} 
+              className="skill-card-compact"
+              initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.05, duration: 0.35 }}
+              transition={{ delay: index * 0.05, duration: 0.3 }}
             >
-              {/* Row Left: Index & Meta */}
-              <div className="skills-row__meta">
-                <span className="skills-row__index">/0{index + 1}</span>
-                <div className="skills-row__title-wrap">
-                  <div className="skills-row__icon-box" style={{ color: color, background: `${color}12` }}>
-                    <Icon size={15} />
-                  </div>
-                  <h3>{group.category}</h3>
+              <div className="skill-card-compact__header">
+                <div className="skill-card-compact__icon-box" style={{ color: color, background: `${color}12` }}>
+                  <Icon size={14} />
                 </div>
-                <p className="skills-row__desc">{group.description}</p>
+                <h3>{group.category}</h3>
               </div>
-
-              {/* Row Right: Skills Chips */}
-              <div className="skills-row__badges">
+              
+              <div className="skill-card-compact__badges">
                 {group.skills.map((skill) => (
-                  <span key={skill} className="skill-chip">
+                  <span key={skill} className="skill-chip-compact">
                     <span 
-                      className="skill-chip__dot" 
+                      className="skill-chip-compact__dot" 
                       style={{ 
                         background: color,
                         boxShadow: `0 0 6px ${color}`

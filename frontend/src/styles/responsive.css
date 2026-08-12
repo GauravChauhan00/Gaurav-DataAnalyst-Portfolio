@@ -23,6 +23,9 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .skills-masonry {
+    column-count: 2;
+  }
 }
 
 @media (max-width: 860px) {
@@ -100,18 +103,13 @@
     grid-template-columns: 1fr;
   }
 
-  .skills-row {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 24px 0;
+  .skills-masonry {
+    column-count: 1;
   }
 
-  .skills-row__desc {
-    grid-column: 1;
-  }
-
-  .skills-row__badges {
-    align-self: flex-start;
+  .skill-card-compact {
+    padding: 16px;
+    margin-bottom: 16px;
   }
 
   .skill-chip {
