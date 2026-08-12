@@ -112,6 +112,21 @@
     margin-bottom: 16px;
   }
 
+  .education-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .education-row__meta {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    text-align: left;
+    gap: 12px;
+  }
+
   .skill-chip {
     padding: 8px 16px;
     font-size: 0.86rem;

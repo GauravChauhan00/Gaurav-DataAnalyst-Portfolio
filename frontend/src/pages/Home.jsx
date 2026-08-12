@@ -15,12 +15,12 @@ export default function Home() {
     <motion.main {...pageTransition}>
       <Hero />
       <About />
-      <Education />
       <TechnicalSkills />
       <SoftSkills />
       <Experience />
       <Projects />
       <Certifications />
+      <Education />
       <Contact />
     </motion.main>
   );
