@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { BarChart3, Database, Globe, Cpu, CheckSquare, Wrench } from 'lucide-react';
 import SectionHeader from '../components/common/SectionHeader';
 import { technicalSkills } from '../data/skills';
@@ -23,75 +22,49 @@ const categoryColors = {
 };
 
 export default function TechnicalSkills() {
-  const [activeCategory, setActiveCategory] = useState(technicalSkills[0].category);
-  const activeGroup = technicalSkills.find(g => g.category === activeCategory) || technicalSkills[0];
-  const ActiveIcon = categoryIcons[activeCategory] || Database;
-  const activeColor = categoryColors[activeCategory] || '#00f0ff';
-
   return (
     <section id="skills" className="section-shell section-pad">
       <SectionHeader
-        eyebrow="Technical Skills"
-        title="Analytics, QA validation, and web development stack"
-        description="Select a category to view the sorted technical skills and tools."
+        eyebrow="Technical Stack"
+        title="Tools & Technologies"
+        description="A list of technical skills grouped by execution layer, sorted by text length."
       />
       
-      <div className="skills-board glass-card">
-        {/* Sidebar Tabs */}
-        <div className="skills-board__sidebar">
-          {technicalSkills.map((group) => {
-            const Icon = categoryIcons[group.category] || Database;
-            const isActive = group.category === activeCategory;
-            return (
-              <button
-                key={group.category}
-                className={`skills-tab-btn ${isActive ? 'skills-tab-btn--active' : ''}`}
-                onClick={() => setActiveCategory(group.category)}
-              >
-                <span className="skills-tab-btn__icon">
-                  <Icon size={18} />
-                </span>
-                <span className="skills-tab-btn__label">{group.category}</span>
-              </button>
-            );
-          })}
-        </div>
-
-        {/* Content Panel */}
-        <div className="skills-board__content">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeCategory}
-              initial={{ opacity: 0, x: 15 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -15 }}
-              transition={{ duration: 0.22, ease: 'easeOut' }}
-              className="skills-detail"
+      <div className="skills-showcase">
+        {technicalSkills.map((group, index) => {
+          const Icon = categoryIcons[group.category] || Database;
+          const color = categoryColors[group.category] || '#00f0ff';
+          
+          return (
+            <motion.div 
+              key={group.category}
+              className="skills-row"
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.05, duration: 0.35 }}
             >
-              <div className="skills-detail__header">
-                <div 
-                  className="skills-detail__icon-wrapper" 
-                  style={{ 
-                    color: activeColor, 
-                    background: `${activeColor}12`,
-                    borderColor: `${activeColor}25`
-                  }}
-                >
-                  <ActiveIcon size={20} />
+              {/* Row Left: Index & Meta */}
+              <div className="skills-row__meta">
+                <span className="skills-row__index">/0{index + 1}</span>
+                <div className="skills-row__title-wrap">
+                  <div className="skills-row__icon-box" style={{ color: color, background: `${color}12` }}>
+                    <Icon size={15} />
+                  </div>
+                  <h3>{group.category}</h3>
                 </div>
-                <h2>{activeGroup.category}</h2>
+                <p className="skills-row__desc">{group.description}</p>
               </div>
-              
-              <p className="skills-detail__description">{activeGroup.description}</p>
-              
-              <div className="skills-detail__badges">
-                {activeGroup.skills.map((skill) => (
-                  <span key={skill} className="skill-badge-new">
+
+              {/* Row Right: Skills Chips */}
+              <div className="skills-row__badges">
+                {group.skills.map((skill) => (
+                  <span key={skill} className="skill-chip">
                     <span 
-                      className="skill-badge-new__dot" 
+                      className="skill-chip__dot" 
                       style={{ 
-                        background: activeColor,
-                        boxShadow: `0 0 8px ${activeColor}`
+                        background: color,
+                        boxShadow: `0 0 6px ${color}`
                       }} 
                     />
                     {skill}
@@ -99,8 +72,8 @@ export default function TechnicalSkills() {
                 ))}
               </div>
             </motion.div>
-          </AnimatePresence>
-        </div>
+          );
+        })}
       </div>
     </section>
   );
