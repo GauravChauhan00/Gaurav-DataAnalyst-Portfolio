@@ -407,7 +407,7 @@ html[data-theme='light'] .navbar--scrolled {
 .hero {
   position: relative;
   min-height: 100vh;
-  padding-top: 145px;
+  padding-top: 100px;
   display: flex;
   align-items: center;
 }
