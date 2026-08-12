@@ -10,7 +10,7 @@ export const technicalSkills = [
     skills: ['Python', 'SQL', 'C++', 'DSA']
   },
   {
-    category: 'Web Development',
+    category: 'Frontend Development',
     description: 'Building responsive, component-based web interfaces with clean user experience.',
     skills: ['HTML5', 'CSS3 & TailwindCSS', 'React.js', 'Vite', 'Responsive Design', 'Component-Based UI']
   },

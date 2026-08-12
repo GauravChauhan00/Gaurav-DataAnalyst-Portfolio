@@ -6,7 +6,7 @@ import { technicalSkills } from '../data/skills';
 const categoryIcons = {
   'Analytics & BI': BarChart3,
   'Database & Programming': Database,
-  'Web Development': Globe,
+  'Frontend Development': Globe,
   'Backend & APIs': Cpu,
   'QA & Data Quality': CheckSquare,
   'Tools & Workflow': Wrench
@@ -15,7 +15,7 @@ const categoryIcons = {
 const categoryColors = {
   'Analytics & BI': '#00f0ff',
   'Database & Programming': '#a855f7',
-  'Web Development': '#00f0ff',
+  'Frontend Development': '#00f0ff',
   'Backend & APIs': '#10b981',
   'QA & Data Quality': '#ec4899',
   'Tools & Workflow': '#f59e0b'
