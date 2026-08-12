@@ -7,6 +7,10 @@
     grid-template-columns: 1fr;
   }
 
+  .about-split {
+    gap: 20px;
+  }
+
   .hero__visual {
     min-height: 460px;
   }
