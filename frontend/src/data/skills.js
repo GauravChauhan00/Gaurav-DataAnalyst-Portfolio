@@ -27,7 +27,7 @@ export const technicalSkills = [
   {
     category: 'QA & Data Quality',
     description: 'Validating systems, tracking defects, and documenting reliable test outcomes.',
-    skills: ['Postman', 'API Testing', 'Documentation', 'Manual Testing', 'Issue Analysis', 'Data Validation', 'Defect Tracking', 'Quality Assurance', 'Test Case Creation']
+    skills: ['Postman', 'API Testing', 'Documentation', 'Manual Testing', 'Issue Analysis', 'Data Validation', 'Defect Tracking', 'Test Case Creation']
   }
 ];
 

@@ -27,8 +27,8 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .skills-masonry {
-    column-count: 2;
+  .skills-grid-symmetric {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -106,13 +106,12 @@
     grid-template-columns: 1fr;
   }
 
-  .skills-masonry {
-    column-count: 1;
+  .skills-grid-symmetric {
+    grid-template-columns: 1fr;
   }
 
   .skill-card-compact {
     padding: 16px;
-    margin-bottom: 16px;
   }
 
   .education-row {

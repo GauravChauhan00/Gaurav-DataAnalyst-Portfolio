@@ -871,16 +871,16 @@ html[data-theme='light'] .terminal-card {
   line-height: 1.7;
 }
 
-/* Skills Masonry Layout (No gaps inside cards) */
-.skills-masonry {
-  column-count: 3;
-  column-gap: 14px;
+/* Skills Symmetric Grid Layout */
+.skills-grid-symmetric {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
   width: 100%;
 }
 
 .skill-card-compact {
-  break-inside: avoid;
-  margin-bottom: 14px;
+  height: 100%;
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   background: linear-gradient(145deg, var(--glass), rgba(255, 255, 255, 0.03));

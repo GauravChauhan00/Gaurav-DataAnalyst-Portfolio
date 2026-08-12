@@ -30,7 +30,7 @@ export default function TechnicalSkills() {
         description="A list of technical skills grouped by execution layer, sorted by text length."
       />
       
-      <div className="skills-masonry">
+      <div className="skills-grid-symmetric">
         {technicalSkills.map((group, index) => {
           const Icon = categoryIcons[group.category] || Database;
           const color = categoryColors[group.category] || '#00f0ff';
