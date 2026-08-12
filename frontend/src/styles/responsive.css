@@ -23,9 +23,6 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .skills-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 }
 
 @media (max-width: 860px) {
@@ -94,7 +91,6 @@
 
   .cert-tabs-grid,
   .education-grid,
-  .skills-grid,
   .projects-grid,
   .certificates-grid,
   .course-grid,
@@ -102,6 +98,50 @@
   .case-grid,
   .footer__grid {
     grid-template-columns: 1fr;
+  }
+
+  .skills-board {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .skills-board__sidebar {
+    flex-direction: row;
+    overflow-x: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    padding: 16px;
+    gap: 10px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .skills-board__sidebar::-webkit-scrollbar {
+    display: none; /* Hide scrollbars for a clean look */
+  }
+
+  .skills-tab-btn {
+    width: auto;
+    white-space: nowrap;
+    padding: 10px 14px;
+    font-size: 0.85rem;
+  }
+
+  .skills-board__content {
+    padding: 24px;
+  }
+
+  .skills-detail h2 {
+    font-size: 1.35rem;
+  }
+
+  .skills-detail__description {
+    font-size: 0.88rem;
+  }
+
+  .skill-badge-new {
+    padding: 8px 14px;
+    font-size: 0.82rem;
+    border-radius: 12px;
   }
 
   .timeline::before {
