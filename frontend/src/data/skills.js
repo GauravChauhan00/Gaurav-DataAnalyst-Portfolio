@@ -7,27 +7,27 @@ export const technicalSkills = [
   {
     category: 'Database & Programming',
     description: 'Writing queries, transforming datasets, and building logic-heavy project flows.',
-    skills: ['SQL', 'C++', 'Python', 'PostgreSQL', 'Data Structures & Algorithms']
+    skills: ['SQL', 'Python', 'C++ & DSA', 'PostgreSQL']
   },
   {
     category: 'Web Development',
     description: 'Building responsive, component-based web interfaces with clean user experience.',
-    skills: ['Vite', 'CSS3', 'HTML5', 'React.js', 'Responsive Design', 'Component-Based UI']
+    skills: ['HTML5', 'CSS3', 'React.js', 'Vite', 'Responsive Design', 'Component-Based UI']
   },
   {
     category: 'Backend & APIs',
     description: 'Understanding API behavior, request/response flows, and backend integrations.',
-    skills: ['OAuth2', 'FastAPI', 'Triggers', 'Webhooks', 'REST APIs', 'API Integration']
-  },
-  {
-    category: 'QA & Data Quality',
-    description: 'Validating systems, tracking defects, and documenting reliable test outcomes.',
-    skills: ['Postman', 'API Testing', 'Manual Testing', 'Data Validation', 'Defect Tracking', 'Quality Assurance', 'Test Case Creation']
+    skills: ['FastAPI', 'JWT', 'REST APIs', 'Triggers', 'Webhooks', 'API Integration', 'OAuth2']
   },
   {
     category: 'Tools & Workflow',
     description: 'Tools used across analytics, testing, documentation, and development workflows.',
-    skills: ['Excel', 'GitHub', 'Postman', 'VS Code', 'Power BI', 'Documentation', 'Issue Analysis']
+    skills: ['Excel', 'GitHub', 'Postman', 'VS Code', 'Power BI', 'Documentation']
+  },
+  {
+    category: 'QA & Data Quality',
+    description: 'Validating systems, tracking defects, and documenting reliable test outcomes.',
+    skills: ['Postman', 'API Testing', 'Manual Testing', 'Issue Analysis', 'Data Validation', 'Defect Tracking', 'Quality Assurance', 'Test Case Creation']
   }
 ];
 
