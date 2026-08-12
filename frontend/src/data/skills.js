@@ -22,12 +22,12 @@ export const technicalSkills = [
   {
     category: 'Tools & Workflow',
     description: 'Tools used across analytics, testing, documentation, and development workflows.',
-    skills: ['Excel', 'GitHub', 'Postman', 'VS Code', 'Power BI', 'PostgreSQL', 'Documentation']
+    skills: ['Excel', 'GitHub', 'Postman', 'VS Code', 'Power BI', 'PostgreSQL']
   },
   {
     category: 'QA & Data Quality',
     description: 'Validating systems, tracking defects, and documenting reliable test outcomes.',
-    skills: ['Postman', 'API Testing', 'Manual Testing', 'Issue Analysis', 'Data Validation', 'Defect Tracking', 'Quality Assurance', 'Test Case Creation']
+    skills: ['Postman', 'API Testing', 'Documentation', 'Manual Testing', 'Issue Analysis', 'Data Validation', 'Defect Tracking', 'Quality Assurance', 'Test Case Creation']
   }
 ];
 
