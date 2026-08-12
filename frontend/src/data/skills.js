@@ -17,7 +17,7 @@ export const technicalSkills = [
   {
     category: 'Backend & APIs',
     description: 'Understanding API behavior, request/response flows, and backend integrations.',
-    skills: ['FastAPI', 'JWT', 'REST APIs', 'Triggers & Webhooks', 'API Integration', 'OAuth2']
+    skills: ['FastAPI', 'REST APIs', 'Triggers & Webhooks', 'API Integration', 'JWT', 'OAuth2']
   },
   {
     category: 'Tools & Workflow',
