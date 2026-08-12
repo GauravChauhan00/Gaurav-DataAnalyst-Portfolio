@@ -20,11 +20,11 @@
   --danger: #ef4444;
   --shadow: 0 24px 70px rgba(15, 23, 42, 0.12);
   --shadow-soft: 0 18px 42px rgba(15, 23, 42, 0.10);
-  --radius-xl: 34px;
-  --radius-lg: 24px;
-  --radius-md: 16px;
-  --max-width: 1180px;
-  --nav-height: 78px;
+  --radius-xl: 24px;
+  --radius-lg: 16px;
+  --radius-md: 12px;
+  --max-width: 1080px;
+  --nav-height: 66px;
 }
 
 html[data-theme='dark'] {
