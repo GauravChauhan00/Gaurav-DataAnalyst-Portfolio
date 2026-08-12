@@ -21,8 +21,8 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: 'easeOut' }}
         >
-          <Badge tone="accent">
-            <Sparkles size={14} /> {personalInfo.availability}
+          <Badge tone="success" className="hero__status-badge">
+            <span className="status-pulse-dot" /> {personalInfo.availability}
           </Badge>
           <p className="hero__kicker">Data Analyst & Full-Stack Developer</p>
           <h1>

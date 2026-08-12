@@ -27,7 +27,7 @@ export default function Contact() {
               <MapPin size={18} /> {personalInfo.location}
             </span>
             <span>
-              <Send size={18} /> {personalInfo.availability}
+              <span className="status-pulse-dot" style={{ display: 'inline-block', verticalAlign: 'middle', marginRight: '8px' }} /> {personalInfo.availability}
             </span>
           </div>
         </div>
