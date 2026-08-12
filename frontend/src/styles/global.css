@@ -149,6 +149,10 @@ img {
   box-shadow: 0 0 12px rgba(16, 185, 129, 0.15);
 }
 
+.hero__status-badge {
+  margin-bottom: 14px;
+}
+
 .status-pulse-dot {
   display: inline-block;
   width: 7px;
