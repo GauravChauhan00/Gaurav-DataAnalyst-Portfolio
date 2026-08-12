@@ -22,12 +22,6 @@ export default function About() {
           transition={{ duration: 0.5 }}
         >
           <img src={personalInfo.profilePhoto} alt={personalInfo.shortName} className="about-portrait__img" />
-          <div className="about-portrait__overlay">
-            <div className="about-portrait__status">
-              <span className="status-pulse-dot" />
-              <span>Available for projects</span>
-            </div>
-          </div>
         </motion.div>
         
         <motion.div 

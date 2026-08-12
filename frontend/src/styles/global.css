@@ -645,7 +645,7 @@ html[data-theme='light'] .terminal-card {
 .about-portrait {
   position: relative;
   width: 100%;
-  height: 310px;
+  height: 350px;
   border-radius: var(--radius-lg);
   border: 1px solid var(--border);
   overflow: hidden;
@@ -695,8 +695,8 @@ html[data-theme='light'] .terminal-card {
 
 .about-info__bio p {
   margin: 0;
-  font-size: 0.88rem;
-  line-height: 1.6;
+  font-size: 0.98rem;
+  line-height: 1.65;
   color: var(--text-soft);
 }
 
@@ -712,7 +712,7 @@ html[data-theme='light'] .terminal-card {
   display: flex;
   align-items: flex-start;
   gap: 8px;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: 700;
   line-height: 1.45;
 }
