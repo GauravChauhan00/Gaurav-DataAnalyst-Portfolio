@@ -1,6 +1,5 @@
 @media (max-width: 1080px) {
   .hero__grid,
-  .about__grid,
   .contact__grid,
   .project-hero,
   .case-split {
@@ -209,7 +208,6 @@
     width: 100%;
   }
 
-  .about__content,
   .contact__panel,
   .contact-form,
   .project-hero,
@@ -217,7 +215,10 @@
     padding: 20px;
   }
 
-  .about__facts,
+  .about-card-premium {
+    padding: 16px;
+  }
+
   .form-grid,
   .gallery-grid {
     grid-template-columns: 1fr;
