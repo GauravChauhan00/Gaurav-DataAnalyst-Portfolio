@@ -4,7 +4,7 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 92%; /* Scales down the entire layout proportionally */
+  font-size: 86%; /* Scales down the entire layout proportionally to 86% */
 }
 
 body {
@@ -68,7 +68,7 @@ img {
 }
 
 .section-pad {
-  padding: 42px 0;
+  padding: 30px 0;
 }
 
 .glass-card {
