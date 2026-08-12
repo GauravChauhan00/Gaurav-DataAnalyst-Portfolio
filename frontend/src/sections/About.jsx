@@ -12,41 +12,48 @@ export default function About() {
         description="Clean reporting, reliable validation, and polished digital experiences — that is the direction of this portfolio."
       />
       
-      <motion.div 
-        className="about-card-premium"
-        initial={{ opacity: 0, y: 16 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-      >
-        <div className="about-card-premium__header">
-          <div className="about-card-premium__avatar-box">
-            <img src={personalInfo.profilePhoto} alt={personalInfo.shortName} />
-            <span className="about-card-premium__status-dot" />
-          </div>
-          <div className="about-card-premium__title-group">
-            <h3>{personalInfo.displayName}</h3>
-            <span className="about-card-premium__role">{personalInfo.title}</span>
-          </div>
-        </div>
+      <div className="about-split">
         
-        <div className="about-card-premium__body">
-          {personalInfo.about.map((paragraph) => (
-            <p key={paragraph} className="about-card-premium__text">{paragraph}</p>
-          ))}
-        </div>
+        <motion.div 
+          className="about-portrait"
+          initial={{ opacity: 0, x: -24 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <img src={personalInfo.profilePhoto} alt={personalInfo.shortName} className="about-portrait__img" />
+          <div className="about-portrait__overlay">
+            <div className="about-portrait__status">
+              <span className="status-pulse-dot" />
+              <span>Available for projects</span>
+            </div>
+          </div>
+        </motion.div>
         
-        <div className="about-card-premium__footer">
-          <div className="about-card-premium__facts-row">
+        <motion.div 
+          className="about-info"
+          initial={{ opacity: 0, x: 24 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <div className="about-info__bio">
+            {personalInfo.about.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </div>
+          
+          <div className="about-info__facts">
             {personalInfo.quickFacts.map((fact) => (
-              <div key={fact} className="about-fact-pill">
-                <CheckCircle2 size={12} className="about-fact-pill__icon" />
+              <div key={fact} className="about-fact-item">
+                <CheckCircle2 size={14} className="about-fact-item__icon" />
                 <span>{fact}</span>
               </div>
             ))}
           </div>
-        </div>
-      </motion.div>
+        </motion.div>
+        
+      </div>
     </section>
   );
 }

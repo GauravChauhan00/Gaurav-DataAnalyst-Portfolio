@@ -635,112 +635,96 @@ html[data-theme='light'] .terminal-card {
   align-items: stretch;
 }
 
-.about-card-premium {
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  background: linear-gradient(145deg, var(--glass), rgba(255, 255, 255, 0.02));
-  box-shadow: var(--shadow-soft);
-  backdrop-filter: blur(16px);
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.about-card-premium__header {
-  display: flex;
+.about-split {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 36px;
   align-items: center;
-  gap: 16px;
 }
 
-.about-card-premium__avatar-box {
+.about-portrait {
   position: relative;
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
+  width: 100%;
+  height: 310px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
   overflow: hidden;
-  border: 2px solid var(--border);
-  background: var(--surface);
-  flex-shrink: 0;
+  box-shadow: var(--shadow-soft);
 }
 
-.about-card-premium__avatar-box img {
+.about-portrait__img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.about-card-premium__status-dot {
+.about-portrait__overlay {
   position: absolute;
-  bottom: 2px;
-  right: 2px;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: var(--success);
-  border: 2px solid var(--bg);
-  box-shadow: 0 0 8px var(--success);
-}
-
-.about-card-premium__title-group {
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 65%, rgba(2, 6, 23, 0.8));
   display: flex;
-  flex-direction: column;
-  gap: 4px;
+  align-items: flex-end;
+  padding: 14px;
 }
 
-.about-card-premium__title-group h3 {
-  margin: 0 !important;
-  font-size: 1.25rem;
-  font-weight: 800;
-  color: var(--text);
-}
-
-.about-card-premium__role {
-  font-size: 0.84rem;
-  color: var(--primary);
+.about-portrait__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(15, 23, 42, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 6px 12px;
+  backdrop-filter: blur(8px);
+  font-size: 0.76rem;
   font-weight: 700;
+  color: #fff;
 }
 
-.about-card-premium__body {
+.about-info {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 16px;
 }
 
-.about-card-premium__text {
+.about-info__bio {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.about-info__bio p {
   margin: 0;
   font-size: 0.88rem;
   line-height: 1.6;
   color: var(--text-soft);
 }
 
-.about-card-premium__footer {
+.about-info__facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
   border-top: 1px solid var(--border);
   padding-top: 16px;
 }
 
-.about-card-premium__facts-row {
+.about-fact-item {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.about-fact-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 12px;
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.02);
-  color: var(--text-soft);
-  font-size: 0.78rem;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.8rem;
   font-weight: 700;
+  line-height: 1.45;
 }
 
-.about-fact-pill__icon {
+.about-fact-item span {
+  color: var(--text-soft);
+}
+
+.about-fact-item__icon {
   color: var(--success);
   flex-shrink: 0;
+  margin-top: 1px;
 }
 
 .education-grid,
