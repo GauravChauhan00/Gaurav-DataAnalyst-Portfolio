@@ -7,12 +7,12 @@ export const technicalSkills = [
   {
     category: 'Database & Programming',
     description: 'Writing queries, transforming datasets, and building logic-heavy project flows.',
-    skills: ['SQL', 'C++', 'DSA', 'Python']
+    skills: ['Python', 'SQL', 'C++', 'DSA']
   },
   {
     category: 'Web Development',
     description: 'Building responsive, component-based web interfaces with clean user experience.',
-    skills: ['HTML5', 'CSS3', 'React.js', 'Vite', 'Responsive Design', 'Component-Based UI']
+    skills: ['HTML5', 'CSS3 & TailwindCSS', 'React.js', 'Vite', 'Responsive Design', 'Component-Based UI']
   },
   {
     category: 'Backend & APIs',
