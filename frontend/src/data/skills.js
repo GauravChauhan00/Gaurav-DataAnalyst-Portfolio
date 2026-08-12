@@ -7,7 +7,7 @@ export const technicalSkills = [
   {
     category: 'Database & Programming',
     description: 'Writing queries, transforming datasets, and building logic-heavy project flows.',
-    skills: ['SQL', 'Python', 'C++ & DSA', 'PostgreSQL']
+    skills: ['SQL', 'C++', 'DSA', 'Python']
   },
   {
     category: 'Web Development',
@@ -22,7 +22,7 @@ export const technicalSkills = [
   {
     category: 'Tools & Workflow',
     description: 'Tools used across analytics, testing, documentation, and development workflows.',
-    skills: ['Excel', 'GitHub', 'Postman', 'VS Code', 'Power BI', 'Documentation']
+    skills: ['Excel', 'GitHub', 'Postman', 'VS Code', 'Power BI', 'PostgreSQL', 'Documentation']
   },
   {
     category: 'QA & Data Quality',

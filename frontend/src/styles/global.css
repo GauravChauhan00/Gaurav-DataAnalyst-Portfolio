@@ -754,11 +754,11 @@ html[data-theme='light'] .terminal-card {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 8px 16px;
+  padding: 10px 20px;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid var(--border);
   border-radius: 20px;
-  font-size: 0.85rem;
+  font-size: 0.94rem;
   font-weight: 700;
   color: var(--text-soft);
   transition: all 0.25s ease;

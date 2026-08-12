@@ -115,8 +115,8 @@
   }
 
   .skill-chip {
-    padding: 6px 12px;
-    font-size: 0.78rem;
+    padding: 8px 16px;
+    font-size: 0.86rem;
   }
 
   .timeline::before {
