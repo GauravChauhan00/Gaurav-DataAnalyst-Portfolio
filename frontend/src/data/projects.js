@@ -157,28 +157,30 @@ export const projects = [
     shortDescription:
       'A complete data analytics pipeline — from raw CSV cleaning to SLA metrics, KPI tracking, SQL analysis, and Power BI dashboards — built in Python and Jupyter Notebook.',
     overview:
-      'Analyzed customer support ticket logs to measure resolution times, first-contact resolution rates (FCR), and agent SLA compliance.',
+      'Analyzed customer support ticket logs to measure resolution times, first-contact resolution rates (FCR), and agent SLA compliance across 1,000+ support inquiries.',
     problem:
-      'Support teams lacked visibility into ticket backlog drivers and agent-level resolution bottlenecks.',
+      'Support operations leadership lacked visibility into ticket backlog drivers, priority SLA breach trends, and team-level resolution bottlenecks.',
     features: [
-      'Python data cleaning pipeline handling missing fields and timestamp conversions',
-      'SLA breach rate tracking across ticket priority tiers',
-      'Agent performance benchmarking and CSAT distribution analysis',
-      'Power BI operational dashboards with dynamic filters'
+      'Python data cleaning pipeline handling missing fields, priority classification, and timestamp conversions',
+      'SLA breach rate tracking across ticket priority tiers and channels (Email, Chat, API Monitoring)',
+      'Team-level performance benchmarking and CSAT distribution analysis',
+      'Power BI operational dashboards with dynamic filters and DAX compliance measures'
     ],
-    technologies: ['Python', 'Pandas', 'SQL', 'Power BI', 'Excel'],
-    role: 'Data Analyst',
-    challenges: 'Handling disparate timezone formats across global support queues.',
-    solution: 'Standardized all ticket timestamps to UTC before computing resolution hours.',
+    technologies: ['Python', 'Pandas', 'SQL', 'Power BI', 'Excel', 'Matplotlib'],
+    role: 'Data Quality & Operations Analyst',
+    challenges: 'Handling disparate timezone formats and calculating business-hour resolution SLAs.',
+    solution: 'Standardized all ticket timestamps to UTC and built automated SLA breach calculation flags.',
     learnings: 'Customer support KPI benchmarking, SLA modeling, and operational BI reporting.',
     githubUrl: 'https://github.com/GauravChauhan00/Customer-Support-SLA-Analysis',
     liveUrl: '',
     screenshots: [
-      '/images/projects/customer-support-analysis/team_performance_table.png',
-      '/images/projects/customer-support-analysis/weekly_ticket_volume.png',
-      '/images/projects/customer-support-analysis/top_support_categories.png'
+      '/images/projects/customer-support-analysis/00_cover_thumbnail.png',
+      '/images/projects/customer-support-analysis/01_weekly_ticket_volume.png',
+      '/images/projects/customer-support-analysis/02_sql_sla_breach_analysis.png',
+      '/images/projects/customer-support-analysis/03_team_performance_table.png',
+      '/images/projects/customer-support-analysis/04_csat_vs_resolution_time.png'
     ],
-    tags: ['Data Analytics', 'Support SLAs', 'Python', 'Power BI']
+    tags: ['Data Analytics', 'Support SLAs', 'Python', 'Power BI', 'SQL']
   }
 ];
 
