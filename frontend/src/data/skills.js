@@ -1,43 +1,36 @@
 export const technicalSkills = [
   {
-    category: 'Data Analytics & BI',
-    description: 'Transforming raw data into executive dashboards, Star Schemas, and commercial insights.',
-    skills: ['Power BI', 'DAX Measures', 'Star Schema Modeling', 'Data Visualization', 'Business Intelligence', 'Executive Dashboards', 'Cohort Retention', 'KPI Tracking', 'OEE & SLA Analytics']
+    category: 'Analytics & Power BI',
+    description: 'Building interactive dashboards, calculating DAX metrics, and data reporting.',
+    skills: ['Power BI', 'DAX', 'Data Visualization', 'Advanced Excel', 'KPI Dashboards']
   },
   {
     category: 'SQL & Databases',
-    description: 'Relational database architecture, CTEs, window functions, and high-performance querying.',
-    skills: ['PostgreSQL', 'SQL Window Functions', 'CTEs & Subqueries', 'DENSE_RANK / LAG / LEAD', 'Relational Schema DDL', 'Constraints & Indexing', 'Complex Joins', 'Query Optimization']
+    description: 'Writing queries, filtering datasets, and joining relational tables.',
+    skills: ['SQL', 'PostgreSQL', 'Joins & Subqueries', 'Aggregate Functions', 'Window Functions']
   },
   {
-    category: 'Python & Data Science',
-    description: 'End-to-end data processing, exploratory data analysis, and statistical hypothesis testing.',
-    skills: ['Python', 'Pandas', 'NumPy', 'Scipy', 'Matplotlib', 'Seaborn', 'Scikit-Learn', 'Data Cleaning & ETL', 'Statistical Analysis', 'Correlation & Outlier Detection']
+    category: 'Python for Data',
+    description: 'Cleaning messy datasets, data manipulation, and exploratory chart analysis.',
+    skills: ['Python', 'Pandas', 'NumPy', 'Matplotlib', 'Seaborn', 'Data Cleaning']
   },
   {
-    category: 'Frontend Development',
-    description: 'Building clean, component-based, responsive web applications and interactive dashboards.',
-    skills: ['React.js', 'JavaScript (ES6+)', 'HTML5', 'CSS3 & TailwindCSS', 'Vite', 'Responsive Design', 'Component-Based UI', 'Recharts & Visual UI']
+    category: 'Frontend Basics',
+    description: 'Building responsive web pages and clean dashboard user interfaces.',
+    skills: ['React.js', 'JavaScript', 'HTML5', 'CSS3', 'Tailwind CSS']
   },
   {
-    category: 'Analytics Tools & Workflow',
-    description: 'Essential developer and analyst workflow tools for version control and data exploration.',
-    skills: ['Microsoft Excel (Pivots/XLOOKUP)', 'Git & GitHub', 'pgAdmin 4', 'Jupyter Notebook', 'VS Code', 'Postman', 'REST API Ingestion']
-  },
-  {
-    category: 'Data Quality & Validation',
-    description: 'Auditing datasets, validating referential integrity, and performing root-cause analysis.',
-    skills: ['Data Validation', 'Anomaly Detection', 'Root Cause Analysis', 'Referential Integrity Checks', 'Defect Tracking', 'Data Profiling', 'Documentation']
+    category: 'Tools & Workflow',
+    description: 'Daily tools used for querying, coding, and version control.',
+    skills: ['Git & GitHub', 'VS Code', 'Jupyter Notebook', 'pgAdmin 4']
   }
 ];
 
 export const softSkills = [
-  'Analytical Problem Solving',
-  'Commercial Acumen',
-  'Clear Technical Documentation',
-  'Stakeholder Communication',
-  'Attention to Data Detail',
-  'Root Cause Analysis',
-  'Ownership & Delivery',
-  'Continuous Learning Agility'
+  'Problem Solving',
+  'Analytical Thinking',
+  'Attention to Detail',
+  'Clear Communication',
+  'Documentation',
+  'Quick Learner'
 ];

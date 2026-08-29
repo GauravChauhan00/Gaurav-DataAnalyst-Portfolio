@@ -1,24 +1,22 @@
 import { motion } from 'framer-motion';
-import { BarChart3, Database, Globe, Cpu, CheckSquare, Wrench } from 'lucide-react';
+import { BarChart3, Database, Globe, Cpu, Wrench } from 'lucide-react';
 import SectionHeader from '../components/common/SectionHeader';
 import { technicalSkills } from '../data/skills';
 
 const categoryIcons = {
-  'Analytics & BI': BarChart3,
-  'Database & Programming': Database,
-  'Frontend Development': Globe,
-  'Backend & APIs': Cpu,
-  'Tools & Workflow': Wrench,
-  'QA & Data Quality': CheckSquare
+  'Analytics & Power BI': BarChart3,
+  'SQL & Databases': Database,
+  'Python for Data': Cpu,
+  'Frontend Basics': Globe,
+  'Tools & Workflow': Wrench
 };
 
 const categoryColors = {
-  'Analytics & BI': 'var(--color-analytics)',
-  'Database & Programming': 'var(--color-db)',
-  'Frontend Development': 'var(--color-frontend)',
-  'Backend & APIs': 'var(--color-backend)',
-  'Tools & Workflow': 'var(--color-tools)',
-  'QA & Data Quality': 'var(--color-qa)'
+  'Analytics & Power BI': 'var(--color-analytics)',
+  'SQL & Databases': 'var(--color-db)',
+  'Python for Data': 'var(--color-backend)',
+  'Frontend Basics': 'var(--color-frontend)',
+  'Tools & Workflow': 'var(--color-tools)'
 };
 
 export default function TechnicalSkills() {
@@ -27,7 +25,7 @@ export default function TechnicalSkills() {
       <SectionHeader
         eyebrow="Technical Stack"
         title="Tools & Technologies"
-        description="A list of technical skills grouped by execution layer, sorted by text length."
+        description="Core tools and technologies I use for data analysis, querying, dashboard reporting, and web interfaces."
       />
       
       <div className="skills-grid-symmetric">
