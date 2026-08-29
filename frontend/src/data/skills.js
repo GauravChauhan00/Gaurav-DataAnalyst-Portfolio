@@ -11,8 +11,8 @@ export const technicalSkills = [
   },
   {
     category: 'Python for Data',
-    description: 'Cleaning messy datasets, data manipulation, and exploratory chart analysis.',
-    skills: ['Python', 'Pandas', 'NumPy', 'Matplotlib', 'Seaborn', 'Data Cleaning']
+    description: 'Building ETL pipelines, cleaning messy datasets, and exploratory analysis.',
+    skills: ['Python', 'Pandas', 'NumPy', 'ETL Pipelines', 'Data Cleaning', 'Matplotlib']
   },
   {
     category: 'Frontend Basics',
