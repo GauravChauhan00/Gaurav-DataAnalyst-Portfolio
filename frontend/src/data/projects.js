@@ -35,15 +35,15 @@ export const projects = [
     liveUrl: '',
     screenshots: [
       '/images/projects/ecommerce/00_cover_thumbnail.png',
-      '/images/projects/ecommerce/01_executive_kpi_scorecard.png',
       '/images/projects/ecommerce/02_monthly_revenue_profit_trend.png',
-      '/images/projects/ecommerce/03_subcategory_performance.png',
       '/images/projects/ecommerce/04_discount_margin_erosion.png',
-      '/images/projects/ecommerce/05_regional_sales_breakdown.png',
-      '/images/projects/ecommerce/06_customer_ltv_deciles.png',
       '/images/projects/ecommerce/07_payment_method_fallout.png',
       '/images/projects/ecommerce/08_delivery_lead_times.png',
       '/images/projects/ecommerce/09_correlation_matrix.png',
+      '/images/projects/ecommerce/03_subcategory_performance.png',
+      '/images/projects/ecommerce/06_customer_ltv_deciles.png',
+      '/images/projects/ecommerce/01_executive_kpi_scorecard.png',
+      '/images/projects/ecommerce/05_regional_sales_breakdown.png',
       '/images/projects/ecommerce/10_star_schema_model.png'
     ],
     tags: ['Data Analytics', 'Power BI', 'PostgreSQL', 'Python', 'DAX', 'SQL', 'E-Commerce']
@@ -84,15 +84,15 @@ export const projects = [
     liveUrl: '',
     screenshots: [
       '/images/projects/manufacturing/00_cover_thumbnail.png',
-      '/images/projects/manufacturing/01_plant_kpi_scorecard.png',
       '/images/projects/manufacturing/02_downtime_pareto_chart.png',
-      '/images/projects/manufacturing/03_vibration_vs_defects.png',
       '/images/projects/manufacturing/04_machine_downtime_ranking.png',
       '/images/projects/manufacturing/05_shift_performance_comparison.png',
-      '/images/projects/manufacturing/06_energy_intensity_by_machine.png',
       '/images/projects/manufacturing/07_thermal_stress_defects.png',
       '/images/projects/manufacturing/08_defect_category_share.png',
       '/images/projects/manufacturing/09_sensor_correlation_matrix.png',
+      '/images/projects/manufacturing/03_vibration_vs_defects.png',
+      '/images/projects/manufacturing/01_plant_kpi_scorecard.png',
+      '/images/projects/manufacturing/06_energy_intensity_by_machine.png',
       '/images/projects/manufacturing/10_manufacturing_star_schema.png'
     ],
     tags: ['Manufacturing', 'OEE', 'Power BI', 'SQL', 'Python', 'Statistics', 'IoT']
@@ -133,14 +133,14 @@ export const projects = [
     liveUrl: '',
     screenshots: [
       '/images/projects/churn/00_cover_thumbnail.png',
-      '/images/projects/churn/01_executive_retention_kpi.png',
       '/images/projects/churn/02_cohort_retention_heatmap.png',
-      '/images/projects/churn/03_contract_and_support_churn.png',
       '/images/projects/churn/04_revenue_at_risk_by_plan.png',
       '/images/projects/churn/05_tenure_decay_survival.png',
       '/images/projects/churn/06_usage_frequency_impact.png',
       '/images/projects/churn/07_churn_reasons_breakdown.png',
       '/images/projects/churn/08_payment_method_risk.png',
+      '/images/projects/churn/03_contract_and_support_churn.png',
+      '/images/projects/churn/01_executive_retention_kpi.png',
       '/images/projects/churn/09_regional_arr_exposure.png',
       '/images/projects/churn/10_churn_star_schema.png'
     ],
@@ -176,9 +176,9 @@ export const projects = [
     screenshots: [
       '/images/projects/customer-support-analysis/00_cover_thumbnail.png',
       '/images/projects/customer-support-analysis/01_weekly_ticket_volume.png',
+      '/images/projects/customer-support-analysis/04_csat_vs_resolution_time.png',
       '/images/projects/customer-support-analysis/02_sql_sla_breach_analysis.png',
-      '/images/projects/customer-support-analysis/03_team_performance_table.png',
-      '/images/projects/customer-support-analysis/04_csat_vs_resolution_time.png'
+      '/images/projects/customer-support-analysis/03_team_performance_table.png'
     ],
     tags: ['Data Analytics', 'Support SLAs', 'Python', 'Power BI', 'SQL']
   }
