@@ -1,0 +1,74 @@
+RESUME UPDATE GUIDE
+===================
+
+1. RESUME LOCATION
+------------------
+Current resume file:
+
+frontend/public/resume/Gaurav_Resume.pdf
+
+Resume download button uses:
+
+frontend/src/data/personalInfo.js
+
+Field:
+
+resumePath: '/resume/Gaurav_Resume.pdf'
+
+
+2. BEST WAY TO REPLACE RESUME
+-----------------------------
+1. Create latest resume PDF
+2. Rename it exactly:
+
+Gaurav_Resume.pdf
+
+3. Replace old file in:
+
+frontend/public/resume/
+
+4. No code change needed
+
+
+3. IF FILE NAME IS DIFFERENT
+----------------------------
+Example new file:
+
+Gaurav_Chauhan_Resume_2026.pdf
+
+Put it here:
+
+frontend/public/resume/Gaurav_Chauhan_Resume_2026.pdf
+
+Update:
+
+frontend/src/data/personalInfo.js
+
+resumePath: '/resume/Gaurav_Chauhan_Resume_2026.pdf'
+
+
+4. UPDATE WEBSITE CONTENT BASED ON RESUME
+-----------------------------------------
+If resume has new skills, projects, experience, or education, update these files:
+
+frontend/src/data/personalInfo.js
+frontend/src/data/skills.js
+frontend/src/data/experience.js
+frontend/src/data/education.js
+frontend/src/data/projects.js
+frontend/src/data/certificates.js
+frontend/src/data/achievements.js
+
+
+5. REDEPLOY AFTER RESUME UPDATE
+-------------------------------
+Test locally:
+
+cd frontend
+npm run dev
+
+Then push:
+
+git add .
+git commit -m "Update resume"
+git push

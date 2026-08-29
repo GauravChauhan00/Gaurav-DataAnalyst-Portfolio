@@ -1,0 +1,173 @@
+CERTIFICATE UPDATE GUIDE
+========================
+
+Portfolio me certificates two types ke hain:
+
+1. Single individual certificates
+2. Course certificate bundles
+
+Main data file:
+
+frontend/src/data/certificates.js
+
+
+1. WHERE TO ADD SINGLE CERTIFICATES
+-----------------------------------
+Folder:
+
+frontend/public/certificates/single/
+
+Example:
+
+frontend/public/certificates/single/python-data-science.pdf
+
+Then update:
+
+frontend/src/data/certificates.js
+
+singleCertificates array me add karo:
+
+{
+  id: 'python-data-science',
+  title: 'Python for Data Science Professional Certificate',
+  issuer: 'Coursera',
+  date: '2025',
+  category: 'Data Science',
+  filePath: '/certificates/single/python-data-science.pdf',
+  credentialUrl: 'https://credential-link-if-any.com',
+  description: 'Short professional description.'
+}
+
+
+2. WHERE TO ADD COURSE-WISE CERTIFICATES
+----------------------------------------
+Folder:
+
+frontend/public/certificates/courses/
+
+Create course folder:
+
+frontend/public/certificates/courses/meta-front-end-developer/
+
+Add files:
+
+certificate-1.pdf
+certificate-2.pdf
+certificate-3.pdf
+
+
+3. HOW TO CREATE COURSE BUNDLE
+------------------------------
+Open:
+
+frontend/src/data/certificates.js
+
+Inside courseBundles array, add:
+
+{
+  id: 'meta-front-end-developer',
+  courseName: 'Meta Front-End Developer Professional Certificate',
+  platform: 'Coursera',
+  category: 'Frontend Development',
+  totalCertificates: 9,
+  status: 'Completed',
+  description: 'Course bundle description.',
+  certificates: [
+    {
+      title: 'Introduction to Front-End Development',
+      date: '2025',
+      filePath: '/certificates/courses/meta-front-end-developer/certificate-1.pdf',
+      credentialUrl: ''
+    },
+    {
+      title: 'Programming with JavaScript',
+      date: '2025',
+      filePath: '/certificates/courses/meta-front-end-developer/certificate-2.pdf',
+      credentialUrl: ''
+    }
+  ]
+}
+
+
+4. FIELD EXPLANATION
+--------------------
+id:
+Unique id. Use lowercase and hyphen.
+
+Title/courseName:
+Certificate or course name shown on website.
+
+issuer/platform:
+Company/platform name like Coursera, Udemy, Google, Microsoft.
+
+date:
+Completion date or year.
+
+category:
+Used for filters.
+
+filePath:
+PDF/image path from public folder.
+
+credentialUrl:
+Official credential link if available.
+
+
+5. HOW TO REPLACE OLD CERTIFICATE
+---------------------------------
+If file name same hai:
+
+1. Replace old PDF with new PDF
+2. No code change needed
+
+If file name changed:
+
+1. Add new PDF
+2. Update filePath in certificates.js
+
+
+6. HOW TO REMOVE CERTIFICATE
+----------------------------
+1. Delete certificate object from certificates.js
+2. Optional: delete PDF from public folder
+3. Save
+4. Redeploy
+
+
+7. HOW VIEW/DOWNLOAD BUTTONS WORK
+---------------------------------
+If filePath is empty:
+
+View/Download buttons disabled rahenge.
+
+If filePath is correct:
+
+View Certificate button modal me open karega.
+Download PDF button file download karega.
+
+
+8. HOW TO MAKE NEW CERTIFICATES APPEAR
+--------------------------------------
+After adding file and updating certificates.js:
+
+cd frontend
+npm run dev
+
+Check locally.
+Then:
+
+git add .
+git commit -m "Update certificates"
+git push
+
+Vercel/Netlify auto redeploy karega.
+
+
+9. IMPORTANT TIPS FOR 100+ CERTIFICATES
+---------------------------------------
+- Certificates ko category-wise organize karo.
+- Course bundles use karo, sab PDFs ek grid me mat daalo.
+- File names simple rakho.
+- Spaces avoid karo.
+- Example: python-data-science.pdf
+- Use search and filters to keep section clean.

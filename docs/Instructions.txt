@@ -1,0 +1,259 @@
+GAURAV PREMIUM PORTFOLIO - MAIN INSTRUCTIONS
+===========================================
+
+Ye project ek complete full-stack portfolio hai jisme frontend, backend aur SQLite database included hai.
+
+1. REQUIRED SOFTWARE
+--------------------
+Install these first:
+
+1. Node.js LTS version
+2. npm, Node.js ke sath install ho jata hai
+3. VS Code
+4. DB Browser for SQLite, optional but recommended
+5. Git, GitHub upload ke liye
+
+Check installation:
+
+node -v
+npm -v
+git --version
+
+
+2. PROJECT FOLDER STRUCTURE
+---------------------------
+Main folders:
+
+frontend/  -> React + Vite website
+backend/   -> Node.js + Express.js API
+docs/      -> Guides and explanation files
+
+
+3. HOW TO RUN BACKEND LOCALLY
+-----------------------------
+Open terminal inside project folder:
+
+cd backend
+npm install
+cp .env.example .env
+npm run init-db
+npm run dev
+
+Backend should run at:
+
+http://localhost:5000
+
+Health check:
+
+http://localhost:5000/api/health
+
+Expected response:
+
+Portfolio backend is running.
+
+
+4. HOW TO RUN FRONTEND LOCALLY
+------------------------------
+Open another terminal inside project folder:
+
+cd frontend
+npm install
+cp .env.example .env
+npm run dev
+
+Frontend should run at:
+
+http://localhost:5173
+
+
+5. HOW COMPLETE PROJECT WORKS
+-----------------------------
+Frontend contact form sends data to:
+
+POST http://localhost:5000/api/inquiries
+
+Backend validates the form.
+If data is valid, backend saves it into SQLite table:
+
+inquiries
+
+Database file:
+
+backend/database/portfolio.sqlite
+
+
+6. HOW TO UPDATE PERSONAL DETAILS
+---------------------------------
+Edit:
+
+frontend/src/data/personalInfo.js
+
+You can update:
+
+- Display name
+- Title
+- Hero headline
+- About text
+- Email
+- Phone
+- Location
+- Resume path
+- Profile photo path
+- Availability status
+
+
+7. HOW TO UPDATE SOCIAL LINKS
+-----------------------------
+Edit:
+
+frontend/src/data/socialLinks.js
+
+Current links:
+
+GitHub: https://github.com/GauravChauhan00
+LinkedIn: https://www.linkedin.com/in/gaurav-chauhan-382ab0214
+Email: gaurav94855@gmail.com
+
+
+8. HOW TO UPDATE RESUME
+-----------------------
+Resume file location:
+
+frontend/public/resume/Gaurav_Resume.pdf
+
+Best method:
+
+1. Delete old resume PDF
+2. Add new resume PDF with same name: Gaurav_Resume.pdf
+3. Resume download button will work automatically
+
+If you use a different file name, update this file:
+
+frontend/src/data/personalInfo.js
+
+Field:
+
+resumePath: '/resume/Gaurav_Resume.pdf'
+
+
+9. HOW TO UPDATE PROFILE PHOTO
+------------------------------
+Profile image location:
+
+frontend/public/images/profile/
+
+Default placeholder:
+
+profile-placeholder.svg
+
+To use your real photo:
+
+1. Add your photo inside frontend/public/images/profile/
+2. Example: profile-photo.jpg
+3. Open frontend/src/data/personalInfo.js
+4. Update:
+
+profilePhoto: '/images/profile/profile-photo.jpg'
+
+
+10. HOW TO UPDATE PROJECTS
+--------------------------
+Main project data file:
+
+frontend/src/data/projects.js
+
+Project screenshots folder:
+
+frontend/public/images/projects/
+
+For a new project:
+
+1. Create a new folder inside frontend/public/images/projects/
+2. Add screenshots there
+3. Add new project object in projects.js
+4. Add GitHub link in githubUrl
+5. Add live link in liveUrl
+6. Save and redeploy
+
+Read:
+
+docs/Project_Link_Update_Guide.txt
+
+
+11. HOW TO UPDATE CERTIFICATES
+------------------------------
+Single certificate folder:
+
+frontend/public/certificates/single/
+
+Course bundle certificate folder:
+
+frontend/public/certificates/courses/
+
+Main certificate data file:
+
+frontend/src/data/certificates.js
+
+Read:
+
+docs/Certificate_Update_Guide.txt
+
+
+12. HOW TO CHECK CONTACT FORM SUBMISSIONS
+-----------------------------------------
+Method 1: DB Browser for SQLite
+
+1. Open DB Browser for SQLite
+2. Click Open Database
+3. Select:
+
+backend/database/portfolio.sqlite
+
+4. Go to Browse Data
+5. Select table:
+
+inquiries
+
+You will see:
+
+id, name, email, subject, message, created_at
+
+Method 2: Terminal
+
+From main project folder:
+
+sqlite3 backend/database/portfolio.sqlite
+SELECT * FROM inquiries;
+.exit
+
+Method 3: Protected API route
+
+If backend .env has ADMIN_TOKEN, call:
+
+GET http://localhost:5000/api/inquiries
+
+Header:
+
+x-admin-token: your-admin-token
+
+
+13. COMMON ERRORS
+-----------------
+Error: Frontend contact form failed
+Possible reasons:
+
+- Backend is not running
+- VITE_API_BASE_URL is wrong
+- CORS origin is wrong in backend .env
+
+Error: database not found
+Run:
+
+cd backend
+npm run init-db
+
+Error: npm command not found
+Install Node.js LTS.
+
+Error: module not found
+Run npm install inside frontend/backend folder.

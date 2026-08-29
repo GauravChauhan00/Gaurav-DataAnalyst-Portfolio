@@ -1,0 +1,125 @@
+GITHUB UPLOAD GUIDE
+===================
+
+Is guide ka use karke portfolio ko GitHub par upload kar sakte ho.
+
+1. CREATE GITHUB REPOSITORY
+---------------------------
+1. Go to GitHub
+2. Click New Repository
+3. Repository name example:
+
+premium-portfolio
+
+aur ya:
+
+gaurav-portfolio
+
+4. Public ya private choose karo
+5. README add mat karo agar local project already ready hai
+6. Create repository
+
+
+2. OPEN TERMINAL IN PROJECT FOLDER
+----------------------------------
+Project root folder open karo:
+
+gaurav-premium-portfolio
+
+Terminal me check karo:
+
+ls
+
+You should see:
+
+frontend
+backend
+docs
+README.md
+.gitignore
+
+
+3. INITIALIZE GIT
+-----------------
+Run:
+
+git init
+
+
+4. CHECK .GITIGNORE
+-------------------
+Project me .gitignore already included hai.
+
+Important ignored files:
+
+node_modules/
+.env
+backend/database/*.sqlite
+*.log
+
+Why?
+
+- node_modules bahut heavy hota hai
+- .env me secret values hoti hain
+- SQLite DB me real client inquiries ho sakti hain
+
+ZIP me starter SQLite database included hai, but GitHub par real database push mat karna.
+
+
+5. ADD FILES
+------------
+Run:
+
+git add .
+
+
+6. COMMIT FILES
+---------------
+Run:
+
+git commit -m "Initial portfolio website"
+
+
+7. CONNECT LOCAL PROJECT TO GITHUB
+----------------------------------
+GitHub repository page par jo remote URL milega use paste karo:
+
+git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
+
+Example:
+
+git remote add origin https://github.com/GauravChauhan00/premium-portfolio.git
+
+
+8. PUSH PROJECT
+---------------
+Run:
+
+git branch -M main
+git push -u origin main
+
+
+9. HOW TO UPDATE GITHUB AFTER CHANGES
+-------------------------------------
+Whenever you change project/certificates/resume etc:
+
+git status
+git add .
+git commit -m "Update portfolio content"
+git push
+
+
+10. WHAT NOT TO UPLOAD
+----------------------
+Do not upload:
+
+- node_modules
+- .env
+- real database with private client inquiries
+- private certificate files if you do not want them public
+- private phone number if you do not want it visible
+
+
+11. IMPORTANT NOTE
+------------------
+If you deploy frontend on Vercel/Netlify from GitHub, every push can auto-update your website.

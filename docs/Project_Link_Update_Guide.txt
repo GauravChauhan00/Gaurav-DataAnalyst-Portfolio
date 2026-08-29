@@ -1,0 +1,188 @@
+PROJECT LINK UPDATE GUIDE
+=========================
+
+Portfolio me projects hardcoded components me nahi hain. Sab project data ek simple file me hai:
+
+frontend/src/data/projects.js
+
+
+1. HOW TO CREATE A NEW PROJECT FOLDER
+-------------------------------------
+Go to:
+
+frontend/public/images/projects/
+
+Create a folder:
+
+my-new-project
+
+Add screenshots:
+
+cover.png
+screenshot-1.png
+screenshot-2.png
+
+Recommended naming:
+
+frontend/public/images/projects/my-new-project/cover.png
+frontend/public/images/projects/my-new-project/screenshot-1.png
+frontend/public/images/projects/my-new-project/screenshot-2.png
+
+
+2. HOW TO UPLOAD THAT PROJECT TO GITHUB
+---------------------------------------
+Open separate project folder, not portfolio folder.
+
+Run:
+
+git init
+git add .
+git commit -m "Initial project upload"
+
+Create GitHub repository.
+Then:
+
+git branch -M main
+git remote add origin https://github.com/YOUR_USERNAME/YOUR_PROJECT_REPO.git
+git push -u origin main
+
+Copy GitHub repo link.
+
+
+3. HOW TO DEPLOY THAT PROJECT
+-----------------------------
+For React/Vite project:
+
+Best: Vercel or Netlify
+
+Vercel:
+1. Import project repo
+2. Build command: npm run build
+3. Output: dist
+4. Deploy
+5. Copy live demo link
+
+Netlify:
+1. Add site from Git
+2. Build command: npm run build
+3. Publish directory: dist
+4. Deploy
+5. Copy live demo link
+
+GitHub Pages:
+Can be used for static projects, but Vercel/Netlify is easier.
+
+
+4. WHERE TO PASTE GITHUB AND LIVE LINKS
+---------------------------------------
+Open:
+
+frontend/src/data/projects.js
+
+Find your project object.
+
+Update:
+
+githubUrl: 'https://github.com/YOUR_USERNAME/YOUR_PROJECT_REPO',
+liveUrl: 'https://your-live-demo-link.vercel.app',
+
+If link is empty, button will show disabled/coming soon style.
+If link is added, button becomes clickable.
+
+
+5. WHERE TO ADD SCREENSHOTS
+---------------------------
+Add screenshot files here:
+
+frontend/public/images/projects/project-folder-name/
+
+Then update screenshots array:
+
+screenshots: [
+  '/images/projects/project-folder-name/cover.png',
+  '/images/projects/project-folder-name/screenshot-1.png',
+  '/images/projects/project-folder-name/screenshot-2.png'
+]
+
+Important:
+In React public folder, path starts from /images, not /public/images.
+
+Correct:
+
+'/images/projects/my-project/cover.png'
+
+Wrong:
+
+'/public/images/projects/my-project/cover.png'
+
+
+6. HOW TO ADD NEW PROJECT CARD
+------------------------------
+In projects.js, add object like this:
+
+{
+  id: 'my-new-project',
+  title: 'My New Project',
+  subtitle: 'Short project subtitle',
+  category: 'Web Development',
+  year: '2026',
+  status: 'Completed',
+  featured: true,
+  shortDescription: 'Short recruiter-friendly description.',
+  overview: 'What the project does.',
+  problem: 'What problem it solves.',
+  features: [
+    'Feature one',
+    'Feature two'
+  ],
+  technologies: ['React.js', 'Node.js', 'SQLite'],
+  role: 'Full-Stack Developer',
+  challenges: 'Main challenge faced.',
+  solution: 'How you solved it.',
+  learnings: 'What you learned.',
+  githubUrl: 'https://github.com/username/repo',
+  liveUrl: 'https://demo-link.com',
+  screenshots: [
+    '/images/projects/my-new-project/cover.png'
+  ],
+  tags: ['React', 'API', 'Dashboard']
+}
+
+
+7. HOW BUTTONS REDIRECT CORRECTLY
+---------------------------------
+Project card buttons use:
+
+githubUrl
+liveUrl
+
+Case Study button uses:
+
+id
+
+Example:
+
+id: 'my-new-project'
+
+Detail page URL becomes:
+
+/projects/my-new-project
+
+Do not use spaces in id.
+Use lowercase with hyphen.
+
+
+8. HOW TO REDEPLOY PORTFOLIO AFTER ADDING PROJECT
+-------------------------------------------------
+Local check:
+
+cd frontend
+npm run dev
+
+Then push:
+
+git add .
+git commit -m "Add new project"
+git push
+
+If Vercel/Netlify connected, website auto-updates.

@@ -6,9 +6,6 @@ from datetime import datetime, timezone, timedelta
 
 logger = logging.getLogger(__name__)
 
-TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "8992926370:AAGogt3wrygo2YEocPd3rIW6Uxzto0LCdcM")
-TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "1352837172")
-
 def get_ist_time():
     ist = timezone(timedelta(hours=5, minutes=30))
     return datetime.now(ist).strftime("%d %b %Y, %I:%M:%S %p IST")
@@ -16,7 +13,6 @@ def get_ist_time():
 def parse_user_agent(ua_string: str):
     ua = ua_string.lower() if ua_string else ""
     
-    # Detect OS
     os_name = "Unknown OS"
     if "windows nt 10.0" in ua: os_name = "Windows 10/11"
     elif "windows" in ua: os_name = "Windows"
@@ -26,7 +22,6 @@ def parse_user_agent(ua_string: str):
     elif "ipad" in ua: os_name = "iOS (iPad)"
     elif "linux" in ua: os_name = "Linux"
 
-    # Detect Browser
     browser_name = "Unknown Browser"
     if "edg/" in ua: browser_name = "Microsoft Edge"
     elif "chrome/" in ua and "safari" in ua and "opr" not in ua and "edg" not in ua: browser_name = "Google Chrome"
@@ -38,9 +33,6 @@ def parse_user_agent(ua_string: str):
     return os_name, browser_name
 
 def fetch_ip_geolocation(ip: str):
-    """
-    Fetches city, region, country, and ISP info for an IP address.
-    """
     if not ip or ip in ["127.0.0.1", "localhost", "::1", "unknown"]:
         return {
             "city": "Localhost / Internal",
@@ -51,7 +43,6 @@ def fetch_ip_geolocation(ip: str):
             "proxy": False
         }
 
-    # Clean IP if multi-comma forwarded
     clean_ip = ip.split(",")[0].strip()
 
     try:
@@ -82,8 +73,8 @@ def fetch_ip_geolocation(ip: str):
     }
 
 def send_telegram_notification(text: str) -> bool:
-    token = os.getenv("TELEGRAM_BOT_TOKEN", TELEGRAM_BOT_TOKEN)
-    chat_id = os.getenv("TELEGRAM_CHAT_ID", TELEGRAM_CHAT_ID)
+    token = os.getenv("TELEGRAM_BOT_TOKEN", "")
+    chat_id = os.getenv("TELEGRAM_CHAT_ID", "")
 
     if not token or not chat_id:
         return False

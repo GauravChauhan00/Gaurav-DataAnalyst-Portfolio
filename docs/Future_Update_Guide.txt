@@ -1,0 +1,143 @@
+FUTURE UPDATE GUIDE
+===================
+
+Use this when you want to update portfolio after some months.
+
+1. ADD NEW PROJECT
+------------------
+1. Add screenshots in:
+
+frontend/public/images/projects/new-project-name/
+
+2. Update:
+
+frontend/src/data/projects.js
+
+3. Add:
+
+- title
+- description
+- tech stack
+- features
+- GitHub link
+- live demo link
+- screenshots
+- status
+- year
+
+4. Test locally
+5. Push to GitHub
+6. Website redeploys
+
+
+2. ADD GITHUB/LIVE LINKS
+------------------------
+Open:
+
+frontend/src/data/projects.js
+
+Update:
+
+githubUrl: 'your-github-link',
+liveUrl: 'your-live-demo-link',
+
+
+3. ADD PROJECT SCREENSHOTS
+--------------------------
+Folder:
+
+frontend/public/images/projects/project-name/
+
+Then update screenshots array in projects.js.
+
+
+4. ADD SINGLE CERTIFICATE
+-------------------------
+1. Add PDF/image:
+
+frontend/public/certificates/single/
+
+2. Update:
+
+frontend/src/data/certificates.js
+
+3. Add object in singleCertificates.
+
+
+5. ADD COURSE CERTIFICATE BUNDLE
+--------------------------------
+1. Create folder:
+
+frontend/public/certificates/courses/course-name/
+
+2. Add all PDFs/images
+3. Update courseBundles array in certificates.js
+
+
+6. REPLACE RESUME
+-----------------
+Replace:
+
+frontend/public/resume/Gaurav_Resume.pdf
+
+or update resumePath in personalInfo.js.
+
+
+7. CHANGE PROFILE PHOTO
+-----------------------
+Add image:
+
+frontend/public/images/profile/profile-photo.jpg
+
+Update:
+
+frontend/src/data/personalInfo.js
+
+profilePhoto: '/images/profile/profile-photo.jpg'
+
+
+8. UPDATE PERSONAL DETAILS
+--------------------------
+Edit:
+
+frontend/src/data/personalInfo.js
+
+Update name, title, intro, email, phone visibility, location, availability.
+
+
+9. UPDATE SKILLS
+----------------
+Edit:
+
+frontend/src/data/skills.js
+
+Add/remove skills in categories.
+
+
+10. UPDATE ACHIEVEMENTS
+-----------------------
+Edit:
+
+frontend/src/data/achievements.js
+
+Only add real achievements.
+
+
+11. REDEPLOY WEBSITE
+--------------------
+After any update:
+
+git add .
+git commit -m "Update portfolio"
+git push
+
+Vercel/Netlify redeploys automatically if connected.
+
+
+12. CHECK CONTACT FORM
+----------------------
+Backend should be live and frontend env should have:
+
+VITE_API_BASE_URL=https://your-backend-url.com
+
+If not working, check backend logs and CORS.
