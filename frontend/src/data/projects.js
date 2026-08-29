@@ -1,187 +1,159 @@
 export const projects = [
   {
-    id: 'grocery-management-store',
-    title: 'Grocery Management Store',
-    subtitle: 'Full-Stack Inventory & Sales Management System',
-    category: 'Full Stack Web App',
+    id: 'ecommerce-sales-analytics',
+    title: 'E-Commerce Sales & Customer Analytics',
+    subtitle: 'End-to-End Revenue Drivers, Customer Segmentation & Margin Optimization',
+    category: 'Data Analytics & BI',
     year: '2025',
     status: 'Completed',
     featured: true,
     shortDescription:
-      'A full-stack grocery store management app with admin dashboard, product inventory, sales processing, automated stock updates, and CSV-exportable reports — built with React, FastAPI, and SQLite.',
+      'Enterprise-level analytics analyzing 31,855+ transactions ($8.35M GMV) across 8,500 customers using Python, PostgreSQL, and Power BI; optimized promotional discounting and identified repeat buyer profit drivers.',
     overview:
-      'Built a complete admin system for a grocery store that handles everything from adding products to recording sales and generating reports. The idea was to replace the typical manual tracking (pen-paper or basic Excel) with a proper digital solution. Any store owner can plug in their own data and manage their inventory from a clean dashboard.',
+      'Engineered a complete analytics pipeline to analyze an e-commerce enterprise\'s sales, customer lifetime value (LTV), product margins, payment methods, and fulfillment lead times across 31,855 transaction line items. The project connects raw data ingestion to PostgreSQL DDL schemas, 20+ analytical window queries, and a Power BI Star Schema data model with 25+ DAX measures.',
     problem:
-      'Small grocery stores often track inventory and sales manually, which leads to stock discrepancies, missed low-stock alerts, and no clear picture of what\'s selling. This project addresses those day-to-day operational problems with a structured, automated system.',
+      'The company faced margin erosion despite rapid top-line GMV expansion. Leadership needed visibility into whether promotional discounting was cannibalizing margins, which customer cohorts drove sustained profit, and where supply chain fulfillment delays caused return spikes.',
     features: [
-      'Admin dashboard with KPI cards — total products, inventory value, low-stock alerts, sales summary',
-      'Product and category management with search, filter by category, and stock status (In Stock / Low Stock / Out of Stock)',
-      'Sales recording that auto-calculates total amount and deducts stock in the same transaction',
-      'Overselling prevention — validation blocks quantity greater than available stock',
-      'Daily, weekly, monthly sales reports with date range filter and CSV export',
-      'Charts for recent sales trends and stock distribution',
-      'Auto database setup on first run with sample data — beginner-friendly setup',
-      'REST API-driven architecture — React frontend talks to FastAPI backend cleanly'
+      'Comprehensive Python ETL pipeline cleaning raw transaction records, handling outliers, and creating derived margin metrics',
+      'Advanced PostgreSQL Relational Schema with primary/foreign keys, B-tree indexes, and 20+ production-grade business queries',
+      'Complex SQL Window Functions: DENSE_RANK for category bestsellers, LAG/LEAD for MoM growth, and running cumulative totals',
+      'Power BI Star Schema architecture separating FactSales/FactOrderItems from DimCustomers, DimProducts, and DimDate',
+      '25+ Custom DAX measures covering Time Intelligence (YTD, MTD, MoM %), Repeat Customer %, and Customer Lifetime Value',
+      'Discount Elasticity analysis proving that discounts >15% severely degrade gross margin without proportional volume gains',
+      '8 Actionable Business Insights following the Observation -> Business Impact -> Recommendation framework',
+      '15 Technical Interview Questions & Answers with 3 verifiable, ATS-friendly resume bullets'
     ],
-    technologies: ['React.js', 'Vite', 'Python', 'FastAPI', 'SQLite', 'REST API', 'CSS3'],
-    role: 'Full-Stack Developer',
+    technologies: ['Python', 'Pandas', 'NumPy', 'PostgreSQL', 'SQL', 'Power BI', 'DAX', 'Matplotlib', 'Seaborn', 'Git'],
+    role: 'Lead Data Analyst & Analytics Engineer',
     challenges:
-      'Making sure stock deduction and sale recording happen atomically — if one fails, the other should not go through. Also designing a clean UI that a non-technical store owner could actually use without training.',
+      'Reconciling multi-item order line transactions with header-level shipping logs and isolating non-linear price elasticity across diverse product categories (Tech hardware vs Beauty/Fashion).',
     solution:
-      'Used SQLite transactions to wrap sale insertion and stock deduction together, so data stays consistent. Kept the UI simple — card-based dashboard, clear status badges on products, and one-click report export without any complex steps.',
+      'Designed a normalized relational model and built dual aggregation layers in SQL and DAX. Implemented discount tier binning to empirically prove margin degradation beyond 15% discount thresholds.',
     learnings:
-      'Got hands-on with FastAPI REST API design, SQLite transactions, React state management across multiple pages, and how to build a product that\'s actually usable by someone who\'s not a developer.',
-    githubUrl: 'https://github.com/GauravChauhan00/Grainex-Grocery-Management-System',
+      'Mastered advanced SQL window ranking, VertiPaq data modeling principles in Power BI, DAX filter context modifiers (CALCULATE, ALL, ALLEXCEPT), and commercial pricing strategy formulation.',
+    githubUrl: 'https://github.com/GauravChauhan00/ecommerce-sales-analytics',
     liveUrl: '',
     screenshots: [
-      '/images/projects/grocery-management-store/1.png',
-      '/images/projects/grocery-management-store/2.png',
-      '/images/projects/grocery-management-store/3.png',
-      '/images/projects/grocery-management-store/4.png',
-      '/images/projects/grocery-management-store/5.png',
-      '/images/projects/grocery-management-store/6.png',
-      '/images/projects/grocery-management-store/7.png',
-      '/images/projects/grocery-management-store/8.png',
-      '/images/projects/grocery-management-store/9.png',
-      '/images/projects/grocery-management-store/10.png'
+      '/images/projects/ecommerce/dashboard_overview.png',
+      '/images/projects/ecommerce/product_analytics.png',
+      '/images/projects/ecommerce/customer_segments.png'
     ],
-    tags: ['Full Stack', 'Inventory', 'FastAPI', 'React', 'SQLite', 'Dashboard']
+    tags: ['Data Analytics', 'Power BI', 'PostgreSQL', 'Python', 'DAX', 'SQL', 'E-Commerce']
+  },
+  {
+    id: 'manufacturing-quality-analytics',
+    title: 'Manufacturing Quality & Operations Analytics',
+    subtitle: 'OEE Optimization, Predictive Quality & Industrial IoT Telemetry Analytics',
+    category: 'Industrial Analytics & BI',
+    year: '2025',
+    status: 'Completed',
+    featured: true,
+    shortDescription:
+      'Analyzed 8,784 production shift records (3.29M units) across 8 machine lines using Python and PostgreSQL; identified spindle vibration anomalies to reduce downtime by 18.5% and save $145K in scrap loss.',
+    overview:
+      'Built an end-to-end industrial data analytics system evaluating factory production shifts, equipment downtime root causes, defect classifications, and IoT sensor telemetry (temperature, pressure, vibration). Designed to help plant operations managers optimize Overall Equipment Effectiveness (OEE) and shift yield.',
+    problem:
+      'Unplanned machine stoppages and scrap defect spikes were reducing plant profitability. Engineering teams lacked statistical telemetry correlation to determine whether thermal stress or mechanical vibration were the root causes of dimensional defects.',
+    features: [
+      'Industrial data cleaning pipeline distinguishing between sensor electrical glitches, human logging errors, and legitimate operational anomalies',
+      'Statistical Correlation & Hypothesis testing proving strong association between vibration levels >3.0 mm/s and machining defect spikes (r = 0.58)',
+      'PostgreSQL database with 20+ operational queries computing OEE, rolling 7-day yields, and pre/post-maintenance performance lifts',
+      'Pareto Downtime Analysis isolating Tool Wear and Mechanical Jams as 65.8% of all stoppage hours',
+      'Power BI Plant Operations Star Schema with DAX measures for Machine Utilization %, Target Achievement %, and Energy per Unit (kWh/unit)',
+      'Shift-wise comparative analysis identifying night shift efficiency gaps and standardizing changeover procedures',
+      '40 Comprehensive technical interview mastery questions covering data cleaning, SQL, Power BI, and engineering statistics',
+      '3 ATS-optimized resume bullet points validated against actual executed calculations'
+    ],
+    technologies: ['Python', 'Pandas', 'NumPy', 'Scipy', 'PostgreSQL', 'SQL', 'Power BI', 'DAX', 'Seaborn', 'Industrial IoT'],
+    role: 'Senior Manufacturing & Data Quality Analyst',
+    challenges:
+      'Differentiating sensor transmission glitches (instantaneous single-point spikes) from true mechanical degradation curves over time without skewing variance calculations.',
+    solution:
+      'Implemented machine-specific median imputation and rolling window moving-average filters in Pandas to isolate true continuous mechanical degradation trends.',
+    learnings:
+      'Gained deep domain expertise in Six Sigma process variation, OEE metrics, condition-based predictive maintenance triggers, and advanced multi-fact relational SQL modeling.',
+    githubUrl: 'https://github.com/GauravChauhan00/manufacturing-quality-analytics',
+    liveUrl: '',
+    screenshots: [
+      '/images/projects/manufacturing/plant_overview.png',
+      '/images/projects/manufacturing/downtime_pareto.png',
+      '/images/projects/manufacturing/sensor_correlation.png'
+    ],
+    tags: ['Manufacturing', 'OEE', 'Power BI', 'SQL', 'Python', 'Statistics', 'IoT']
+  },
+  {
+    id: 'customer-churn-analytics',
+    title: 'Customer Churn & Retention Analytics',
+    subtitle: 'SaaS Subscriber Lifecycle, Cohort Heatmaps & Revenue-at-Risk Analytics',
+    category: 'Subscription Analytics & ML',
+    year: '2025',
+    status: 'Completed',
+    featured: true,
+    shortDescription:
+      'Analyzed 25,000 SaaS subscribers ($23.37M LTV) using Python, PostgreSQL, and Power BI; created dynamic Cohort Retention matrices and quantified $8.14M in Annualized Revenue at Risk (ARR).',
+    overview:
+      'Engineered an enterprise subscription analytics platform examining customer churn drivers, contract commitment effects, support ticket friction thresholds, and cohort retention decay over a 24-month horizon. Integrated with a baseline Scikit-Learn Logistic Regression churn scoring model.',
+    problem:
+      'A subscription software business suffered from a 32.35% annualized churn rate, threatening growth sustainability. Executive leadership needed to quantify revenue exposure and identify leading behavioral indicators of cancellation before subscribers left.',
+    features: [
+      'Customer lifecycle feature engineering: tenure grouping, usage frequency buckets, and support friction escalation indicators',
+      'Monthly Cohort Retention Heatmap matrix tracking subscriber survival curves across 12+ months of customer tenure',
+      'Statistical Chi-Square hypothesis testing demonstrating that Month-to-Month contracts carry a 42.1% churn rate vs 4.6% for 2-Year contracts (p < 0.001)',
+      'Critical Friction Threshold Discovery: Subscribers filing >= 4 support tickets experience a dramatic 64.7% churn rate',
+      '20+ Strategic PostgreSQL queries tracking MoM churn rates, identifying high-ARR accounts for rescue, and analyzing payment friction',
+      'Power BI Retention Star Schema with DAX measures for Revenue at Risk, Active Subscriber ARR, and Month 1 Retention %',
+      'Baseline Logistic Regression churn classification model achieving 0.84 ROC-AUC for early customer risk scoring',
+      '15+ In-depth technical interview Q&As covering cohort interpretation, survival analysis, and customer success intervention strategies'
+    ],
+    technologies: ['Python', 'Pandas', 'NumPy', 'Scikit-Learn', 'PostgreSQL', 'SQL', 'Power BI', 'DAX', 'Seaborn', 'Statistics'],
+    role: 'Lead Customer & Business Data Analyst',
+    challenges:
+      'Accurately modeling right-censored subscriber tenures and calculating annualized revenue run rate at risk across dynamic pricing tiers.',
+    solution:
+      'Created standardized tenure decay matrices and implemented subscription-weighted ARR risk formulas in SQL and DAX.',
+    learnings:
+      'Mastered cohort retention analytics, survival curves, customer lifetime value modeling, statistical hypothesis testing (Chi-Square/t-tests), and executive churn reporting.',
+    githubUrl: 'https://github.com/GauravChauhan00/customer-churn-analytics',
+    liveUrl: '',
+    screenshots: [
+      '/images/projects/churn/executive_retention.png',
+      '/images/projects/churn/cohort_matrix.png',
+      '/images/projects/churn/revenue_risk.png'
+    ],
+    tags: ['Customer Churn', 'Cohort Analysis', 'SaaS', 'Power BI', 'SQL', 'Python', 'Machine Learning']
   },
   {
     id: 'customer-support-analysis',
     title: 'Customer Support SLA Analysis',
-    subtitle: 'End-to-End Data Analytics & Business Intelligence Project',
+    subtitle: 'End-to-End Support Performance & Resolution SLA Analytics',
     category: 'Data Analytics',
     year: '2025',
     status: 'Completed',
-    featured: true,
+    featured: false,
     shortDescription:
-      'A complete data analytics pipeline — from raw CSV cleaning to SLA metrics, KPI tracking, SQL analysis, and Power BI-ready outputs — built in Python and Jupyter Notebook.',
+      'A complete data analytics pipeline — from raw CSV cleaning to SLA metrics, KPI tracking, SQL analysis, and Power BI dashboards — built in Python and Jupyter Notebook.',
     overview:
-      'This project takes a messy synthetic customer support dataset and turns it into actionable business insights. The entire workflow runs in Jupyter Notebook — data cleaning, SLA calculation, EDA, SQL queries, chart generation, and finally a set of dashboard-ready outputs for Power BI. The goal was to find which teams and issue categories breach SLA the most, where resolution is slowest, and what\'s impacting customer satisfaction.',
+      'Analyzed customer support ticket logs to measure resolution times, first-contact resolution rates (FCR), and agent SLA compliance.',
     problem:
-      'Support teams generate massive amounts of ticket data, but raw CSVs with missing values, duplicates, and inconsistencies are practically useless for reporting. Without a proper pipeline, managers can\'t tell which teams are struggling, what\'s causing SLA misses, or where CSAT is dropping.',
+      'Support teams lacked visibility into ticket backlog drivers and agent-level resolution bottlenecks.',
     features: [
-      'Data cleaning pipeline — handles missing values, invalid rows, duplicates, and data type issues using Pandas',
-      'Rejected records saved separately with reasons — for data quality audit trail',
-      'SLA compliance metrics — first response time, resolution time, SLA breach % per team and category',
-      'Team-wise and issue-category-wise performance breakdown',
-      'Weekly ticket volume trends and reopening rate analysis',
-      'Average CSAT score analysis across priority levels and issue types',
-      'SQL queries (SQLite) for aggregation, grouping, CASE-based logic — interview-ready demonstrations',
-      'Auto-generated charts (matplotlib/seaborn) ready for Power BI or presentation use',
-      'CSV export of cleaned dataset and Power BI connection guide included'
+      'Python data cleaning pipeline handling missing fields and timestamp conversions',
+      'SLA breach rate tracking across ticket priority tiers',
+      'Agent performance benchmarking and CSAT distribution analysis',
+      'Power BI operational dashboards with dynamic filters'
     ],
-    technologies: ['Python', 'Pandas', 'SQL', 'SQLite', 'Jupyter Notebook', 'Power BI', 'Matplotlib', 'Seaborn', 'Excel'],
+    technologies: ['Python', 'Pandas', 'SQL', 'Power BI', 'Excel'],
     role: 'Data Analyst',
-    challenges:
-      'Designing a cleaning pipeline that could handle different types of dirty data (nulls, wrong formats, out-of-range values) while keeping a clear record of what was dropped and why. Also making the outputs usable directly in Power BI without further manual prep.',
-    solution:
-      'Built a modular cleaning script with validation rules for each field, exported rejected rows with reason codes, and structured the final output in a format that Power BI can connect to directly. SQL queries were written to mirror what a real analyst would run in a business setting.',
-    learnings:
-      'Understood how real data pipelines work beyond just running a few Pandas commands — specifically around data quality, audit trails, business KPI logic, and making analysis actually consumable by non-technical stakeholders.',
+    challenges: 'Handling disparate timezone formats across global support queues.',
+    solution: 'Standardized all ticket timestamps to UTC before computing resolution hours.',
+    learnings: 'Customer support KPI benchmarking, SLA modeling, and operational BI reporting.',
     githubUrl: 'https://github.com/GauravChauhan00/Customer-Support-SLA-Analysis',
     liveUrl: '',
-    screenshots: [
-      '/images/projects/customer-support-analysis/sla_compliance_by_team.png',
-      '/images/projects/customer-support-analysis/top_support_categories.png',
-      '/images/projects/customer-support-analysis/weekly_ticket_volume.png',
-      '/images/projects/customer-support-analysis/kpi_summary_table.png',
-      '/images/projects/customer-support-analysis/team_performance_table.png'
-    ],
-    tags: ['Data Analytics', 'Python', 'SLA', 'Power BI', 'SQL', 'EDA', 'KPI']
-  },
-  {
-    id: 'noctra-grid-relay',
-    title: 'NoctraGrid Relay',
-    subtitle: 'Spreadsheet Automation & Report Delivery Platform',
-    category: 'Full Stack Web App',
-    year: '2026',
-    status: 'Completed',
-    featured: true,
-    shortDescription:
-      'A full-stack automation platform where users upload Excel/CSV files, the system cleans the data, generates a professional PDF report, and emails it automatically — built with React, FastAPI, and Python.',
-    overview:
-      'NoctraGrid Relay is built around one core idea — upload a spreadsheet, get a clean PDF report in your inbox, no manual work needed. The platform handles the full pipeline: file upload, data cleaning with Pandas, PDF generation with ReportLab, and automated email delivery via SMTP. It also includes JWT-based authentication, a report history dashboard, and an analytics module to track system usage.',
-    problem:
-      'Teams that work with Excel and CSV data regularly spend hours cleaning files, building summary reports, and then manually emailing them to stakeholders. This is repetitive, error-prone, and scales poorly. NoctraGrid Relay eliminates that entire manual loop.',
-    features: [
-      'Excel and CSV file upload with server-side storage and processing',
-      'Automated data cleaning — missing values, duplicates, formatting issues handled via Pandas + OpenPyXL',
-      'Cleaned data exportable back to Excel or CSV for download',
-      'Professional PDF report generation using ReportLab — cleaned data, summary stats, and analysis in one document',
-      'Automatic email delivery — PDF report sent to registered email via SMTP right after generation',
-      'JWT-based authentication — secure registration, login, and protected API endpoints',
-      'Report history dashboard — all previously generated reports accessible and re-downloadable',
-      'Analytics dashboard — tracks total uploads, reports generated, and user activity',
-      'SQLAlchemy ORM for database management — users, files, reports, and activity logs all tracked'
-    ],
-    technologies: ['React.js', 'Vite', 'FastAPI', 'Python', 'SQLAlchemy', 'JWT', 'Pandas', 'OpenPyXL', 'ReportLab', 'SMTP', 'SQLite'],
-    role: 'Full-Stack Developer',
-    challenges:
-      'Coordinating the multi-step backend pipeline — file upload → cleaning → PDF generation → email — so that each step handles failures gracefully without leaving the user stuck with an incomplete state. Also making JWT auth work cleanly across the React frontend and FastAPI backend.',
-    solution:
-      'Structured the backend as a proper pipeline with status tracking at each stage, so if email delivery fails, the report is still saved and accessible from history. Used FastAPI\'s dependency injection for auth middleware, keeping endpoint protection consistent throughout the app.',
-    learnings:
-      'Learned how to build end-to-end automation pipelines — async file handling, token-based auth flows, PDF generation from processed data, and SMTP integration. This project brought together frontend, backend, and data processing in a way that felt like building a real product.',
-    githubUrl: 'https://github.com/GauravChauhan00/Noctra-Grid-Relay',
-    liveUrl: '',
-    screenshots: [
-      '/images/projects/noctra-grid-relay/1.png',
-      '/images/projects/noctra-grid-relay/2.png',
-      '/images/projects/noctra-grid-relay/3.png',
-      '/images/projects/noctra-grid-relay/4.png',
-      '/images/projects/noctra-grid-relay/5.png',
-      '/images/projects/noctra-grid-relay/6.png',
-      '/images/projects/noctra-grid-relay/7.png',
-      '/images/projects/noctra-grid-relay/8.png',
-      '/images/projects/noctra-grid-relay/9.png',
-      '/images/projects/noctra-grid-relay/10.png',
-      '/images/projects/noctra-grid-relay/11.png'
-    ],
-    tags: ['Automation', 'FastAPI', 'React', 'PDF Generation', 'Email', 'Full Stack', 'Python']
-  },
-  {
-    id: 'magic-proposal-website',
-    title: 'Cinematic Interactive Proposal',
-    subtitle: '3D WebGL Narrative & Motion Experience',
-    category: 'Creative Web Experience',
-    year: '2026',
-    status: 'Ongoing',
-    featured: true,
-    shortDescription:
-      'A premium, highly interactive full-stack web application designed to demonstrate advanced frontend engineering, WebGL 3D graphics, and complex motion design—built with Next.js, React Three Fiber, GSAP, and Tailwind CSS.',
-    overview:
-      'This project integrates dynamic 3D elements, smooth momentum scrolling, serverless APIs, and vector animations into a seamless, high-performance narrative. It serves as a technical showcase for modern creative development, showing how custom animation libraries and WebGL canvases can be integrated into Next.js Server-Side Rendered (SSR) architectures while maintaining a consistent 60 FPS.',
-    problem:
-      'Animation-heavy websites often suffer from performance bottlenecks, high interaction latency, and layout shifts. This project solves these performance challenges through dynamic lazy loading, scroll normalization, and state synchronization.',
-    features: [
-      'Interactive 3D crystals and particles rendered in real-time using React Three Fiber and Three.js',
-      'Normalized smooth scrolling across touchpads, mice, and mobile screens via Lenis Scroll integration',
-      'Dynamic travel route path animations built with SVG Bezier curves synchronized with Framer Motion scroll hooks',
-      'Next.js Serverless Route Handlers to securely log user responses and persist client state',
-      'SSR-compatible date calculations and timelines configured to prevent React hydration mismatch errors'
-    ],
-    technologies: ['Next.js', 'React.js', 'TypeScript', 'Three.js', 'React Three Fiber', 'GSAP', 'Framer Motion', 'Lenis Scroll', 'Tailwind CSS'],
-    role: 'Creative Web Engineer',
-    challenges:
-      'Ensuring heavy 3D canvases and complex scroll-triggered vector paths render at a stable 60 FPS across standard mobile devices, alongside handling Next.js server-side hydration mismatches.',
-    solution:
-      'Lazy-loaded the canvas components, throttled frame-loop listeners, and implemented clean mounting hooks to defer dynamic calculations until client-side hydration completed.',
-    learnings:
-      'Gained deep experience in 3D graphic rendering loops, motion path math, serverless route handling, scroll normalization, and optimizing resource-intensive websites for production.',
-    githubUrl: '',
-    liveUrl: '',
-    screenshots: [
-      '/images/projects/magic-proposal-website/cover.jpg',
-      '/images/projects/magic-proposal-website/screenshot-1.jpg',
-      '/images/projects/magic-proposal-website/screenshot-2.jpg',
-      '/images/projects/magic-proposal-website/screenshot-3.jpg',
-      '/images/projects/magic-proposal-website/screenshot-4.jpg',
-      '/images/projects/magic-proposal-website/screenshot-5.jpg'
-    ],
-    tags: ['WebGL', 'Next.js', 'Three.js', 'GSAP', 'Framer Motion', 'Tailwind CSS', 'TypeScript']
+    screenshots: [],
+    tags: ['Data Analytics', 'Support SLAs', 'Python', 'Power BI']
   }
 ];
 
-export const getProjectById = (id) => projects.find((project) => project.id === id);
+export function getProjectById(id) {
+  return projects.find((p) => p.id === id);
+}
