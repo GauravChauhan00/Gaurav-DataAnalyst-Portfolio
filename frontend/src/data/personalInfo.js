@@ -2,36 +2,37 @@ export const personalInfo = {
   legalName: 'Gaurav',
   displayName: 'Gaurav',
   shortName: 'Gaurav',
-  title: 'Data Analyst | Data Quality Analyst | Web Developer',
-  heroRole: 'Data Analyst & Web Developer',
+  title: 'Data Analyst | BI Specialist | Python & SQL | React Frontend',
+  heroRole: 'Data Analyst & Analytics Engineer',
   headline:
-    'I build data analytics pipelines, clean web interfaces, and automated workflows that turn raw datasets into actionable insights.',
+    'I analyze enterprise datasets, design Star-Schema Power BI dashboards, author complex PostgreSQL queries, and build interactive React interfaces that turn raw data into strategic business decisions.',
   intro:
-    'Data Analyst and Full-Stack Developer with hands-on experience in Python data cleaning, SQL querying, exploratory analysis, API testing, and React web development.',
+    'Data Analyst with hands-on expertise in Python data pipelines (Pandas, NumPy, Scipy), PostgreSQL, SQL Window Functions, Power BI, DAX modeling, and modern Frontend UI development (React.js, HTML5, CSS3, JavaScript).',
   about: [
-    'I work at the intersection of data analytics and modern web development. Whether it is cleaning messy datasets in Python, querying SQL databases, building React web applications, or automating spreadsheet workflows, I focus on delivering clean, reliable software.',
-    'My portfolio highlights real-world engineering projects — from grocery store inventory systems and customer support SLA analytics to spreadsheet automation platforms.'
+    'I am a Data Analyst dedicated to solving complex operational and financial challenges through data. Whether it is engineering automated Python cleaning pipelines, authoring multi-CTE PostgreSQL queries with window functions, architecting Power BI Star-Schemas, or building responsive React analytical web interfaces, my focus is delivering actionable business insights.',
+    'My portfolio highlights production-grade analytical projects — from 31K+ transaction E-Commerce margin optimization and IoT manufacturing OEE analytics to 25K SaaS subscriber cohort retention and revenue-at-risk modeling.'
   ],
   email: 'gaurav949855@gmail.com',
   phone: '+91 8307042798',
   showPhoneOnWebsite: false,
   location: 'India',
   availability: 'Open to Work',
-  availabilityDetails: 'Open to internships, data analyst roles, QA/data validation roles, web development roles, freelance projects, and collaboration.',
+  availabilityDetails: 'Open to Data Analyst roles, Business Intelligence Engineer roles, Product/Operations Analyst roles, and Frontend Web Development opportunities.',
   resumePath: '/resume/Gaurav_Resume.pdf',
   profilePhoto: '/images/profile/profile-placeholder.svg',
-  signature: '</> clean data · reliable APIs · modern web',
+  signature: '</> Python · PostgreSQL · Power BI · DAX · React.js',
   quickFacts: [
-    'Data Analytics, Pipeline Engineering & Power BI Dashboards',
-    'Full-Stack Web Development (React, FastAPI, Python, SQL)',
-    'REST API Testing, Postman Validation & Data Quality',
-    'Spreadsheet Automation & Custom Business Software'
+    'Advanced PostgreSQL & Relational Star Schema Data Modeling',
+    'Power BI Interactive Dashboards & Custom DAX Measures',
+    'Python Data Cleaning, Statistical Correlation & EDA (Pandas, NumPy)',
+    'Frontend UI Development (React.js, HTML5, CSS3, Tailwind, JavaScript)',
+    'Cohort Retention, OEE Quality Analytics & Revenue-at-Risk Modeling'
   ],
   services: [
-    'Data Analytics & Power BI Dashboards',
-    'Full-Stack Web Development (React + FastAPI)',
-    'Python & SQL Data Pipeline Automation',
-    'REST API Development & Validation',
-    'Data Quality & SLA Performance Analytics'
+    'Data Analytics & Power BI Interactive Dashboards',
+    'PostgreSQL Database Querying & Star-Schema Data Modeling',
+    'Python Data Cleaning, ETL Automation & Exploratory Analysis',
+    'Frontend Web Development (React.js, HTML5, CSS3, JavaScript)',
+    'Data Quality Validation & Operational SLA Analytics'
   ]
 };

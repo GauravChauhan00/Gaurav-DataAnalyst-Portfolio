@@ -1,45 +1,43 @@
 export const technicalSkills = [
   {
-    category: 'Analytics & BI',
-    description: 'Turning raw data into clean reporting views and business-friendly insights.',
-    skills: ['Power BI', 'Data Analysis', 'Data Cleaning', 'Data Visualization', 'Business Intelligence', 'Dashboard Development', 'Reporting & Analytics']
+    category: 'Data Analytics & BI',
+    description: 'Transforming raw data into executive dashboards, Star Schemas, and commercial insights.',
+    skills: ['Power BI', 'DAX Measures', 'Star Schema Modeling', 'Data Visualization', 'Business Intelligence', 'Executive Dashboards', 'Cohort Retention', 'KPI Tracking', 'OEE & SLA Analytics']
   },
   {
-    category: 'Database & Programming',
-    description: 'Writing queries, transforming datasets, and building logic-heavy project flows.',
-    skills: ['Python', 'SQL', 'C++', 'DSA']
+    category: 'SQL & Databases',
+    description: 'Relational database architecture, CTEs, window functions, and high-performance querying.',
+    skills: ['PostgreSQL', 'SQL Window Functions', 'CTEs & Subqueries', 'DENSE_RANK / LAG / LEAD', 'Relational Schema DDL', 'Constraints & Indexing', 'Complex Joins', 'Query Optimization']
+  },
+  {
+    category: 'Python & Data Science',
+    description: 'End-to-end data processing, exploratory data analysis, and statistical hypothesis testing.',
+    skills: ['Python', 'Pandas', 'NumPy', 'Scipy', 'Matplotlib', 'Seaborn', 'Scikit-Learn', 'Data Cleaning & ETL', 'Statistical Analysis', 'Correlation & Outlier Detection']
   },
   {
     category: 'Frontend Development',
-    description: 'Building responsive, component-based web interfaces with clean user experience.',
-    skills: ['HTML5', 'CSS3 & TailwindCSS', 'React.js', 'Vite', 'Responsive Design', 'Component-Based UI']
+    description: 'Building clean, component-based, responsive web applications and interactive dashboards.',
+    skills: ['React.js', 'JavaScript (ES6+)', 'HTML5', 'CSS3 & TailwindCSS', 'Vite', 'Responsive Design', 'Component-Based UI', 'Recharts & Visual UI']
   },
   {
-    category: 'Backend & APIs',
-    description: 'Understanding API behavior, request/response flows, and backend integrations.',
-    skills: ['FastAPI', 'REST APIs', 'Triggers & Webhooks', 'API Integration', 'JWT', 'OAuth2']
+    category: 'Analytics Tools & Workflow',
+    description: 'Essential developer and analyst workflow tools for version control and data exploration.',
+    skills: ['Microsoft Excel (Pivots/XLOOKUP)', 'Git & GitHub', 'pgAdmin 4', 'Jupyter Notebook', 'VS Code', 'Postman', 'REST API Ingestion']
   },
   {
-    category: 'Tools & Workflow',
-    description: 'Tools used across analytics, testing, documentation, and development workflows.',
-    skills: ['Excel', 'GitHub', 'Postman', 'VS Code', 'Power BI', 'PostgreSQL']
-  },
-  {
-    category: 'QA & Data Quality',
-    description: 'Validating systems, tracking defects, and documenting reliable test outcomes.',
-    skills: ['Postman', 'API Testing', 'Documentation', 'Manual Testing', 'Issue Analysis', 'Data Validation', 'Defect Tracking', 'Test Case Creation']
+    category: 'Data Quality & Validation',
+    description: 'Auditing datasets, validating referential integrity, and performing root-cause analysis.',
+    skills: ['Data Validation', 'Anomaly Detection', 'Root Cause Analysis', 'Referential Integrity Checks', 'Defect Tracking', 'Data Profiling', 'Documentation']
   }
 ];
 
 export const softSkills = [
-  'Problem Solving',
-  'Documentation',
-  'Clear Communication',
-  'Analytical Thinking',
-  'Attention to Detail',
+  'Analytical Problem Solving',
+  'Commercial Acumen',
+  'Clear Technical Documentation',
+  'Stakeholder Communication',
+  'Attention to Data Detail',
   'Root Cause Analysis',
-  'Ownership Mindset',
-  'Learning Agility',
-  'Process Improvement',
-  'Stakeholder Communication'
+  'Ownership & Delivery',
+  'Continuous Learning Agility'
 ];

@@ -16,9 +16,9 @@ export default function Projects() {
   return (
     <section id="projects" className="section-shell section-pad projects">
       <SectionHeader
-        eyebrow="Projects"
-        title="Premium project case studies"
-        description="Each project is managed from one config file, so GitHub links, live demos, screenshots, and case-study details can be updated easily."
+        eyebrow="Portfolio Projects"
+        title="Enterprise Data Analytics & BI Case Studies"
+        description="Production-grade analytics projects spanning Python data pipelines, advanced PostgreSQL window queries, Power BI Star-Schema modeling, and interactive UI dashboards."
       />
       <div className="filter-row" role="tablist" aria-label="Project filters">
         {categories.map((category) => (

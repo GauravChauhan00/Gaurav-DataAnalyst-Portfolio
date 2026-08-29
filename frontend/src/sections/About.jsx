@@ -8,12 +8,11 @@ export default function About() {
     <section id="about" className="section-shell about section-pad">
       <SectionHeader
         eyebrow="About Me"
-        title="A data-quality minded analyst with web development skills."
-        description="Clean reporting, reliable validation, and polished digital experiences — that is the direction of this portfolio."
+        title="A business-minded Data Analyst with strong SQL, Power BI, Python & React skills."
+        description="Clean analytics pipelines, Star-Schema data modeling, advanced SQL window querying, and modern interactive web dashboards."
       />
       
       <div className="about-split">
-        
         <motion.div 
           className="about-portrait"
           initial={{ opacity: 0, x: -24 }}
@@ -46,7 +45,6 @@ export default function About() {
             ))}
           </div>
         </motion.div>
-        
       </div>
     </section>
   );
