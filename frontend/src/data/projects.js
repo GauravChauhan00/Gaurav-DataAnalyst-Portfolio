@@ -34,9 +34,9 @@ export const projects = [
     githubUrl: 'https://github.com/GauravChauhan00/ecommerce-sales-analytics',
     liveUrl: '',
     screenshots: [
-      '/images/projects/ecommerce/dashboard_overview.png',
-      '/images/projects/ecommerce/product_analytics.png',
-      '/images/projects/ecommerce/customer_segments.png'
+      '/images/projects/ecommerce/01_monthly_revenue_profit_trend.png',
+      '/images/projects/ecommerce/02_subcategory_performance.png',
+      '/images/projects/ecommerce/03_discount_margin_erosion.png'
     ],
     tags: ['Data Analytics', 'Power BI', 'PostgreSQL', 'Python', 'DAX', 'SQL', 'E-Commerce']
   },
@@ -75,9 +75,9 @@ export const projects = [
     githubUrl: 'https://github.com/GauravChauhan00/manufacturing-quality-analytics',
     liveUrl: '',
     screenshots: [
-      '/images/projects/manufacturing/plant_overview.png',
-      '/images/projects/manufacturing/downtime_pareto.png',
-      '/images/projects/manufacturing/sensor_correlation.png'
+      '/images/projects/manufacturing/01_downtime_pareto_chart.png',
+      '/images/projects/manufacturing/02_vibration_vs_defects.png',
+      '/images/projects/manufacturing/03_shift_performance_comparison.png'
     ],
     tags: ['Manufacturing', 'OEE', 'Power BI', 'SQL', 'Python', 'Statistics', 'IoT']
   },
@@ -116,9 +116,9 @@ export const projects = [
     githubUrl: 'https://github.com/GauravChauhan00/customer-churn-analytics',
     liveUrl: '',
     screenshots: [
-      '/images/projects/churn/executive_retention.png',
-      '/images/projects/churn/cohort_matrix.png',
-      '/images/projects/churn/revenue_risk.png'
+      '/images/projects/churn/01_cohort_retention_heatmap.png',
+      '/images/projects/churn/02_contract_and_support_churn.png',
+      '/images/projects/churn/03_revenue_at_risk_by_plan.png'
     ],
     tags: ['Customer Churn', 'Cohort Analysis', 'SaaS', 'Power BI', 'SQL', 'Python', 'Machine Learning']
   },
@@ -149,7 +149,11 @@ export const projects = [
     learnings: 'Customer support KPI benchmarking, SLA modeling, and operational BI reporting.',
     githubUrl: 'https://github.com/GauravChauhan00/Customer-Support-SLA-Analysis',
     liveUrl: '',
-    screenshots: [],
+    screenshots: [
+      '/images/projects/customer-support-analysis/team_performance_table.png',
+      '/images/projects/customer-support-analysis/weekly_ticket_volume.png',
+      '/images/projects/customer-support-analysis/top_support_categories.png'
+    ],
     tags: ['Data Analytics', 'Support SLAs', 'Python', 'Power BI']
   }
 ];
