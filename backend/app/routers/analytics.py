@@ -1,11 +1,12 @@
-from fastapi import APIRouter, Request
+from fastapi import APIRouter, Request, BackgroundTasks
 from app.models.schemas import VisitCreate, StandardResponse
 from app.database.db import get_db
+from app.services.telegram_service import send_telegram_notification
 
 router = APIRouter(prefix="/api/analytics", tags=["Analytics"])
 
 @router.post("/visit", response_model=StandardResponse)
-async def record_visit(visit: VisitCreate, request: Request):
+async def record_visit(visit: VisitCreate, request: Request, background_tasks: BackgroundTasks):
     ip = request.client.host if request.client else "unknown"
     user_agent = request.headers.get("user-agent", "unknown")
 
@@ -17,6 +18,17 @@ async def record_visit(visit: VisitCreate, request: Request):
                 VALUES (?, ?, ?, ?, ?)
             """, (visit.path, visit.referrer, visit.screen, ip, user_agent))
             conn.commit()
+
+        # Send Telegram Visitor Alert in background
+        telegram_visit_msg = (
+            f"👁️ *New Visitor on Data Analyst Portfolio!*\n\n"
+            f"📍 *Path:* `{visit.path}`\n"
+            f"🔗 *Referrer:* {visit.referrer}\n"
+            f"💻 *Screen:* `{visit.screen}`\n"
+            f"🌐 *IP:* `{ip}`"
+        )
+        background_tasks.add_task(send_telegram_notification, telegram_visit_msg)
+
         return StandardResponse(success=True, message="Visit recorded successfully.")
     except Exception:
         return StandardResponse(success=False, message="Analytics write skipped.")

@@ -11,6 +11,10 @@ FRONTEND_ORIGIN = os.getenv("FRONTEND_ORIGIN", "*")
 ADMIN_SECRET_TOKEN = os.getenv("ADMIN_SECRET_TOKEN", "gaurav-admin-secret-2025")
 DB_PATH = os.getenv("DB_PATH", str(BASE_DIR / "portfolio_data.db"))
 
+# Telegram Visitor & Contact Alert Bot
+TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "8992926370:AAGogt3wrygo2YEocPd3rIW6Uxzto0LCdcM")
+TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "1352837172")
+
 # SMTP Email Configuration (Optional)
 SMTP_HOST = os.getenv("SMTP_HOST", "")
 SMTP_PORT = int(os.getenv("SMTP_PORT", 587))
