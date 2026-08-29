@@ -1,7 +1,7 @@
 services:
   # 1. Python FastAPI Backend API Service
   - type: web
-    name: gaurav-portfolio-api
+    name: gaurav-dataanalyst-portfolio
     env: python
     buildCommand: pip install -r backend/requirements.txt
     startCommand: cd backend && uvicorn main:app --host 0.0.0.0 --port $PORT
@@ -19,7 +19,7 @@ services:
     staticPublishPath: frontend/dist
     envVars:
       - key: VITE_API_BASE_URL
-        value: https://gaurav-portfolio-api.onrender.com
+        value: https://gaurav-dataanalyst-portfolio.onrender.com
     routes:
       - type: rewrite
         source: /*
