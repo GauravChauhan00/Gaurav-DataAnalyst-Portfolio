@@ -1,101 +1,46 @@
-# Gaurav </> Premium Full-Stack Portfolio
+# 📊 Gaurav | Data Analyst & BI Portfolio
 
-A premium, modern, responsive, full-stack personal portfolio website for **Gaurav** — positioned as a **Data Analyst, Data Quality Analyst, and Web Developer**.
+[![React](https://img.shields.io/badge/React-18.3-61DAFB.svg)](https://reactjs.org/)
+[![Vite](https://img.shields.io/badge/Vite-6.0-646CFF.svg)](https://vitejs.dev/)
+[![Power BI](https://img.shields.io/badge/Power_BI-Desktop-F2C811.svg)](https://powerbi.microsoft.com/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-14%2B-336791.svg)](https://www.postgresql.org/)
+[![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 
-## What is included
+An ultra-modern, interactive Data Analyst Portfolio showcasing production-grade data analytics projects, Star-Schema Power BI dashboards, advanced PostgreSQL queries, and automated Python ETL pipelines.
 
-- React.js + Vite frontend
-- Premium dark/light theme toggle
-- Framer Motion animations
-- Three.js / React Three Fiber animated hero section
-- Project cards and project detail pages
-- Certificate library with single certificates and course bundles
-- Contact form with validation
-- Node.js + Express.js backend
-- SQLite database for contact inquiries
-- SQL schema and seed files
-- Resume folder
-- Certificate folders
-- Project screenshot folders
-- Beginner-friendly documentation
+---
 
-## Main folders
+## 🌟 Featured Projects
 
-```txt
-frontend/   React portfolio website
-backend/    Express API + SQLite contact form backend
-docs/       Guides and Hinglish deep explanation files
-```
+1. **[E-Commerce Sales & Customer Analytics](https://github.com/GauravChauhan00/Ecommerce-Sales-Analytics)**  
+   - Analyzed 31,855+ transactions ($8.35M GMV) to optimize discounting elasticity and identify repeat customer profit drivers.
+2. **[Manufacturing Quality & Operations Analytics](https://github.com/GauravChauhan00/Manufacturing-Quality-Analytics)**  
+   - Evaluated 8,784 shift records (3.29M units) to optimize Overall Equipment Effectiveness (OEE) and identify vibration telemetry root causes.
+3. **[Customer Churn & Retention Analytics](https://github.com/GauravChauhan00/Customer-Churn-Analytics)**  
+   - Modeled 25,000 SaaS subscribers ($23.37M LTV) with monthly cohort retention heatmaps and quantified $8.14M ARR at risk.
+4. **[Customer Support SLA Analysis](https://github.com/GauravChauhan00/Customer-Support-SLA-Analysis)**  
+   - Analyzed 1,000+ support tickets to measure resolution times, first-contact resolution rates (FCR), and agent SLA compliance.
 
-## Quick local setup
+---
 
-Open two terminals.
+## 🛠️ Tech Stack & Architecture
 
-### Terminal 1: Backend
+- **Frontend:** React.js 18, Vite, Framer Motion, Lucide Icons, Three.js / React Three Fiber
+- **Analytics & BI:** Power BI Desktop, DAX, Star Schema Data Modeling, Advanced Excel
+- **Databases & Querying:** PostgreSQL, SQL Window Functions, Multi-CTEs
+- **Python Data Stack:** Python, Pandas, NumPy, Scipy, Matplotlib, Seaborn
 
-```bash
-cd backend
-npm install
-cp .env.example .env
-npm run init-db
-npm run dev
-```
+---
 
-Backend runs on:
-
-```txt
-http://localhost:5000
-```
-
-### Terminal 2: Frontend
+## 🚀 Local Development
 
 ```bash
 cd frontend
 npm install
-cp .env.example .env
 npm run dev
 ```
 
-Frontend runs on:
+---
 
-```txt
-http://localhost:5173
-```
-
-## Contact form database
-
-Contact submissions are saved in:
-
-```txt
-backend/database/portfolio.sqlite
-```
-
-Table name:
-
-```txt
-inquiries
-```
-
-You can view data using **DB Browser for SQLite** or terminal:
-
-```bash
-sqlite3 backend/database/portfolio.sqlite
-SELECT * FROM inquiries;
-```
-
-## Future updates
-
-Update most portfolio content from these files:
-
-```txt
-frontend/src/data/personalInfo.js
-frontend/src/data/socialLinks.js
-frontend/src/data/skills.js
-frontend/src/data/education.js
-frontend/src/data/experience.js
-frontend/src/data/projects.js
-frontend/src/data/certificates.js
-frontend/src/data/achievements.js
-```
-
-Read the docs folder carefully before editing.
+## 📄 License
+This project is licensed under the MIT License.
