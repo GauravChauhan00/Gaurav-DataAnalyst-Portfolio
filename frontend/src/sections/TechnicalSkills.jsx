@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { BarChart3, Database, Globe, Cpu, Wrench, Sparkles } from 'lucide-react';
+import { BarChart3, Database, Globe, Cpu, Wrench } from 'lucide-react';
 import SectionHeader from '../components/common/SectionHeader';
 import { technicalSkills } from '../data/skills';
 
@@ -41,7 +41,64 @@ const categoryMeta = {
   }
 };
 
+function SkillCard({ group, index }) {
+  const meta = categoryMeta[group.category] || {
+    icon: Database,
+    color: 'var(--primary)',
+    gradient: 'var(--glass)',
+    borderColor: 'var(--border)',
+    tag: 'Core'
+  };
+  const Icon = meta.icon;
+
+  return (
+    <motion.div 
+      className="premium-skill-card"
+      style={{ 
+        '--card-accent': meta.color,
+        '--card-gradient': meta.gradient,
+        '--card-border': meta.borderColor
+      }}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: index * 0.08, duration: 0.4, ease: 'easeOut' }}
+      whileHover={{ y: -4, transition: { duration: 0.2 } }}
+    >
+      <div className="premium-skill-card__glow" />
+      
+      <div className="premium-skill-card__top">
+        <div className="premium-skill-card__icon-wrap">
+          <Icon size={20} />
+        </div>
+        <div className="premium-skill-card__header-info">
+          <span className="premium-skill-card__tag">{meta.tag}</span>
+          <h3>{group.category}</h3>
+        </div>
+      </div>
+
+      <p className="premium-skill-card__desc">{group.description}</p>
+      
+      <div className="premium-skill-card__chips">
+        {group.skills.map((skill) => (
+          <motion.span 
+            key={skill} 
+            className="premium-skill-chip"
+            whileHover={{ scale: 1.04, backgroundColor: 'rgba(255, 255, 255, 0.08)' }}
+          >
+            <span className="premium-skill-chip__bullet" />
+            {skill}
+          </motion.span>
+        ))}
+      </div>
+    </motion.div>
+  );
+}
+
 export default function TechnicalSkills() {
+  const topRowSkills = technicalSkills.slice(0, 3);
+  const bottomRowSkills = technicalSkills.slice(3, 5);
+
   return (
     <section id="skills" className="section-shell section-pad skills-showcase">
       <SectionHeader
@@ -50,61 +107,20 @@ export default function TechnicalSkills() {
         description="Focused on practical, interview-ready data tools — from database querying and data modeling to interactive dashboards."
       />
       
-      <div className="premium-skills-grid">
-        {technicalSkills.map((group, index) => {
-          const meta = categoryMeta[group.category] || {
-            icon: Database,
-            color: 'var(--primary)',
-            gradient: 'var(--glass)',
-            borderColor: 'var(--border)',
-            tag: 'Core'
-          };
-          const Icon = meta.icon;
-          
-          return (
-            <motion.div 
-              key={group.category} 
-              className="premium-skill-card"
-              style={{ 
-                '--card-accent': meta.color,
-                '--card-gradient': meta.gradient,
-                '--card-border': meta.borderColor
-              }}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.08, duration: 0.4, ease: 'easeOut' }}
-              whileHover={{ y: -4, transition: { duration: 0.2 } }}
-            >
-              <div className="premium-skill-card__glow" />
-              
-              <div className="premium-skill-card__top">
-                <div className="premium-skill-card__icon-wrap">
-                  <Icon size={20} />
-                </div>
-                <div className="premium-skill-card__header-info">
-                  <span className="premium-skill-card__tag">{meta.tag}</span>
-                  <h3>{group.category}</h3>
-                </div>
-              </div>
+      <div className="skills-pyramid-container">
+        {/* Top Row: 3 Cards */}
+        <div className="skills-pyramid-row skills-pyramid-row--top">
+          {topRowSkills.map((group, index) => (
+            <SkillCard key={group.category} group={group} index={index} />
+          ))}
+        </div>
 
-              <p className="premium-skill-card__desc">{group.description}</p>
-              
-              <div className="premium-skill-card__chips">
-                {group.skills.map((skill) => (
-                  <motion.span 
-                    key={skill} 
-                    className="premium-skill-chip"
-                    whileHover={{ scale: 1.04, backgroundColor: 'rgba(255, 255, 255, 0.08)' }}
-                  >
-                    <span className="premium-skill-chip__bullet" />
-                    {skill}
-                  </motion.span>
-                ))}
-              </div>
-            </motion.div>
-          );
-        })}
+        {/* Bottom Row: 2 Cards Centered */}
+        <div className="skills-pyramid-row skills-pyramid-row--bottom">
+          {bottomRowSkills.map((group, index) => (
+            <SkillCard key={group.category} group={group} index={index + 3} />
+          ))}
+        </div>
       </div>
     </section>
   );

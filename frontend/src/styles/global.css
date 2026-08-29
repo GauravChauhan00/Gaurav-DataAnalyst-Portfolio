@@ -2332,3 +2332,46 @@ html[data-theme='light'] .terminal-card {
   background: var(--card-accent);
   box-shadow: 0 0 8px var(--card-accent);
 }
+
+/* Skills Pyramid Layout: 3 Top, 2 Bottom Centered */
+.skills-pyramid-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.skills-pyramid-row--top {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
+.skills-pyramid-row--bottom {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  width: 100%;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  .skills-pyramid-row--top {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .skills-pyramid-row--bottom {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 680px) {
+  .skills-pyramid-row--top,
+  .skills-pyramid-row--bottom {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+}
