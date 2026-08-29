@@ -34,6 +34,7 @@ export const projects = [
     githubUrl: 'https://github.com/GauravChauhan00/ecommerce-sales-analytics',
     liveUrl: '',
     screenshots: [
+      '/images/projects/ecommerce/00_cover_thumbnail.png',
       '/images/projects/ecommerce/01_executive_kpi_scorecard.png',
       '/images/projects/ecommerce/02_monthly_revenue_profit_trend.png',
       '/images/projects/ecommerce/03_subcategory_performance.png',
@@ -82,6 +83,7 @@ export const projects = [
     githubUrl: 'https://github.com/GauravChauhan00/manufacturing-quality-analytics',
     liveUrl: '',
     screenshots: [
+      '/images/projects/manufacturing/00_cover_thumbnail.png',
       '/images/projects/manufacturing/01_plant_kpi_scorecard.png',
       '/images/projects/manufacturing/02_downtime_pareto_chart.png',
       '/images/projects/manufacturing/03_vibration_vs_defects.png',
@@ -130,6 +132,7 @@ export const projects = [
     githubUrl: 'https://github.com/GauravChauhan00/customer-churn-analytics',
     liveUrl: '',
     screenshots: [
+      '/images/projects/churn/00_cover_thumbnail.png',
       '/images/projects/churn/01_executive_retention_kpi.png',
       '/images/projects/churn/02_cohort_retention_heatmap.png',
       '/images/projects/churn/03_contract_and_support_churn.png',
