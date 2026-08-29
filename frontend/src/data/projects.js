@@ -20,8 +20,7 @@ export const projects = [
       'Power BI Star Schema architecture separating FactSales/FactOrderItems from DimCustomers, DimProducts, and DimDate',
       '25+ Custom DAX measures covering Time Intelligence (YTD, MTD, MoM %), Repeat Customer %, and Customer Lifetime Value',
       'Discount Elasticity analysis proving that discounts >15% severely degrade gross margin without proportional volume gains',
-      '8 Actionable Business Insights following the Observation -> Business Impact -> Recommendation framework',
-      '15 Technical Interview Questions & Answers with 3 verifiable, ATS-friendly resume bullets'
+      '8 Actionable Business Insights following the Observation -> Business Impact -> Recommendation framework'
     ],
     technologies: ['Python', 'Pandas', 'NumPy', 'PostgreSQL', 'SQL', 'Power BI', 'DAX', 'Matplotlib', 'Seaborn', 'Git'],
     role: 'Lead Data Analyst & Analytics Engineer',
@@ -31,7 +30,7 @@ export const projects = [
       'Designed a normalized relational model and built dual aggregation layers in SQL and DAX. Implemented discount tier binning to empirically prove margin degradation beyond 15% discount thresholds.',
     learnings:
       'Mastered advanced SQL window ranking, VertiPaq data modeling principles in Power BI, DAX filter context modifiers (CALCULATE, ALL, ALLEXCEPT), and commercial pricing strategy formulation.',
-    githubUrl: 'https://github.com/GauravChauhan00/ecommerce-sales-analytics',
+    githubUrl: 'https://github.com/GauravChauhan00/Ecommerce-Sales-Analytics',
     liveUrl: '',
     screenshots: [
       '/images/projects/ecommerce/00_cover_thumbnail.png',
@@ -68,9 +67,7 @@ export const projects = [
       'PostgreSQL database with 20+ operational queries computing OEE, rolling 7-day yields, and pre/post-maintenance performance lifts',
       'Pareto Downtime Analysis isolating Tool Wear and Mechanical Jams as 65.8% of all stoppage hours',
       'Power BI Plant Operations Star Schema with DAX measures for Machine Utilization %, Target Achievement %, and Energy per Unit (kWh/unit)',
-      'Shift-wise comparative analysis identifying night shift efficiency gaps and standardizing changeover procedures',
-      '40 Comprehensive technical interview mastery questions covering data cleaning, SQL, Power BI, and engineering statistics',
-      '3 ATS-optimized resume bullet points validated against actual executed calculations'
+      'Shift-wise comparative analysis identifying night shift efficiency gaps and standardizing changeover procedures'
     ],
     technologies: ['Python', 'Pandas', 'NumPy', 'Scipy', 'PostgreSQL', 'SQL', 'Power BI', 'DAX', 'Seaborn', 'Industrial IoT'],
     role: 'Senior Manufacturing & Data Quality Analyst',
@@ -80,7 +77,7 @@ export const projects = [
       'Implemented machine-specific median imputation and rolling window moving-average filters in Pandas to isolate true continuous mechanical degradation trends.',
     learnings:
       'Gained deep domain expertise in Six Sigma process variation, OEE metrics, condition-based predictive maintenance triggers, and advanced multi-fact relational SQL modeling.',
-    githubUrl: 'https://github.com/GauravChauhan00/manufacturing-quality-analytics',
+    githubUrl: 'https://github.com/GauravChauhan00/Manufacturing-Quality-Analytics',
     liveUrl: '',
     screenshots: [
       '/images/projects/manufacturing/00_cover_thumbnail.png',
@@ -118,8 +115,7 @@ export const projects = [
       'Critical Friction Threshold Discovery: Subscribers filing >= 4 support tickets experience a dramatic 64.7% churn rate',
       '20+ Strategic PostgreSQL queries tracking MoM churn rates, identifying high-ARR accounts for rescue, and analyzing payment friction',
       'Power BI Retention Star Schema with DAX measures for Revenue at Risk, Active Subscriber ARR, and Month 1 Retention %',
-      'Baseline Logistic Regression churn classification model achieving 0.84 ROC-AUC for early customer risk scoring',
-      '15+ In-depth technical interview Q&As covering cohort interpretation, survival analysis, and customer success intervention strategies'
+      'Baseline Logistic Regression churn classification model achieving 0.84 ROC-AUC for early customer risk scoring'
     ],
     technologies: ['Python', 'Pandas', 'NumPy', 'Scikit-Learn', 'PostgreSQL', 'SQL', 'Power BI', 'DAX', 'Seaborn', 'Statistics'],
     role: 'Lead Customer & Business Data Analyst',
@@ -129,7 +125,7 @@ export const projects = [
       'Created standardized tenure decay matrices and implemented subscription-weighted ARR risk formulas in SQL and DAX.',
     learnings:
       'Mastered cohort retention analytics, survival curves, customer lifetime value modeling, statistical hypothesis testing (Chi-Square/t-tests), and executive churn reporting.',
-    githubUrl: 'https://github.com/GauravChauhan00/customer-churn-analytics',
+    githubUrl: 'https://github.com/GauravChauhan00/Customer-Churn-Analytics',
     liveUrl: '',
     screenshots: [
       '/images/projects/churn/00_cover_thumbnail.png',
