@@ -11,8 +11,19 @@ def _send_bg_visit_alert(visit_dict: dict, ip: str, ua: str):
 
 @router.post("/visit", response_model=StandardResponse)
 async def record_visit(visit: VisitCreate, request: Request, background_tasks: BackgroundTasks):
+    cf_ip = request.headers.get("cf-connecting-ip")
+    real_ip = request.headers.get("x-real-ip")
     forwarded = request.headers.get("x-forwarded-for")
-    ip = forwarded.split(",")[0].strip() if forwarded else (request.client.host if request.client else "unknown")
+    
+    if cf_ip:
+        ip = cf_ip.strip()
+    elif real_ip:
+        ip = real_ip.strip()
+    elif forwarded:
+        ip = forwarded.split(",")[0].strip()
+    else:
+        ip = request.client.host if request.client else "unknown"
+
     user_agent = request.headers.get("user-agent", "unknown")
 
     try:

@@ -13,8 +13,19 @@ def _send_bg_inquiry_alert(inquiry_dict: dict, ip: str, ua: str):
 
 @router.post("", response_model=InquiryResponse)
 async def submit_inquiry(inquiry: InquiryCreate, request: Request, background_tasks: BackgroundTasks):
+    cf_ip = request.headers.get("cf-connecting-ip")
+    real_ip = request.headers.get("x-real-ip")
     forwarded = request.headers.get("x-forwarded-for")
-    ip = forwarded.split(",")[0].strip() if forwarded else (request.client.host if request.client else "unknown")
+    
+    if cf_ip:
+        ip = cf_ip.strip()
+    elif real_ip:
+        ip = real_ip.strip()
+    elif forwarded:
+        ip = forwarded.split(",")[0].strip()
+    else:
+        ip = request.client.host if request.client else "unknown"
+
     user_agent = request.headers.get("user-agent", "unknown")
 
     try:

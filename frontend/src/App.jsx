@@ -33,25 +33,21 @@ export default function App() {
 
   useEffect(() => {
     try {
-      const hasVisited = sessionStorage.getItem('visited_da_portfolio_session');
-      if (!hasVisited) {
-        sessionStorage.setItem('visited_da_portfolio_session', 'true');
-        fetch(`${API_BASE_URL}/api/analytics/visit`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            path: window.location.pathname,
-            referrer: document.referrer || 'Direct / Bookmark',
-            screen: `${window.screen.width}x${window.screen.height} (Viewport: ${window.innerWidth}x${window.innerHeight})`,
-            deviceType: getDeviceType(),
-            language: navigator.language || 'en',
-            timezone: Intl.DateTimeFormat().resolvedOptions().timeZone || 'Unknown',
-            siteName: 'Data Analyst Portfolio'
-          })
-        }).catch(() => {});
-      }
+      fetch(`${API_BASE_URL}/api/analytics/visit`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          path: window.location.pathname,
+          referrer: document.referrer || 'Direct / URL Entered',
+          screen: `${window.screen.width}x${window.screen.height} (Viewport: ${window.innerWidth}x${window.innerHeight})`,
+          deviceType: getDeviceType(),
+          language: navigator.language || 'en',
+          timezone: Intl.DateTimeFormat().resolvedOptions().timeZone || 'Unknown',
+          siteName: 'Data Analyst Portfolio'
+        })
+      }).catch(() => {});
     } catch (e) {
-      // Ignore storage/network errors
+      // Ignore network errors
     }
   }, []);
 

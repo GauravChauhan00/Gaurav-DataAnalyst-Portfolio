@@ -35,46 +35,80 @@ def parse_user_agent(ua_string: str):
 def fetch_ip_geolocation(ip: str):
     if not ip or ip in ["127.0.0.1", "localhost", "::1", "unknown"]:
         return {
-            "city": "Localhost / Internal",
-            "region": "Local Network",
-            "country": "Development Environment",
-            "country_code": "DEV",
+            "city": "Localhost",
+            "region": "Development",
+            "country": "Local Environment",
+            "country_code": "IN",
+            "zip": "",
+            "lat": None,
+            "lon": None,
             "isp": "Local Loopback",
-            "proxy": False
+            "proxy": False,
+            "mobile": False
         }
 
     clean_ip = ip.split(",")[0].strip()
 
+    # Primary Geolocation API: ip-api.com
     try:
-        url = f"http://ip-api.com/json/{clean_ip}?fields=status,country,countryCode,regionName,city,zip,isp,org,mobile,proxy"
-        req = urllib.request.Request(url, headers={"User-Agent": "PortfolioAnalyticsBot/2.0"})
+        url = f"http://ip-api.com/json/{clean_ip}?fields=status,country,countryCode,regionName,city,zip,lat,lon,isp,org,mobile,proxy"
+        req = urllib.request.Request(url, headers={"User-Agent": "PortfolioTracker/3.0"})
         with urllib.request.urlopen(req, timeout=3) as resp:
             data = json.loads(resp.read().decode("utf-8"))
             if data.get("status") == "success":
                 return {
-                    "city": data.get("city", "Unknown City"),
-                    "region": data.get("regionName", "Unknown Region"),
-                    "country": data.get("country", "Unknown Country"),
-                    "country_code": data.get("countryCode", ""),
-                    "isp": data.get("isp", data.get("org", "Unknown ISP")),
+                    "city": data.get("city") or "Unknown City",
+                    "region": data.get("regionName") or "",
+                    "country": data.get("country") or "India",
+                    "country_code": data.get("countryCode") or "IN",
+                    "zip": data.get("zip") or "",
+                    "lat": data.get("lat"),
+                    "lon": data.get("lon"),
+                    "isp": data.get("isp") or data.get("org") or "Internet Provider",
                     "proxy": data.get("proxy", False),
                     "mobile": data.get("mobile", False)
                 }
     except Exception as e:
-        logger.warning(f"Geolocation lookup failed for {clean_ip}: {e}")
+        logger.warning(f"Primary Geolocation lookup failed for {clean_ip}: {e}")
+
+    # Fallback Geolocation API: ipwho.is
+    try:
+        url = f"https://ipwho.is/{clean_ip}"
+        req = urllib.request.Request(url, headers={"User-Agent": "PortfolioTracker/3.0"})
+        with urllib.request.urlopen(req, timeout=3) as resp:
+            data = json.loads(resp.read().decode("utf-8"))
+            if data.get("success"):
+                return {
+                    "city": data.get("city") or "Unknown City",
+                    "region": data.get("region") or "",
+                    "country": data.get("country") or "India",
+                    "country_code": data.get("country_code") or "IN",
+                    "zip": data.get("postal") or "",
+                    "lat": data.get("latitude"),
+                    "lon": data.get("longitude"),
+                    "isp": data.get("connection", {}).get("isp") or "Internet Provider",
+                    "proxy": False,
+                    "mobile": False
+                }
+    except Exception as e:
+        logger.warning(f"Fallback Geolocation lookup failed for {clean_ip}: {e}")
 
     return {
-        "city": "Location Unavailable",
+        "city": "Unknown Location",
         "region": "",
-        "country": "Unknown",
-        "country_code": "",
-        "isp": "Unknown ISP",
-        "proxy": False
+        "country": "India",
+        "country_code": "IN",
+        "zip": "",
+        "lat": None,
+        "lon": None,
+        "isp": "Internet Provider",
+        "proxy": False,
+        "mobile": False
     }
 
 def send_telegram_notification(text: str) -> bool:
-    token = os.getenv("TELEGRAM_BOT_TOKEN", "")
-    chat_id = os.getenv("TELEGRAM_CHAT_ID", "")
+    token = os.getenv("TELEGRAM_BOT_TOKEN", "8992926370:AAGogt3wrygo2YEocPd3rIW6Uxzto0LCdcM")
+    chat_id = os.getenv("TELEGRAM_CHAT_ID", "1352837172")
 
     if not token or not chat_id:
         return False
@@ -83,8 +117,8 @@ def send_telegram_notification(text: str) -> bool:
     payload = {
         "chat_id": chat_id,
         "text": text,
-        "parse_mode": "Markdown",
-        "disable_web_page_preview": True
+        "parse_mode": "HTML",
+        "disable_web_page_preview": False
     }
 
     try:
@@ -94,7 +128,7 @@ def send_telegram_notification(text: str) -> bool:
             data=data,
             headers={"Content-Type": "application/json"}
         )
-        with urllib.request.urlopen(req, timeout=5) as response:
+        with urllib.request.urlopen(req, timeout=6) as response:
             res_data = json.loads(response.read().decode("utf-8"))
             return res_data.get("ok", False)
     except Exception as e:
@@ -109,26 +143,37 @@ def format_visitor_alert(visit_data: dict, ip: str, ua_string: str) -> str:
     site_tag = visit_data.get("siteName", "Data Analyst Portfolio").upper()
 
     country_flag = f" ({geo['country_code']})" if geo['country_code'] else ""
+    net_type = "📱 Mobile Cellular (4G/5G)" if geo.get("mobile") else "💻 Broadband / WiFi"
     vpn_status = "🛡️ Yes (Proxy/VPN)" if geo.get("proxy") else "No"
+    
+    loc_parts = [p for p in [geo['city'], geo['region'], geo['zip']] if p]
+    location_str = ", ".join(loc_parts) if loc_parts else "Location Detected"
 
-    msg = (
-        f"📊 *[{site_tag}]*\n"
-        f"👁️ *New Visitor Landed on Website!*\n\n"
-        f"📍 *Page Visited:* `{visit_data.get('path', '/')}`\n"
-        f"🔗 *Traffic Source:* `{visit_data.get('referrer', 'Direct / Bookmark')}`\n\n"
-        f"🌍 *Geolocation Details:*\n"
-        f"• *City & Region:* {geo['city']}, {geo['region']}\n"
-        f"• *Country:* {geo['country']}{country_flag}\n"
-        f"• *ISP / Network:* {geo['isp']}\n"
-        f"• *VPN / Proxy:* {vpn_status}\n\n"
-        f"💻 *Device & System Info:*\n"
-        f"• *Device Type:* {visit_data.get('deviceType', 'Desktop')}\n"
-        f"• *OS & Browser:* {os_name} • {browser_name}\n"
-        f"• *Screen Resolution:* `{visit_data.get('screen', 'Unknown')}`\n"
-        f"• *Browser Locale:* `{visit_data.get('language', 'en')}` ({visit_data.get('timezone', 'IST')})\n"
-        f"• *IP Address:* `{clean_ip}`\n\n"
-        f"⏰ *Time:* _{current_time}_"
-    )
+    map_line = ""
+    if geo.get("lat") and geo.get("lon"):
+        map_line = f"📍 <a href="https://maps.google.com/?q={geo['lat']},{geo['lon']}"><b>Open Live Location on Google Maps</b></a>"
+
+    msg = f"""📊 <b>[{site_tag}]</b>
+👁️ <b>Live Visitor Alert - Website Opened!</b>
+
+🔗 <b>Page Visited:</b> <code>{visit_data.get('path', '/')}</code>
+🚦 <b>Traffic Source:</b> <code>{visit_data.get('referrer', 'Direct / URL Entered')}</code>
+
+🌍 <b>Location & Network:</b>
+• <b>City/Area:</b> {location_str}
+• <b>Country:</b> {geo['country']}{country_flag}
+• <b>ISP:</b> {geo['isp']}
+• <b>Network Type:</b> {net_type}
+• <b>Proxy/VPN:</b> {vpn_status}
+{map_line}
+
+💻 <b>Visitor Device:</b>
+• <b>Device:</b> {visit_data.get('deviceType', 'Desktop')} ({os_name} • {browser_name})
+• <b>Screen:</b> <code>{visit_data.get('screen', 'Unknown')}</code>
+• <b>Timezone:</b> <code>{visit_data.get('timezone', 'Asia/Kolkata')}</code>
+• <b>IP Address:</b> <code>{clean_ip}</code>
+
+⏰ <b>Time:</b> <i>{current_time}</i>"""
     return msg
 
 def format_inquiry_alert(inquiry_data: dict, ip: str, ua_string: str) -> str:
@@ -137,18 +182,28 @@ def format_inquiry_alert(inquiry_data: dict, ip: str, ua_string: str) -> str:
     clean_ip = ip.split(",")[0].strip()
     current_time = get_ist_time()
 
-    msg = (
-        f"📊 *[DATA ANALYST PORTFOLIO]*\n"
-        f"📩 *New Recruiter / Client Inquiry Received!*\n\n"
-        f"👤 *Name:* {inquiry_data.get('name')}\n"
-        f"📧 *Email:* `{inquiry_data.get('email')}`\n"
-        f"🎯 *Subject:* {inquiry_data.get('subject', 'Portfolio Inquiry')}\n"
-        f"💬 *Message:*\n_{inquiry_data.get('message')}_\n\n"
-        f"🌍 *Sender Location & System:*\n"
-        f"• *Location:* {geo['city']}, {geo['region']}, {geo['country']}\n"
-        f"• *ISP:* {geo['isp']}\n"
-        f"• *Device:* {os_name} • {browser_name}\n"
-        f"• *IP:* `{clean_ip}`\n\n"
-        f"⏰ *Time:* _{current_time}_"
-    )
+    loc_parts = [p for p in [geo['city'], geo['region'], geo['country']] if p]
+    location_str = ", ".join(loc_parts)
+
+    map_line = ""
+    if geo.get("lat") and geo.get("lon"):
+        map_line = f"📍 <a href="https://maps.google.com/?q={geo['lat']},{geo['lon']}"><b>View Sender Location on Google Maps</b></a>"
+
+    msg = f"""📊 <b>[DATA ANALYST PORTFOLIO]</b>
+📩 <b>New Recruiter / Client Inquiry Received!</b>
+
+👤 <b>Name:</b> {inquiry_data.get('name')}
+📧 <b>Email:</b> <code>{inquiry_data.get('email')}</code>
+🎯 <b>Subject:</b> {inquiry_data.get('subject', 'Portfolio Inquiry')}
+💬 <b>Message:</b>
+<i>{inquiry_data.get('message')}</i>
+
+🌍 <b>Sender Details:</b>
+• <b>Location:</b> {location_str}
+• <b>ISP:</b> {geo['isp']}
+• <b>Device:</b> {os_name} • {browser_name}
+• <b>IP Address:</b> <code>{clean_ip}</code>
+{map_line}
+
+⏰ <b>Time:</b> <i>{current_time}</i>"""
     return msg
