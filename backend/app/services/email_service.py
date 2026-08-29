@@ -47,16 +47,31 @@ Sent via Gaurav Data Analyst Portfolio
         """
 
         msg.attach(MIMEText(plain_text, "plain", "utf-8"))
-        msg.attach(MIMEText(html_body, "html", "utf-8"))
+        import ssl
 
-        with smtplib.SMTP(SMTP_HOST, SMTP_PORT, timeout=10) as server:
-            server.starttls()
-            server.login(SMTP_USER, SMTP_PASS)
-            server.sendmail(SMTP_USER, ALERT_EMAIL, msg.as_string())
+        # 1. Try SSL Port 465 first (Standard & fastest on cloud hosts like Render)
+        try:
+            ssl_context = ssl.create_default_context()
+            with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=ssl_context, timeout=12) as server:
+                server.login(SMTP_USER, SMTP_PASS)
+                server.sendmail(SMTP_USER, ALERT_EMAIL, msg.as_string())
+            logger.info(f"✅ Notification email successfully sent via SSL (465) to {ALERT_EMAIL}")
+            return True
+        except Exception as ssl_err:
+            logger.warning(f"SSL (465) delivery attempt failed ({ssl_err}), trying STARTTLS ({SMTP_PORT})...")
 
-        logger.info(f"✅ Notification email successfully sent to {ALERT_EMAIL}")
-        return True
+        # 2. Fallback to STARTTLS Port 587
+        try:
+            with smtplib.SMTP(SMTP_HOST, SMTP_PORT, timeout=12) as server:
+                server.starttls()
+                server.login(SMTP_USER, SMTP_PASS)
+                server.sendmail(SMTP_USER, ALERT_EMAIL, msg.as_string())
+            logger.info(f"✅ Notification email successfully sent via STARTTLS to {ALERT_EMAIL}")
+            return True
+        except Exception as starttls_err:
+            logger.error(f"❌ Both SSL and STARTTLS email delivery failed: {starttls_err}")
+            return False
     except Exception as e:
-        logger.error(f"❌ Failed to send email notification: {e}")
+        logger.error(f"❌ Failed to construct or send email notification: {e}")
         return False
 
