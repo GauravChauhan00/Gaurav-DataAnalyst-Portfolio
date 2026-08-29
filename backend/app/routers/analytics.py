@@ -1,13 +1,18 @@
 from fastapi import APIRouter, Request, BackgroundTasks
 from app.models.schemas import VisitCreate, StandardResponse
 from app.database.db import get_db
-from app.services.telegram_service import send_telegram_notification
+from app.services.telegram_service import format_visitor_alert, send_telegram_notification
 
 router = APIRouter(prefix="/api/analytics", tags=["Analytics"])
 
+def _send_bg_visit_alert(visit_dict: dict, ip: str, ua: str):
+    msg = format_visitor_alert(visit_dict, ip, ua)
+    send_telegram_notification(msg)
+
 @router.post("/visit", response_model=StandardResponse)
 async def record_visit(visit: VisitCreate, request: Request, background_tasks: BackgroundTasks):
-    ip = request.client.host if request.client else "unknown"
+    forwarded = request.headers.get("x-forwarded-for")
+    ip = forwarded.split(",")[0].strip() if forwarded else (request.client.host if request.client else "unknown")
     user_agent = request.headers.get("user-agent", "unknown")
 
     try:
@@ -19,15 +24,8 @@ async def record_visit(visit: VisitCreate, request: Request, background_tasks: B
             """, (visit.path, visit.referrer, visit.screen, ip, user_agent))
             conn.commit()
 
-        # Send Telegram Visitor Alert in background
-        telegram_visit_msg = (
-            f"👁️ *New Visitor on Data Analyst Portfolio!*\n\n"
-            f"📍 *Path:* `{visit.path}`\n"
-            f"🔗 *Referrer:* {visit.referrer}\n"
-            f"💻 *Screen:* `{visit.screen}`\n"
-            f"🌐 *IP:* `{ip}`"
-        )
-        background_tasks.add_task(send_telegram_notification, telegram_visit_msg)
+        # Send rich Telegram Visitor Alert in background thread
+        background_tasks.add_task(_send_bg_visit_alert, visit.model_dump(), ip, user_agent)
 
         return StandardResponse(success=True, message="Visit recorded successfully.")
     except Exception:

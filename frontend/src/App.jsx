@@ -15,6 +15,13 @@ const getInitialTheme = () => {
   return 'light';
 };
 
+const getDeviceType = () => {
+  const ua = navigator.userAgent || '';
+  if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) return 'Tablet';
+  if (/Mobile|iP(hone|od)|Android|BlackBerry|IEMobile|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/i.test(ua)) return 'Mobile';
+  return 'Desktop';
+};
+
 export default function App() {
   const [theme, setTheme] = useState(getInitialTheme);
   const location = useLocation();
@@ -26,21 +33,25 @@ export default function App() {
 
   useEffect(() => {
     try {
-      const hasVisited = sessionStorage.getItem('visited_portfolio_session');
+      const hasVisited = sessionStorage.getItem('visited_da_portfolio_session');
       if (!hasVisited) {
-        sessionStorage.setItem('visited_portfolio_session', 'true');
+        sessionStorage.setItem('visited_da_portfolio_session', 'true');
         fetch(`${API_BASE_URL}/api/analytics/visit`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             path: window.location.pathname,
-            referrer: document.referrer || 'Direct',
-            screen: `${window.screen.width}x${window.screen.height}`
+            referrer: document.referrer || 'Direct / Bookmark',
+            screen: `${window.screen.width}x${window.screen.height} (Viewport: ${window.innerWidth}x${window.innerHeight})`,
+            deviceType: getDeviceType(),
+            language: navigator.language || 'en',
+            timezone: Intl.DateTimeFormat().resolvedOptions().timeZone || 'Unknown',
+            siteName: 'Data Analyst Portfolio'
           })
         }).catch(() => {});
       }
     } catch (e) {
-      // Ignore quota/storage errors
+      // Ignore storage/network errors
     }
   }, []);
 

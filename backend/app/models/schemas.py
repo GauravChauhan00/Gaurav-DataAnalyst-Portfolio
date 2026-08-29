@@ -1,6 +1,5 @@
 from pydantic import BaseModel, EmailStr, Field
 from typing import Optional
-from datetime import datetime
 
 class InquiryCreate(BaseModel):
     name: str = Field(..., min_length=2, max_length=100)
@@ -15,8 +14,12 @@ class InquiryResponse(BaseModel):
 
 class VisitCreate(BaseModel):
     path: Optional[str] = "/"
-    referrer: Optional[str] = "Direct"
+    referrer: Optional[str] = "Direct / Bookmark"
     screen: Optional[str] = "Unknown"
+    deviceType: Optional[str] = "Desktop"
+    language: Optional[str] = "en"
+    timezone: Optional[str] = "Unknown"
+    siteName: Optional[str] = "Data Analyst Portfolio"
 
 class StandardResponse(BaseModel):
     success: bool
