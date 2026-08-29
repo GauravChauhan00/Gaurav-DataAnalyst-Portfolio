@@ -150,8 +150,10 @@ def format_visitor_alert(visit_data: dict, ip: str, ua_string: str) -> str:
     location_str = ", ".join(loc_parts) if loc_parts else "Location Detected"
 
     map_line = ""
-    if geo.get("lat") and geo.get("lon"):
-        map_line = f"📍 <a href="https://maps.google.com/?q={geo['lat']},{geo['lon']}"><b>Open Live Location on Google Maps</b></a>"
+    lat = geo.get("lat")
+    lon = geo.get("lon")
+    if lat and lon:
+        map_line = f'📍 <a href="https://maps.google.com/?q={lat},{lon}"><b>Open Live Location on Google Maps</b></a>'
 
     msg = f"""📊 <b>[{site_tag}]</b>
 👁️ <b>Live Visitor Alert - Website Opened!</b>
@@ -186,8 +188,10 @@ def format_inquiry_alert(inquiry_data: dict, ip: str, ua_string: str) -> str:
     location_str = ", ".join(loc_parts)
 
     map_line = ""
-    if geo.get("lat") and geo.get("lon"):
-        map_line = f"📍 <a href="https://maps.google.com/?q={geo['lat']},{geo['lon']}"><b>View Sender Location on Google Maps</b></a>"
+    lat = geo.get("lat")
+    lon = geo.get("lon")
+    if lat and lon:
+        map_line = f'📍 <a href="https://maps.google.com/?q={lat},{lon}"><b>View Sender Location on Google Maps</b></a>'
 
     msg = f"""📊 <b>[DATA ANALYST PORTFOLIO]</b>
 📩 <b>New Recruiter / Client Inquiry Received!</b>
