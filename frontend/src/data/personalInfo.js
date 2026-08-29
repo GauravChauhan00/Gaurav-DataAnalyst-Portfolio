@@ -12,7 +12,7 @@ export const personalInfo = {
     'I am a Data Analyst dedicated to solving complex operational and financial challenges through data. Whether it is engineering automated Python cleaning pipelines, authoring multi-CTE PostgreSQL queries with window functions, architecting Power BI Star-Schemas, or building responsive React analytical web interfaces, my focus is delivering actionable business insights.',
     'My portfolio highlights production-grade analytical projects — from 31K+ transaction E-Commerce margin optimization and IoT manufacturing OEE analytics to 25K SaaS subscriber cohort retention and revenue-at-risk modeling.'
   ],
-  email: 'gaurav949855@gmail.com',
+  email: 'gaurav94855@gmail.com',
   phone: '+91 8307042798',
   showPhoneOnWebsite: false,
   location: 'India',
