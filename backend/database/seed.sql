@@ -1,5 +1,0 @@
--- Optional seed file.
--- Keep this empty for production so fake inquiries are not added.
--- Example for testing only:
--- INSERT INTO inquiries (name, email, subject, message)
--- VALUES ('Test User', 'test@example.com', 'Portfolio inquiry', 'This is a sample test message.');
