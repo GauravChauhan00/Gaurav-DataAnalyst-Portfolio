@@ -13,7 +13,7 @@ services:
 
   # 2. React Vite Frontend Static Site
   - type: web
-    name: gauravdataanalyst
+    name: GauravDataAnalyst
     env: static
     buildCommand: cd frontend && npm install && npm run build
     staticPublishPath: frontend/dist
